@@ -77,6 +77,75 @@ V.C = () => {
   headline('THE $13M?', 1000, 350, 150, '#ffd400', { shine: true, rot: -.02 });
   finish();
 };
+
+// sticker outline: draw the subject once through a drop-shadow outline filter, then cleanly on top
+function mkc() { const c = document.createElement('canvas'); c.width = W; c.height = H; return c; }
+const _bk = mkc(), _sub = mkc(), _out = mkc();
+function sticker(fn, w = 9, col = '#fff') {
+  // render the subject alone on the main canvas, lift it off, then composite outline + subject back
+  const bx = _bk.getContext('2d'); bx.clearRect(0, 0, W, H); bx.drawImage(cv, 0, 0);
+  ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.clearRect(0, 0, W, H); ctx.restore();
+  ctx.save(); fn(); ctx.restore();
+  const sx = _sub.getContext('2d'); sx.clearRect(0, 0, W, H); sx.drawImage(cv, 0, 0);
+  const ox = _out.getContext('2d'); ox.clearRect(0, 0, W, H);
+  for (let k = 0; k < 24; k++) { const a = k / 24 * Math.PI * 2; ox.drawImage(_sub, Math.cos(a) * w, Math.sin(a) * w); }
+  ox.globalCompositeOperation = 'source-in'; ox.fillStyle = col; ox.fillRect(0, 0, W, H); ox.globalCompositeOperation = 'source-over';
+  ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.clearRect(0, 0, W, H); ctx.drawImage(_bk, 0, 0);
+  ctx.shadowColor = 'rgba(0,0,0,.55)'; ctx.shadowBlur = 22; ctx.shadowOffsetY = 12; ctx.drawImage(_out, 0, 0); ctx.shadowColor = 'transparent'; ctx.drawImage(_sub, 0, 0); ctx.restore();
+}
+function strike(x0, y, x1, w = 18) { ctx.save(); ctx.strokeStyle = '#e3121b'; ctx.lineWidth = w; ctx.lineCap = 'round'; ctx.shadowColor = 'rgba(0,0,0,.5)'; ctx.shadowBlur = 10; ctx.beginPath(); ctx.moveTo(x0, y + 14); ctx.lineTo(x1, y - 14); ctx.stroke(); ctx.restore(); }
+// D — the $13M → $4.23 twist on a loud yellow background
+V.D = () => {
+  bg('#ffd400', '#ff9d00'); rays(1380, 520, 'rgba(255,255,255,A)', 22, .16);
+  ctx.save(); ctx.globalAlpha = .12; for (let i = 0; i < 40; i++) { const R = rnd(i); ctx.fillStyle = '#000'; ctx.font = `900 ${60 + R() * 60}px ${F_HEAD}`; ctx.fillText('$', R() * W, R() * H); } ctx.restore();
+  sticker(() => { wings(1420, 390, .78, .55, { droop: .55 }); drawCan(1420, 560, 640, { rot: .1, drops: true, noShadow: true }); }, 10);
+  // falling feathers from the broken wing
+  for (let i = 0; i < 7; i++) { const R = rnd(i + 3); ctx.save(); ctx.translate(1180 + R() * 520, 760 + R() * 260); ctx.rotate(R() * 3); drawFeather(90, 22, 1); ctx.restore(); }
+  headline('$13,000,000', 70, 260, 150, '#ffffff', { stroke: '#000' }); strike(60, 210, 990, 22);
+  headline('$4.23?!', 60, 600, 330, '#e3121b', { stroke: '#fff', shine: true, rot: -.04 });
+  headline('PER PERSON', 90, 760, 90, '#000000', { stroke: '#ffd400' });
+  ctx.save(); ctx.fillStyle = 'rgba(0,0,0,.18)'; ctx.fillRect(0, 0, W, H); ctx.globalCompositeOperation = 'destination-over'; ctx.restore();
+};
+// E — Red Bull on trial
+V.E = () => {
+  bg('#160806', '#050202'); ctx.save(); ctx.globalAlpha = .6; courtroom(0); ctx.restore();
+  ctx.fillStyle = 'rgba(30,0,0,.45)'; ctx.fillRect(0, 0, W, H); glow(1000, 520, 700, 'rgba(255,40,40,.35)');
+  // defendant podium with the can
+  sticker(() => { drawCan(1000, 520, 560, { drops: true, noShadow: true }); wings(1000, 330, .42, .7, { droop: .3 }); }, 9);
+  ctx.fillStyle = grad(700, 0, 1300, 0, [[0, '#3a2414'], [.5, '#6b4826'], [1, '#2a180c']]); ctx.fillRect(700, 760, 600, 330); ctx.fillStyle = '#8a5f34'; ctx.fillRect(680, 745, 640, 30);
+  ctx.save(); ctx.fillStyle = '#d9b44a'; ctx.font = `900 46px ${F_HEAD}`; ctx.textAlign = 'center'; ctx.fillText('DEFENDANT', 1000, 860); ctx.restore();
+  // giant gavel mid-swing with motion arcs
+  sticker(() => gavel(1600, 300, 2.2, Math.PI * .5 + .35), 8);
+  ctx.save(); ctx.strokeStyle = 'rgba(255,255,255,.5)'; ctx.lineWidth = 10; ctx.lineCap = 'round'; for (let k = 0; k < 3; k++) { ctx.beginPath(); ctx.arc(1700, 520, 330 + k * 40, -2.2, -1.6); ctx.stroke(); } ctx.restore();
+  headline('RED BULL', 60, 250, 200, '#ff2a2a', { stroke: '#fff', shine: true });
+  headline('ON TRIAL', 70, 430, 170, '#ffffff', { shine: true });
+  ctx.save(); ctx.fillStyle = '#16a34a'; rr(70, 830, 520, 140, 24); ctx.fill(); ctx.strokeStyle = '#fff'; ctx.lineWidth = 8; ctx.stroke(); ctx.restore();
+  headline('$13M', 330, 935, 110, '#ffffff', { align: 'center', stroke: '#0b5a26' });
+  finish();
+};
+// F — expectation vs reality meme
+V.F = () => {
+  // left: expectation — flying over the suburb at sunset
+  ctx.save(); ctx.beginPath(); ctx.rect(0, 0, 955, H); ctx.clip();
+  ctx.fillStyle = grad(0, 0, 0, H, [[0, '#3a7bd5'], [.7, '#ffb36b'], [1, '#ff8a4b']]); ctx.fillRect(0, 0, 960, H);
+  for (let i = 0; i < 5; i++) house(-60 + i * 220, 1080, 160, 110, { body: '#2b2338', roof: '#211b2c' });
+  glow(480, 420, 500, 'rgba(255,255,220,.5)');
+  sticker(() => { person(480, 830, 560, { cap: true, armUp: 1, holdCan: true, light: 1, backWings: { s: .62, spread: 1, flap: 0 } }); }, 9);
+  ctx.restore();
+  // right: reality — dark couch, tired guy, tiny check
+  ctx.save(); ctx.beginPath(); ctx.rect(965, 0, 955, H); ctx.clip();
+  bg('#1d1a22', '#09080c'); ctx.fillStyle = '#16131b'; ctx.fillRect(965, 0, 955, H); glow(1440, 300, 600, 'rgba(120,140,200,.25)');
+  ctx.fillStyle = '#3a2f4a'; rr(1040, 760, 820, 260, 60); ctx.fill(); rr(1000, 640, 900, 180, 60); ctx.fill();
+  sticker(() => { person(1440, 1040, 560, { cap: true, shock: true, light: -1, holdCan: true, armUp: .3, shrug: .4 }); }, 9);
+  sticker(() => giantCheck(1560, 340, 520, '$4.23', 'You', .08), 8);
+  ctx.restore(); headline('$4.23', 1640, 990, 165, '#ff2a2a', { align: 'center', stroke: '#fff', shine: true, rot: -.06 }); ctx.save();
+  ctx.restore();
+  ctx.fillStyle = '#fff'; ctx.fillRect(955, 0, 10, H);
+  headline('EXPECTATION', 480, 150, 104, '#ffffff', { align: 'center', shine: true });
+  headline('REALITY', 1440, 150, 120, '#ffd400', { align: 'center', shine: true });
+  finish();
+};
+
 window.drawThumb = k => { ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; V[k](); };
 </script>
 </body></html>
