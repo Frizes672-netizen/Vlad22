@@ -42,18 +42,16 @@ function portrait(cx, cy, Hh, o = {}) {
   for (const s of [-1, 1]) { ctx.fillStyle = s < 0 ? '#a46a4f' : '#cf9373'; ctx.beginPath(); ctx.ellipse(s * 37, 2, 7, 13, s * .15, 0, 7); ctx.fill();
     ctx.strokeStyle = 'rgba(90,45,30,.6)'; ctx.lineWidth = 1.6; ctx.beginPath(); ctx.ellipse(s * 37.5, 2, 4, 9, s * .15, -1.2, 1.6); ctx.stroke(); }
   // ---- face shape ----
-  const face = new Path2D(); face.moveTo(0, -56); face.bezierCurveTo(24, -56, 36, -40, 36, -12); face.bezierCurveTo(36, 6, 33, 17, 25, 30); face.bezierCurveTo(17, 41, 8, 45, 0, 45);
-  face.bezierCurveTo(-8, 45, -17, 41, -25, 30); face.bezierCurveTo(-33, 17, -36, 6, -36, -12); face.bezierCurveTo(-36, -40, -24, -56, 0, -56); face.closePath();
+  const face = new Path2D(); face.moveTo(0, -56); face.bezierCurveTo(24, -56, 37, -40, 37, -12); face.bezierCurveTo(37, 8, 34, 20, 27, 31); face.bezierCurveTo(19, 42, 9, 46, 0, 46);
+  face.bezierCurveTo(-9, 46, -19, 42, -27, 31); face.bezierCurveTo(-34, 20, -37, 8, -37, -12); face.bezierCurveTo(-37, -40, -24, -56, 0, -56); face.closePath();
   ctx.save(); ctx.clip(face);
-  ctx.fillStyle = grad(0, -40, 0, 45, [[0, '#cf987a'], [.5, '#c48a68'], [1, '#b47a5c']]); ctx.fillRect(-60, -70, 120, 130);
+  ctx.fillStyle = skin; ctx.fillRect(-60, -70, 120, 130);
   ctx.fillStyle = rgrad(14, -12, 2, 52, [[0, 'rgba(250,206,170,.85)'], [.55, 'rgba(230,170,130,.35)'], [1, 'rgba(0,0,0,0)']]); ctx.fillRect(-60, -70, 120, 130);
   ctx.fillStyle = grad(-38, 0, 8, 0, [[0, 'rgba(70,35,30,.7)'], [.6, 'rgba(90,50,40,.25)'], [1, 'rgba(0,0,0,0)']]); ctx.fillRect(-60, -70, 70, 130);
   blurDraw(6, () => { // cheek warmth, temple shadows, jaw shadow
     ctx.fillStyle = 'rgba(200,90,70,.18)'; ctx.beginPath(); ctx.ellipse(20, 14, 10, 7, 0, 0, 7); ctx.ellipse(-20, 14, 9, 7, 0, 0, 7); ctx.fill();
     ctx.fillStyle = 'rgba(70,40,30,.35)'; ctx.beginPath(); ctx.ellipse(0, 46, 34, 9, 0, 0, 7); ctx.fill();
     ctx.fillStyle = 'rgba(80,45,35,.3)'; ctx.beginPath(); ctx.ellipse(-33, -14, 6, 18, 0, 0, 7); ctx.fill(); });
-  blurDraw(5, () => { ctx.fillStyle = 'rgba(255,215,185,.45)'; ctx.beginPath(); ctx.ellipse(22, 6, 9, 4.5, -.3, 0, 7); ctx.fill(); ctx.beginPath(); ctx.ellipse(0, -30, 18, 7, 0, 0, 7); ctx.fill();
-    ctx.fillStyle = 'rgba(90,50,38,.32)'; ctx.beginPath(); ctx.ellipse(-24, 18, 7, 10, .3, 0, 7); ctx.fill(); ctx.beginPath(); ctx.ellipse(25, 19, 5, 9, -.3, 0, 7); ctx.fill(); });
   // eye sockets
   blurDraw(5, () => { ctx.fillStyle = 'rgba(80,45,35,.38)'; ctx.beginPath(); ctx.ellipse(-15, -6, 11, 7, 0, 0, 7); ctx.ellipse(16, -6, 11, 7, 0, 0, 7); ctx.fill(); });
   // nose shading
@@ -70,9 +68,8 @@ function portrait(cx, cy, Hh, o = {}) {
   ctx.strokeStyle = 'rgba(60,20,15,.85)'; ctx.lineWidth = 1.1; ctx.beginPath(); ctx.moveTo(-11, 27); ctx.quadraticCurveTo(0, 28.2, 11, 27); ctx.stroke();
   blurDraw(1, () => { ctx.fillStyle = 'rgba(255,220,200,.35)'; ctx.beginPath(); ctx.ellipse(2, 30, 4, 1.1, 0, 0, 7); ctx.fill(); });
   // stubble
-  { const R = rnd(5); for (let i = 0; i < 16000; i++) { const x = (R() - .5) * 72, y = -2 + R() * 50; const inJaw = (y > 18 && Math.abs(x) < 34 - (y - 18) * .2) || (y > 20 && y < 25 && Math.abs(x) < 13) || (y > 8 && Math.abs(x) > 22);
-    if (!inJaw || (y > 23.5 && y < 33.5 && Math.abs(x) < 11)) continue; ctx.fillStyle = `rgba(60,38,30,${.06 + R() * .14})`; ctx.fillRect(x, y, .26, .45 + R() * .4); } }
-  blurDraw(3, () => { ctx.fillStyle = 'rgba(70,45,36,.16)'; ctx.beginPath(); ctx.ellipse(0, 33, 27, 13, 0, 0, 7); ctx.fill(); ctx.beginPath(); ctx.ellipse(0, 22.5, 12, 2.6, 0, 0, 7); ctx.fill(); });
+  { const R = rnd(5); for (let i = 0; i < 9000; i++) { const x = (R() - .5) * 74, y = -2 + R() * 50; const inJaw = (y > 18 && Math.abs(x) < 34 - (y - 18) * .2) || (y > 20 && y < 25 && Math.abs(x) < 13) || (y > 8 && Math.abs(x) > 22);
+    if (!inJaw || (y > 23.5 && y < 33.5 && Math.abs(x) < 11)) continue; ctx.fillStyle = `rgba(55,35,28,${.12 + R() * .25})`; ctx.fillRect(x, y, .55, .9 + R() * .7); } }
   // skin texture
   ctx.globalAlpha = .1; ctx.globalCompositeOperation = 'overlay'; ctx.drawImage(noiseC, -60, -70, 120, 130); ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over';
   ctx.restore();
@@ -100,8 +97,6 @@ function portrait(cx, cy, Hh, o = {}) {
   blurDraw(1.5, () => { ctx.strokeStyle = 'rgba(80,45,32,.4)'; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(-3, -16); ctx.lineTo(-2, -10); ctx.moveTo(3, -16); ctx.lineTo(2, -10); ctx.stroke(); }); // frown lines
   // ---- hair at temples / sideburns ----
   { const R = rnd(12); for (let i = 0; i < 500; i++) { const s = R() < .5 ? -1 : 1; const y = -34 + R() * 34, x = s * (33 + R() * 4.5); ctx.strokeStyle = `rgba(${50 + R() * 30},${32 + R() * 20},${22 + R() * 14},.8)`; ctx.lineWidth = .7; ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x + s * (R() - .7) * 2, y + 3 + R() * 4); ctx.stroke(); } }
-  ctx.fillStyle = grad(0, -40, 0, -5, [[0, '#3a2418'], [1, '#2a1a12']]);
-  for (const s2 of [-1, 1]) { ctx.beginPath(); ctx.moveTo(s2 * 41, -30); ctx.quadraticCurveTo(s2 * 44, -14, s2 * 37, -6); ctx.lineTo(s2 * 34, -8); ctx.quadraticCurveTo(s2 * 35, -20, s2 * 33, -29); ctx.fill(); }
   // ---- baseball cap ----
   const capCol = o.cap || '#1d2a4d';
   ctx.fillStyle = grad(-42, 0, 42, 0, [[0, shade(capCol, .45)], [.55, shade(capCol, 1.05)], [.8, shade(capCol, 1.25)], [1, shade(capCol, .6)]]);
@@ -195,21 +190,30 @@ function draw(variant) {
   antonText('GIVES YOU WINGS.', 1170, 395, 96, '#ffffff', { stroke: 10 });
   curvedArrow([[1340, 440], [1280, 560], [1110, 600]], 22, '#e3121b');
   // gavel + settlement + money
-  cashPile(1360, 560);
-  bigGavel(1260, 640, .95);
-  settlementDoc(1660, 700, 460, -.1);
+  bigGavel(1450, 640, 1.05);
+  cashPile(1360, 540);
+  settlementDoc(1640, 690, 470, -.1);
   // the character: painted portrait, looking up with determination
-  portrait(410, 440, 470, { rot: -.06 });
+  portrait(400, 400, 560, { rot: -.06 });
   // handwritten note
   ctx.save(); ctx.translate(150, 180); ctx.rotate(-.12); ctx.font = `58px ${MK}`; ctx.fillStyle = '#fff'; ctx.shadowColor = 'rgba(0,0,0,.8)'; ctx.shadowBlur = 8; ctx.textAlign = 'center';
   ['JUST', 'ANOTHER', 'ENERGY', 'DRINK...'].forEach((l, i) => ctx.fillText(l, 0, i * 62)); ctx.restore();
   ctx.save(); ctx.strokeStyle = '#fff'; ctx.lineWidth = 6; ctx.lineCap = 'round'; ctx.shadowColor = 'rgba(0,0,0,.7)'; ctx.shadowBlur = 6;
   ctx.beginPath(); ctx.moveTo(150, 430); ctx.quadraticCurveTo(140, 520, 215, 560); ctx.stroke(); ctx.beginPath(); ctx.moveTo(185, 560); ctx.lineTo(218, 562); ctx.lineTo(205, 532); ctx.stroke(); ctx.restore();
   // headline banners
-  brushBand(70, 760, 1290, 150, 'rgba(10,10,12,.92)', 4);
+  if (variant === 'skyband') { // no black band: paint sky under the headline, fading the hoodie out
+    const mk = () => { const c = document.createElement('canvas'); c.width = W; c.height = H; return c; };
+    const bk = mk(), sk = mk(); bk.getContext('2d').drawImage(cv, 0, 0);
+    skyBg(); sk.getContext('2d').drawImage(cv, 0, 0);
+    ctx.drawImage(bk, 0, 0);
+    const sx = sk.getContext('2d'); sx.globalCompositeOperation = 'destination-in';
+    sx.fillStyle = grad(0, 640, 0, 800, [[0, 'rgba(0,0,0,0)'], [1, 'rgba(0,0,0,1)']]); sx.fillRect(0, 0, W, H);
+    sx.fillStyle = grad(1240, 0, 1340, 0, [[0, 'rgba(0,0,0,1)'], [1, 'rgba(0,0,0,0)']]); sx.fillRect(0, 0, W, H);
+    ctx.drawImage(sk, 0, 0);
+  } else brushBand(70, 760, 1290, 150, 'rgba(10,10,12,.92)', 4);
   brushBand(40, 900, 1540, 170, '#d3141c', 9);
-  antonText('HE SUED RED BULL', 110, 885, 150, '#ffffff', { spacing: 3 });
-  const l2 = variant === 'honest' ? ['AND GOT ', '$13 MILLION?'] : ['AND WON ', '$13 MILLION'];
+  antonText('HE SUED RED BULL', 110, 885, 150, '#ffffff', variant === 'skyband' ? { spacing: 3, stroke: 12 } : { spacing: 3 });
+  const l2 = variant !== 'exact' ? ['AND GOT ', '$13 MILLION?'] : ['AND WON ', '$13 MILLION'];
   const w1 = antonText(l2[0], 80, 1045, 170, '#ffe200', { spacing: 3, stroke: 8 }); antonText(l2[1], 80 + w1, 1045, 170, '#ffffff', { spacing: 3, stroke: 8 });
   // grade
   ctx.save(); ctx.fillStyle = rgrad(W / 2, H / 2, H * .5, W * .8, [[0, 'rgba(0,0,0,0)'], [1, 'rgba(0,0,0,.45)']]); ctx.fillRect(0, 0, W, H); ctx.restore();
