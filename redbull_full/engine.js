@@ -609,6 +609,17 @@ function personBody(u, P, C, sil) {
   ctx.beginPath(); ctx.ellipse(-5.5 * u, .3 * u, 1.1 * u, 2 * u, 0, 0, 7); ctx.ellipse(5.5 * u, .3 * u, 1.1 * u, 2 * u, 0, 0, 7); ctx.fill();
   if (!sil) {
     // face details (kept soft to avoid an uncanny look)
+    if (P.shock) { // thumbnail expression: wide eyes, raised brows, open mouth
+      ctx.fillStyle = '#fbf7f2'; ctx.beginPath(); ctx.ellipse(-2.15 * u, -.5 * u, 1.15 * u, 1.0 * u, 0, 0, 7); ctx.ellipse(2.15 * u, -.5 * u, 1.15 * u, 1.0 * u, 0, 0, 7); ctx.fill();
+      ctx.fillStyle = '#2a170c'; ctx.beginPath(); ctx.arc(-2.0 * u, -.45 * u, .52 * u, 0, 7); ctx.arc(2.3 * u, -.45 * u, .52 * u, 0, 7); ctx.fill();
+      ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(-1.85 * u, -.65 * u, .16 * u, 0, 7); ctx.arc(2.45 * u, -.65 * u, .16 * u, 0, 7); ctx.fill();
+      ctx.strokeStyle = shade(C.hair, .9); ctx.lineWidth = .6 * u; ctx.lineCap = 'round';
+      ctx.beginPath(); ctx.moveTo(-3.3 * u, -2.5 * u); ctx.quadraticCurveTo(-2.2 * u, -3.4 * u, -1.0 * u, -2.7 * u); ctx.moveTo(1.0 * u, -2.7 * u); ctx.quadraticCurveTo(2.2 * u, -3.4 * u, 3.3 * u, -2.5 * u); ctx.stroke();
+      ctx.fillStyle = 'rgba(90,45,25,.25)'; ctx.beginPath(); ctx.moveTo(0, -.3 * u); ctx.lineTo(.9 * u * L, 2.2 * u); ctx.lineTo(-.3 * u * L, 2.4 * u); ctx.fill();
+      ctx.fillStyle = '#3a1210'; ctx.beginPath(); ctx.ellipse(0, 4.4 * u, 1.35 * u, 1.75 * u, 0, 0, 7); ctx.fill();
+      ctx.fillStyle = '#c0504a'; ctx.beginPath(); ctx.ellipse(0, 5.4 * u, .9 * u, .55 * u, 0, 0, 7); ctx.fill();
+      ctx.fillStyle = 'rgba(40,25,20,.12)'; ctx.beginPath(); ctx.ellipse(0, 4.8 * u, 4 * u, 2.6 * u, 0, 0, 7); ctx.fill();
+    } else {
     ctx.fillStyle = 'rgba(40,20,10,.85)';
     ctx.beginPath(); ctx.ellipse(-2.1 * u, -.4 * u, .62 * u, .42 * u, 0, 0, 7); ctx.ellipse(2.1 * u, -.4 * u, .62 * u, .42 * u, 0, 0, 7); ctx.fill();
     ctx.strokeStyle = shade(C.hair, .9); ctx.lineWidth = .55 * u; ctx.lineCap = 'round';
@@ -617,6 +628,7 @@ function personBody(u, P, C, sil) {
     ctx.strokeStyle = 'rgba(110,50,40,.55)'; ctx.lineWidth = .45 * u; ctx.beginPath(); ctx.moveTo(-1.3 * u, 4.1 * u); ctx.quadraticCurveTo(0, 4.4 * u + (P.mouth || 0) * u, 1.3 * u, 4.1 * u); ctx.stroke();
     // stubble / jaw shadow
     ctx.fillStyle = 'rgba(40,25,20,.12)'; ctx.beginPath(); ctx.ellipse(0, 4.8 * u, 4 * u, 2.6 * u, 0, 0, 7); ctx.fill();
+    }
   }
   // hair
   ctx.fillStyle = sil ? sil : grad(0, -8 * u, 0, -2 * u, [[0, shade(C.hair, 1.25)], [1, C.hair]]);
@@ -647,7 +659,7 @@ function person(x, y, h, o = {}) {
   let [elL, hdL] = arm(shL, -1, lerp(.1 + sw, .3, shrug), lerp(.05 + sw, 1.75, shrug));
   let [elR, hdR] = arm(shR, 1, lerp(lerp(.1 - sw, .3, shrug), .35, armUp), lerp(lerp(.05 - sw, 1.75, shrug), 2.75, armUp));
   if (o.point) [elR, hdR] = arm(shR, 1, 1.2, 1.5);
-  const P = { hipL, hipR, kneeL, kneeR, ankL, ankR, shL, shR, elL, elR, hdL, hdR, sy, headY, tilt: o.tilt || (shrug * .06), mouth: o.mouth };
+  const P = { hipL, hipR, kneeL, kneeR, ankL, ankR, shL, shR, elL, elR, hdL, hdR, sy, headY, tilt: o.tilt || (shrug * .06), mouth: o.mouth, shock: o.shock };
   const C = { skin: o.skin || SKIN[o.skinIdx || 0], top: o.top || '#59606e', pants: o.pants || '#2d3f5e', shoe: o.shoe || '#262626', hair: o.hair || '#3a2618',
     cap: o.cap === true ? (o.capColor || '#1f2d55') : (o.cap || null), light: o.light ?? 1 };
   if (o.backWings) wings(0, sy + 10 * u, o.backWings.s, o.backWings.spread, o.backWings);

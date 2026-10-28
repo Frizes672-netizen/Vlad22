@@ -1,0 +1,82 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>html,body{margin:0;background:#000}canvas{display:block}</style></head><body>
+<canvas id="c" width="1920" height="1080"></canvas>
+<script src="timeline.js"></script>
+<script src="engine.js"></script>
+<script src="props.js"></script>
+<script src="env.js"></script>
+<script src="main.js"></script>
+<script src="scenes1.js"></script>
+<script src="scenes2.js"></script>
+<script>
+// ===== YouTube thumbnails (drawn at 1920×1080, exported at 1280×720) =====
+// heavy outlined headline text, readable at phone size
+function headline(s, x, y, size, fill, o = {}) {
+  ctx.save(); ctx.font = `900 ${size}px ${F_HEAD}`; ctx.textAlign = o.align || 'left'; ctx.letterSpacing = (o.spacing ?? -2) + 'px';
+  ctx.translate(x, y); ctx.rotate(o.rot || 0);
+  ctx.shadowColor = 'rgba(0,0,0,.85)'; ctx.shadowBlur = size * .25; ctx.shadowOffsetY = size * .06;
+  ctx.lineJoin = 'round'; ctx.lineWidth = size * .2; ctx.strokeStyle = o.stroke || '#000'; ctx.strokeText(s, 0, 0);
+  ctx.shadowColor = 'transparent'; ctx.fillStyle = fill; ctx.fillText(s, 0, 0);
+  if (o.shine) { ctx.globalCompositeOperation = 'source-atop'; ctx.fillStyle = grad(0, -size, 0, 0, [[0, 'rgba(255,255,255,.45)'], [.5, 'rgba(255,255,255,0)']]); ctx.fillText(s, 0, 0); }
+  ctx.restore();
+}
+function arrow(x0, y0, x1, y1, w, col = '#ff2a2a') {
+  const a = Math.atan2(y1 - y0, x1 - x0), L = Math.hypot(x1 - x0, y1 - y0);
+  ctx.save(); ctx.translate(x0, y0); ctx.rotate(a);
+  ctx.shadowColor = 'rgba(0,0,0,.7)'; ctx.shadowBlur = 20;
+  ctx.fillStyle = col; ctx.strokeStyle = '#fff'; ctx.lineWidth = w * .18; ctx.lineJoin = 'round';
+  ctx.beginPath(); ctx.moveTo(0, -w * .32); ctx.quadraticCurveTo(L * .5, -w * .55, L - w * 1.1, -w * .4); ctx.lineTo(L - w * 1.1, -w); ctx.lineTo(L, 0); ctx.lineTo(L - w * 1.1, w);
+  ctx.lineTo(L - w * 1.1, w * .4); ctx.quadraticCurveTo(L * .5, w * .1, 0, w * .32); ctx.closePath(); ctx.stroke(); ctx.fill(); ctx.restore();
+}
+function rays(cx, cy, col, n = 18, a = .07) { ctx.save(); ctx.globalCompositeOperation = 'lighter'; for (let i = 0; i < n; i++) { const t0 = i / n * Math.PI * 2; ctx.fillStyle = col.replace('A', a); ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(cx + Math.cos(t0) * 2500, cy + Math.sin(t0) * 2500); ctx.lineTo(cx + Math.cos(t0 + .09) * 2500, cy + Math.sin(t0 + .09) * 2500); ctx.fill(); } ctx.restore(); }
+function cashStack(x, y, s) { for (let r = 0; r < 4; r++) for (let c = 0; c < 6 - r; c++) cashBrick(x + (c - (5 - r) / 2) * 118 * s, y - r * 42 * s, 1); }
+function finish() { // punchy grade: contrast + vignette, no film grain (thumbnails must stay crisp)
+  ctx.save(); ctx.fillStyle = rgrad(W / 2, H / 2, H * .45, W * .75, [[0, 'rgba(0,0,0,0)'], [1, 'rgba(0,0,0,.55)']]); ctx.fillRect(0, 0, W, H); ctx.restore();
+}
+const V = {};
+// A — the hero can with real wings + "SUED FOR NO WINGS?" + $13M
+V.A = () => {
+  bg('#090216', '#05010c'); glow(620, 520, 900, 'rgba(150,60,255,.6)'); glow(620, 520, 420, 'rgba(255,120,220,.25)'); rays(620, 470, 'rgba(255,230,255,A)', 20, .05);
+  floor(880, '#140829', '#030106');
+  ctx.save(); wings(620, 360, 1.05, 1, { glow: 'rgba(220,180,255,.45)' }); ctx.restore();
+  drawCan(620, 560, 680, { rim: 'rgba(230,180,255,.9)', drops: true, rot: -.05 });
+  headline('SUED FOR', 1060, 250, 140, '#ffffff', { shine: true });
+  headline('NO WINGS?', 1030, 420, 150, '#ffd400', { shine: true, rot: -.02 });
+  // money tag
+  ctx.save(); ctx.translate(1440, 760); ctx.rotate(-.05); cashStack(0, 120, 1);
+  ctx.fillStyle = '#16a34a'; ctx.shadowColor = 'rgba(0,0,0,.7)'; ctx.shadowBlur = 30; rr(-330, -120, 660, 170, 26); ctx.fill(); ctx.shadowColor = 'transparent';
+  ctx.strokeStyle = '#fff'; ctx.lineWidth = 8; ctx.stroke(); headline('$13,000,000', 0, 10, 110, '#ffffff', { align: 'center', stroke: '#0b5a26' }); ctx.restore();
+  arrow(1180, 600, 900, 520, 70);
+  finish();
+};
+// B — shocked guy close-up + big "$13 MILLION" + gavel
+V.B = () => {
+  bg('#1a0a06', '#060202'); glow(1360, 420, 900, 'rgba(255,120,40,.35)'); rays(1360, 380, 'rgba(255,220,160,A)', 18, .05);
+  ctx.save(); ctx.globalAlpha = .35; ctx.translate(0, 60); courtroom(0); ctx.restore(); ctx.fillStyle = 'rgba(20,6,4,.55)'; ctx.fillRect(0, 0, W, H);
+  moneyRain(1.6, 30, 11);
+  // the guy, huge and cropped like a face-cam thumbnail
+  glow(1450, 500, 600, 'rgba(255,200,140,.25)');
+  person(1450, 1560, 1300, { cap: true, shock: true, light: -1, top: '#2b3550', shrug: .9 });
+  drawCan(1060, 640, 470, { rim: 'rgba(255,200,150,.8)', rot: -.12, drops: true });
+  headline('$13 MILLION', 70, 250, 190, '#3dff6e', { shine: true, stroke: '#04310f' });
+  headline('FOR NO WINGS?!', 80, 420, 132, '#ffffff', { shine: true });
+  gavel(330, 760, 1.6, Math.PI * .5 + .35);
+  finish();
+};
+// C — "WHO GOT $13M?": one guy with a giant check (X) vs. the crowd
+V.C = () => {
+  bg('#06102a', '#020611'); glow(960, 560, 1000, 'rgba(60,120,255,.3)');
+  usStripes(2, .9);
+  giantCheck(700, 660, 860, '$13,000,000', 'One Lucky Guy', -.06, { sign: true });
+  person(230, 1160, 780, { cap: true, shock: true, light: 1, shrug: .8 });
+  bigX(700, 660, 500, 1);
+  // crowd side
+  const R = rnd(4); for (let i = 0; i < 26; i++) { const c = i % 9, r = Math.floor(i / 9); person(1180 + c * 85 + (r % 2) * 40, 1100 - r * 90, 300 - r * 20, { silhouette: true, color: '#0b1022', rim: 'rgba(255,214,120,.9)', cap: R() > .5, flip: R() > .5 }); }
+  for (let i = 0; i < 30; i++) { ctx.fillStyle = '#ffd54a'; ctx.beginPath(); ctx.arc(1180 + R() * 700, 520 + R() * 260, 9, 0, 7); ctx.fill(); }
+  headline('WHO GOT', 1040, 190, 140, '#ffffff', { shine: true });
+  headline('THE $13M?', 1000, 350, 150, '#ffd400', { shine: true, rot: -.02 });
+  finish();
+};
+window.drawThumb = k => { ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; V[k](); };
+</script>
+</body></html>
