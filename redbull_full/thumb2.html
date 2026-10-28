@@ -26,15 +26,15 @@ function portrait(cx, cy, Hh, o = {}) {
   const skin = '#c98f6c';
   // ---- hoodie / shoulders ----
   ctx.fillStyle = grad(-150, 0, 150, 0, [[0, '#14161d'], [.45, '#2a2e3a'], [.75, '#3a3f4e'], [1, '#1c1f28']]);
-  ctx.beginPath(); ctx.moveTo(-170, 230); ctx.quadraticCurveTo(-160, 95, -70, 72); ctx.lineTo(70, 72); ctx.quadraticCurveTo(165, 92, 175, 230); ctx.closePath(); ctx.fill();
+  ctx.beginPath(); ctx.moveTo(-112, 240); ctx.lineTo(-108, 130); ctx.quadraticCurveTo(-104, 90, -62, 72); ctx.lineTo(62, 72); ctx.quadraticCurveTo(106, 88, 110, 130); ctx.lineTo(114, 240); ctx.closePath(); ctx.fill();
   // hood bunched around the neck
   ctx.fillStyle = grad(-80, 40, 80, 120, [[0, '#1a1d26'], [1, '#2e3240']]);
   ctx.beginPath(); ctx.moveTo(-78, 55); ctx.quadraticCurveTo(-95, 110, -40, 130); ctx.quadraticCurveTo(0, 140, 40, 130); ctx.quadraticCurveTo(98, 108, 80, 52); ctx.quadraticCurveTo(0, 95, -78, 55); ctx.fill();
-  blurDraw(3, () => { ctx.strokeStyle = 'rgba(0,0,0,.5)'; ctx.lineWidth = 3; for (const [a, b, c2, d] of [[-60, 140, -90, 230], [50, 140, 80, 230], [-20, 150, -30, 230]]) { ctx.beginPath(); ctx.moveTo(a, b); ctx.quadraticCurveTo((a + c2) / 2 - 10, (b + d) / 2, c2, d); ctx.stroke(); } });
+  blurDraw(3, () => { ctx.strokeStyle = 'rgba(0,0,0,.5)'; ctx.lineWidth = 3; for (const [a, b, c2, d] of [[-55, 140, -75, 230], [48, 140, 70, 230], [-20, 150, -30, 230]]) { ctx.beginPath(); ctx.moveTo(a, b); ctx.quadraticCurveTo((a + c2) / 2 - 10, (b + d) / 2, c2, d); ctx.stroke(); } });
   ctx.strokeStyle = '#d9d9d9'; ctx.lineWidth = 3; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(-14, 118); ctx.quadraticCurveTo(-18, 160, -15, 200); ctx.moveTo(14, 118); ctx.quadraticCurveTo(17, 150, 13, 185); ctx.stroke();
   ctx.fillStyle = '#c9c9c9'; ctx.fillRect(-18, 196, 6, 12); ctx.fillRect(10, 182, 6, 12);
   // rim light on the right shoulder
-  blurDraw(6, () => { ctx.strokeStyle = 'rgba(255,220,170,.55)'; ctx.lineWidth = 6; ctx.beginPath(); ctx.moveTo(72, 74); ctx.quadraticCurveTo(160, 95, 172, 200); ctx.stroke(); });
+  blurDraw(6, () => { ctx.strokeStyle = 'rgba(255,220,170,.55)'; ctx.lineWidth = 6; ctx.beginPath(); ctx.moveTo(64, 74); ctx.quadraticCurveTo(106, 90, 110, 200); ctx.stroke(); });
   // ---- neck ----
   ctx.fillStyle = grad(-24, 0, 26, 0, [[0, '#7a4e38'], [.6, '#b9805f'], [1, '#c99173']]); ctx.beginPath(); ctx.moveTo(-24, 20); ctx.lineTo(-27, 80); ctx.quadraticCurveTo(0, 95, 27, 80); ctx.lineTo(24, 20); ctx.fill();
   blurDraw(8, () => { ctx.fillStyle = 'rgba(60,30,20,.55)'; ctx.beginPath(); ctx.ellipse(0, 42, 30, 12, 0, 0, 7); ctx.fill(); });
@@ -172,6 +172,13 @@ function curvedArrow(pts, w, col) {
   const a = Math.atan2(pts[2][1] - pts[1][1], pts[2][0] - pts[1][0]); ctx.fillStyle = col; ctx.beginPath(); ctx.moveTo(pts[2][0] + Math.cos(a) * w * 1.6, pts[2][1] + Math.sin(a) * w * 1.6);
   ctx.lineTo(pts[2][0] + Math.cos(a + 2.4) * w * 2.2, pts[2][1] + Math.sin(a + 2.4) * w * 2.2); ctx.lineTo(pts[2][0] + Math.cos(a - 2.4) * w * 2.2, pts[2][1] + Math.sin(a - 2.4) * w * 2.2); ctx.fill(); ctx.restore();
 }
+function drawNote() {
+  // handwritten note
+  ctx.save(); ctx.translate(150, 180); ctx.rotate(-.12); ctx.font = `58px ${MK}`; ctx.fillStyle = '#fff'; ctx.shadowColor = 'rgba(0,0,0,.8)'; ctx.shadowBlur = 8; ctx.textAlign = 'center';
+  ['JUST', 'ANOTHER', 'ENERGY', 'DRINK...'].forEach((l, i) => ctx.fillText(l, 0, i * 62)); ctx.restore();
+  ctx.save(); ctx.strokeStyle = '#fff'; ctx.lineWidth = 6; ctx.lineCap = 'round'; ctx.shadowColor = 'rgba(0,0,0,.7)'; ctx.shadowBlur = 6;
+  ctx.beginPath(); ctx.moveTo(150, 430); ctx.quadraticCurveTo(140, 520, 215, 560); ctx.stroke(); ctx.beginPath(); ctx.moveTo(185, 560); ctx.lineTo(218, 562); ctx.lineTo(205, 532); ctx.stroke(); ctx.restore();
+}
 function draw(variant) {
   ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.filter = 'none';
   skyBg();
@@ -182,7 +189,18 @@ function draw(variant) {
   blurDraw(3, () => courthouseMini(1180, 820, .55));
   sunFlare(1130, 560);
   // the can
-  drawCan(830, 300, 760, { drops: true, rim: 'rgba(255,240,220,.6)', noShadow: true, rot: .02 });
+  if (variant === 'skyband') {
+    const cx = 930, cy = 450, rot = .2;
+    glow(cx, cy, 520, 'rgba(255,240,200,.55)'); glow(cx, cy - 60, 260, 'rgba(255,255,255,.7)');
+    ctx.save(); ctx.strokeStyle = 'rgba(255,255,255,.55)'; ctx.lineCap = 'round'; const R = rnd(17);
+    for (let i = 0; i < 14; i++) { const y = cy - 220 + R() * 460, l = 120 + R() * 260; ctx.lineWidth = 3 + R() * 6; ctx.beginPath(); ctx.moveTo(cx - 330 - R() * 120, y); ctx.lineTo(cx - 330 - R() * 120 - l, y + l * .25); ctx.stroke(); } ctx.restore();
+    ctx.save(); ctx.translate(cx, cy); ctx.rotate(rot); wings(0, -90, .66, 1, { flap: -.08, glow: 'rgba(255,255,255,.35)' }); ctx.restore();
+    drawCan(cx, cy, 560, { drops: true, rim: 'rgba(255,240,220,.7)', noShadow: true, rot, tab: 1 });
+    // fizz spraying out of the open tab
+    const top = [cx + Math.sin(rot) * 285, cy - Math.cos(rot) * 285]; const R2 = rnd(23);
+    for (let i = 0; i < 260; i++) { const a = -Math.PI / 2 + rot + (R2() - .5) * 1.5, d = 15 + R2() * 340, x = top[0] + Math.cos(a) * d, y = top[1] + Math.sin(a) * d + d * d * .0012, r = 2 + R2() * 7 * (1 - d / 340);
+      ctx.fillStyle = `rgba(255,${235 + R2() * 20},${170 + R2() * 60},${.85 - d / 420})`; ctx.beginPath(); ctx.arc(x, y, r, 0, 7); ctx.fill(); ctx.fillStyle = 'rgba(255,255,255,.8)'; ctx.beginPath(); ctx.arc(x - r * .3, y - r * .3, r * .3, 0, 7); ctx.fill(); }
+  } else drawCan(830, 300, 760, { drops: true, rim: 'rgba(255,240,220,.6)', noShadow: true, rot: .02 });
   // logo + slogan
   ctx.save(); ctx.font = `900 150px ${F_HEAD}`; ctx.letterSpacing = '-4px'; ctx.fillStyle = '#d7102a'; ctx.shadowColor = 'rgba(0,0,0,.35)'; ctx.shadowBlur = 16; ctx.fillText('Red Bull', 1180, 150); ctx.restore();
   ctx.fillStyle = rgrad(1430, 255, 0, 62, [[0, '#ffd84a'], [.8, '#f6b800'], [1, '#e3a100']]); ctx.beginPath(); ctx.arc(1430, 255, 62, 0, 7); ctx.fill();
@@ -195,11 +213,7 @@ function draw(variant) {
   settlementDoc(1640, 690, 470, -.1);
   // the character: painted portrait, looking up with determination
   portrait(400, 400, 560, { rot: -.06 });
-  // handwritten note
-  ctx.save(); ctx.translate(150, 180); ctx.rotate(-.12); ctx.font = `58px ${MK}`; ctx.fillStyle = '#fff'; ctx.shadowColor = 'rgba(0,0,0,.8)'; ctx.shadowBlur = 8; ctx.textAlign = 'center';
-  ['JUST', 'ANOTHER', 'ENERGY', 'DRINK...'].forEach((l, i) => ctx.fillText(l, 0, i * 62)); ctx.restore();
-  ctx.save(); ctx.strokeStyle = '#fff'; ctx.lineWidth = 6; ctx.lineCap = 'round'; ctx.shadowColor = 'rgba(0,0,0,.7)'; ctx.shadowBlur = 6;
-  ctx.beginPath(); ctx.moveTo(150, 430); ctx.quadraticCurveTo(140, 520, 215, 560); ctx.stroke(); ctx.beginPath(); ctx.moveTo(185, 560); ctx.lineTo(218, 562); ctx.lineTo(205, 532); ctx.stroke(); ctx.restore();
+  drawNote();
   // headline banners
   if (variant === 'skyband') { // no black band: paint sky under the headline, fading the hoodie out
     const mk = () => { const c = document.createElement('canvas'); c.width = W; c.height = H; return c; };
@@ -210,6 +224,7 @@ function draw(variant) {
     sx.fillStyle = grad(0, 640, 0, 800, [[0, 'rgba(0,0,0,0)'], [1, 'rgba(0,0,0,1)']]); sx.fillRect(0, 0, W, H);
     sx.fillStyle = grad(1240, 0, 1340, 0, [[0, 'rgba(0,0,0,1)'], [1, 'rgba(0,0,0,0)']]); sx.fillRect(0, 0, W, H);
     ctx.drawImage(sk, 0, 0);
+    portrait(400, 400, 560, { rot: -.06 }); drawNote();
   } else brushBand(70, 760, 1290, 150, 'rgba(10,10,12,.92)', 4);
   brushBand(40, 900, 1540, 170, '#d3141c', 9);
   antonText('HE SUED RED BULL', 110, 885, 150, '#ffffff', variant === 'skyband' ? { spacing: 3, stroke: 12 } : { spacing: 3 });
