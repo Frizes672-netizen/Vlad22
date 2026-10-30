@@ -126,6 +126,30 @@ function drawCan(x, y, h, o = {}) {
 }
 
 // stylised human silhouette with rim light
+// relaxed hand seen edge-on from the front (palm facing back towards the thigh): back of the hand, thumb in front, fingers softly curled
+function drawHandEdge(w, ang, u, skin, side, sil, L) {
+  ctx.save(); ctx.translate(w[0], w[1]); ctx.rotate(ang - Math.PI / 2); ctx.scale(.95, .95);
+  const base = sil || skin, edge = sil || shade(skin, .62), th = side;
+  // hand body: narrow from the front, slightly wider at the knuckles, fingers curling towards the body
+  const hb = new Path2D(); hb.moveTo(-1.15 * u, 0); hb.lineTo(1.15 * u, 0);
+  hb.bezierCurveTo(1.6 * u, 1.6 * u, 1.7 * u, 3.4 * u, 1.45 * u, 4.6 * u);           // outer (little-finger) edge
+  hb.bezierCurveTo(1.3 * u, 6.2 * u, .5 * u, 7.6 * u, -.4 * u * th, 7.7 * u);         // curled fingertips
+  hb.bezierCurveTo(-1.2 * u, 7.2 * u, -1.6 * u, 5.6 * u, -1.5 * u, 4.4 * u);          // inner edge
+  hb.bezierCurveTo(-1.6 * u, 3 * u, -1.5 * u, 1.4 * u, -1.15 * u, 0); hb.closePath();
+  ctx.save(); if (th < 0) ctx.scale(-1, 1);
+  ctx.fillStyle = sil || grad(-1.7 * u, 0, 1.7 * u, 0, [[0, shade(skin, .78)], [.5, base], [1, shade(skin, .86)]]); ctx.fill(hb);
+  if (!sil) { ctx.strokeStyle = edge; ctx.lineWidth = .28 * u; ctx.stroke(hb);
+    ctx.strokeStyle = 'rgba(90,45,30,.32)'; ctx.lineWidth = .14 * u; ctx.lineCap = 'round'; // finger joints wrapping round the curl
+    for (const [y0, w0] of [[4.7, 1.3], [5.9, 1.1], [6.9, .8]]) { ctx.beginPath(); ctx.moveTo(-w0 * u, y0 * u); ctx.quadraticCurveTo(0, (y0 + .35) * u, w0 * u, (y0 - .1) * u); ctx.stroke(); }
+    ctx.fillStyle = 'rgba(80,40,25,.14)'; ctx.beginPath(); ctx.ellipse(.7 * u, 5.4 * u, .6 * u, 1.8 * u, 0, 0, 7); ctx.fill(); }
+  ctx.restore();
+  // thumb resting along the front of the hand
+  ctx.lineCap = 'round'; ctx.strokeStyle = edge; ctx.lineWidth = 1.75 * u; ctx.beginPath(); ctx.moveTo(-.5 * u * th, 1.2 * u); ctx.quadraticCurveTo(-1 * u * th, 3 * u, -.6 * u * th, 4.9 * u); ctx.stroke();
+  ctx.strokeStyle = sil || shade(skin, 1.04); ctx.lineWidth = 1.45 * u; ctx.stroke();
+  if (!sil) { ctx.fillStyle = 'rgba(255,215,205,.75)'; ctx.beginPath(); ctx.ellipse(-.6 * u * th, 4.7 * u, .42 * u, .55 * u, 0, 0, 7); ctx.fill();
+    ctx.strokeStyle = 'rgba(90,45,30,.35)'; ctx.lineWidth = .13 * u; ctx.beginPath(); ctx.moveTo(-1.3 * u * th, 3.2 * u); ctx.lineTo(-.2 * u * th, 3.3 * u); ctx.stroke(); }
+  ctx.restore();
+}
 // realistic relaxed hand: palm, four jointed fingers, two-segment thumb towards the body, soft shading
 function drawHand(w, ang, u, skin, side, sil, L) {
   ctx.save(); ctx.translate(w[0], w[1]); ctx.rotate(ang - Math.PI / 2); ctx.scale(.92, .92); // local +y = towards the fingertips
@@ -610,8 +634,14 @@ function personBody(u, P, C, sil) {
     ctx.beginPath(); ctx.moveTo(-6 * u, -3 * u); ctx.bezierCurveTo(-7.6 * u, 6 * u, -8.4 * u, 13 * u, -7.2 * u, 17 * u); ctx.lineTo(7.2 * u, 17 * u);
     ctx.bezierCurveTo(8.4 * u, 13 * u, 7.6 * u, 6 * u, 6 * u, -3 * u); ctx.closePath(); ctx.fill(); ctx.restore();
   }
+  // neck — drawn behind the hoodie so the collar overlaps it (no "floating" neck)
+  { const nT = headY + 4.5 * u, nB = sy + 2.5 * u, nw = C.fem ? 2.1 : 2.6;
+    ctx.fillStyle = sil ? sil : grad(-3 * u, 0, 3 * u, 0, [[0, shade(C.skin, .6)], [.55, shade(C.skin, .86)], [1, shade(C.skin, .72)]]);
+    ctx.beginPath(); ctx.moveTo(-nw * u, nT); ctx.quadraticCurveTo(-(nw - .2) * u, (nT + nB) / 2, -(nw + .9) * u, nB); ctx.lineTo((nw + .9) * u, nB); ctx.quadraticCurveTo((nw - .2) * u, (nT + nB) / 2, nw * u, nT); ctx.closePath(); ctx.fill();
+    if (!sil) { ctx.fillStyle = 'rgba(40,20,10,.35)'; ctx.beginPath(); ctx.ellipse(0, nT + 1.2 * u, (nw + .2) * u, 1.6 * u, 0, 0, 7); ctx.fill(); // shadow under the chin
+      ctx.fillStyle = 'rgba(30,15,10,.3)'; ctx.fillRect(-(nw + .9) * u, nB - 2.4 * u, (nw + .9) * 2 * u, 2 * u); } } // shadow cast by the collar
   // hood behind neck
-  ctx.fillStyle = fill(shade(C.top, .7)); ctx.beginPath(); ctx.ellipse(0, sy - .6 * u, 6.2 * u, 3.2 * u, 0, 0, 7); ctx.fill();
+  ctx.fillStyle = fill(shade(C.top, .7)); ctx.beginPath(); ctx.ellipse(0, sy - .2 * u, 6.2 * u, 2.6 * u, 0, Math.PI, 0); ctx.fill();
   // torso (hoodie): neck → sloping trapezius → rounded shoulder cap → sides → waist
   const ny = sy - 2.4 * u;
   ctx.beginPath(); ctx.moveTo(-3.6 * u, ny);
@@ -622,9 +652,10 @@ function personBody(u, P, C, sil) {
   ctx.quadraticCurveTo(12.6 * u, -62 * u, 13.5 * u, sy + 7.5 * u);
   ctx.bezierCurveTo(13.7 * u, sy + 4 * u, 12.6 * u, sy + 1.9 * u, 10.6 * u, sy + .9 * u);
   ctx.bezierCurveTo(9 * u, sy - .2 * u, 6.4 * u, ny + .6 * u, 3.6 * u, ny);
-  ctx.quadraticCurveTo(0, ny + 1.2 * u, -3.6 * u, ny); ctx.closePath();
+  ctx.quadraticCurveTo(0, ny + 4.2 * u, -3.6 * u, ny); ctx.closePath();
   ctx.fillStyle = sil ? sil : grad(-12 * u * L, 0, 12 * u * L, 0, [[0, shade(C.top, .5)], [.35, shade(C.top, .85)], [.7, shade(C.top, 1.12)], [1, shade(C.top, .75)]]);
   ctx.fill();
+  if (!sil) { ctx.strokeStyle = shade(C.top, .62); ctx.lineWidth = 1.1 * u; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(-3.7 * u, ny + .2 * u); ctx.quadraticCurveTo(0, ny + 4.4 * u, 3.7 * u, ny + .2 * u); ctx.stroke(); } // collar rim
   if (!sil) {
     // fabric folds, pocket, waistband, drawstrings
     ctx.strokeStyle = 'rgba(0,0,0,.18)'; ctx.lineWidth = 1.2 * u;
@@ -642,11 +673,8 @@ function personBody(u, P, C, sil) {
   for (const [s, e, hd, side] of armL) {
     limb3(s, e, hd, 3.5 * u, 3.2 * u, 2.6 * u, C.top, L, sil);
     if (!sil) { ctx.fillStyle = shade(C.top, .7); const dx0 = hd[0] - e[0], dy0 = hd[1] - e[1], l0 = Math.hypot(dx0, dy0) || 1; ctx.beginPath(); ctx.ellipse(hd[0] - dx0 / l0 * .6 * u, hd[1] - dy0 / l0 * .6 * u, 2.9 * u, 1.2 * u, Math.atan2(dy0, dx0) + Math.PI / 2, 0, 7); ctx.fill(); }
-    drawHand(hd, Math.atan2(hd[1] - e[1], hd[0] - e[0]), u, C.skin, side, sil, L);
+    (P.handEdge ? drawHandEdge : drawHand)(hd, Math.atan2(hd[1] - e[1], hd[0] - e[0]), u, C.skin, side, sil, L);
   }
-  // neck
-  ctx.fillStyle = sil ? sil : grad(-2.6 * u, 0, 2.6 * u, 0, [[0, shade(C.skin, .62)], [1, shade(C.skin, .85)]]);
-  ctx.fillRect(-2.5 * u, headY + 5 * u, 5 * u, sy - headY - 4 * u);
   // head
   ctx.save(); ctx.translate(0, headY); ctx.rotate(P.tilt || 0);
   ctx.fillStyle = sil ? sil : rgrad(1.5 * u * L, -1.5 * u, .5 * u, 8 * u, [[0, shade(C.skin, 1.08)], [.6, C.skin], [1, shade(C.skin, .62)]]);
@@ -742,6 +770,9 @@ function personSide(x, y, h, o = {}) {
   if (o.rim && !sil) { /* rim drawn via silhouette pass below */ }
   // far side first (darker), then torso, near leg, near arm, head
   drawArm(far.g ? (p + .5) % 1 : 0, .72); drawLeg(far, .72);
+  { const hx0 = shoulder[0] + 1.6 * u, hy0 = hipY - 43.6 * u, nw = C.fem ? 3.4 : 4.4; // neck behind the torso
+    ctx.fillStyle = sil ? sil : grad(hx0 - 2.5 * u, 0, hx0 + 2.5 * u, 0, [[0, shade(C.skin, .62)], [1, shade(C.skin, .85)]]);
+    ctx.beginPath(); ctx.moveTo(hx0 - nw / 2 * u, hy0 + 3.5 * u); ctx.lineTo(hx0 + nw / 2 * u, hy0 + 4.5 * u); ctx.lineTo(hx0 + (nw / 2 + .8) * u, hy0 + 11.5 * u); ctx.lineTo(hx0 - (nw / 2 + 1.4) * u, hy0 + 11.5 * u); ctx.closePath(); ctx.fill(); }
   // torso (hoodie, side profile)
   ctx.save(); ctx.translate(0, hipY); ctx.rotate(lean);
   ctx.fillStyle = sil ? sil : grad(-5 * u, 0, 6 * u, 0, [[0, shade(C.top, .62)], [.55, C.top], [1, shade(C.top, 1.12)]]);
@@ -758,7 +789,6 @@ function personSide(x, y, h, o = {}) {
   drawLeg(near, 1);
   // neck + head (profile)
   const hx = shoulder[0] + 1.6 * u, hy = hipY - 43.6 * u;
-  ctx.fillStyle = sil ? sil : shade(C.skin, .78); const nw = C.fem ? 3.4 : 4.4; ctx.fillRect(hx - nw / 2 * u, hy + 4 * u, nw * u, 6 * u);
   ctx.save(); ctx.translate(hx, hy); ctx.rotate(o.tilt || 0);
   ctx.fillStyle = sil ? sil : rgrad(2 * u * L, -1 * u, .5 * u, 8 * u, [[0, shade(C.skin, 1.06)], [.65, C.skin], [1, shade(C.skin, .7)]]);
   ctx.beginPath(); ctx.moveTo(-4.8 * u, -2 * u);
@@ -818,7 +848,7 @@ function person(x, y, h, o = {}) {
   const bob = o.walk ? -.35 * u * Math.max(liftL, liftR) : 0;
   const sway = o.walk ? -1.1 * u * Math.cos(Math.PI * 2 * (pL - .25)) : 0; // over the stance foot
   if (sway) ctx.translate(sway, 0);
-  const sy = -81.5 * u - shrug * 2.2 * u + bob, headY = -92 * u - shrug * 1.2 * u + bob;
+  const sy = -81.5 * u - shrug * 2.2 * u + bob, headY = -93.2 * u - shrug * 1.2 * u + bob;
   const hipTilt = o.walk ? .55 * u * (liftL - liftR) : 0; // swing-side hip drops slightly
   const hipL = [-4.8 * u, -48 * u + bob + hipTilt], hipR = [4.8 * u, -48 * u + bob - hipTilt];
   const legA = 0;
@@ -833,12 +863,12 @@ function person(x, y, h, o = {}) {
   if (o.point) [elR, hdR] = arm(shR, 1, 1.2, 1.5);
   if (o.walk && !shrug && !armUp) { // arm swing seen from the front: the forward arm bends at the elbow and the hand rises; the back arm straightens
     const frontArm = (s, side, f) => { // f: -1 back … +1 forward; always a little bent at the elbow
-      const e = [s[0] + side * (1 + .35 * Math.abs(f)) * u, s[1] + 16 * u * (1 - .08 * Math.abs(f))];
-      const bend = .18 + .42 * Math.max(0, f), fl = 14.5 * u * (1 - bend), hx = e[0] - side * (1 + 2.4 * Math.max(0, f) - .5 * Math.max(0, -f)) * u;
+      const e = [s[0] + side * (2.1 + .3 * Math.abs(f) + .5 * Math.max(0, -f)) * u, s[1] + 16 * u * (1 - .08 * Math.abs(f))];
+      const bend = .16 + .4 * Math.max(0, f) + .06 * Math.max(0, -f), fl = 14.5 * u * (1 - bend), hx = e[0] + side * (.5 + 1.1 * Math.max(0, -f) - 2.2 * Math.max(0, f)) * u;
       return [e, [hx, e[1] + fl]]; };
     const lag = .07, sw = Math.cos(Math.PI * 2 * (pL - lag)) * .85; // right arm forward when the left leg is forward
     [elL, hdL] = frontArm(shL, -1, -sw); [elR, hdR] = frontArm(shR, 1, sw); }
-  const P = { hipL, hipR, kneeL, kneeR, ankL, ankR, shL, shR, elL, elR, hdL, hdR, sy, headY, tilt: o.tilt || (shrug * .06) || (o.walk ? .025 * Math.cos(Math.PI * 2 * (pL - .25)) : 0), mouth: o.mouth, shock: o.shock, liftL, liftR };
+  const P = { hipL, hipR, kneeL, kneeR, ankL, ankR, shL, shR, elL, elR, hdL, hdR, sy, headY, tilt: o.tilt || (shrug * .06) || (o.walk ? .025 * Math.cos(Math.PI * 2 * (pL - .25)) : 0), mouth: o.mouth, shock: o.shock, liftL, liftR, handEdge: !!(o.walk && !shrug && !armUp && !o.point) };
   const C = { skin: o.skin || SKIN[o.skinIdx || 0], top: o.top || '#59606e', pants: o.pants || '#2d3f5e', shoe: o.shoe || '#262626', hair: o.hair || '#3a2618',
     cap: o.cap === true ? (o.capColor || '#1f2d55') : (o.cap || null), light: o.light ?? 1, fem: o.fem, headphones: o.headphones, wound: o.wound };
   if (o.backWings) wings(0, sy + 10 * u, o.backWings.s, o.backWings.spread, o.backWings);
