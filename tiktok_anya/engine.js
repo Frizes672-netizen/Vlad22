@@ -810,25 +810,35 @@ function person(x, y, h, o = {}) {
   ctx.save(); ctx.translate(x, y); if (o.flip) ctx.scale(-1, 1);
   const u = h / 100;
   const shrug = o.shrug || 0, armUp = o.armUp || 0, walk = o.walk || 0;
-  // front-view walk (towards the camera): alternate knee lift, body bob, arm swing with elbow bend
-  const liftL = o.walk ? Math.max(0, Math.sin(walk)) : 0, liftR = o.walk ? Math.max(0, -Math.sin(walk)) : 0, bob = o.walk ? -.45 * u * Math.abs(Math.cos(walk)) : 0;
+  // front-view walk (towards the camera) driven by the same gait curves as the profile rig:
+  // smooth knee flexion in swing, pelvis shifts over the stance foot, shoulders counter-tilt, relaxed lagging arms
+  const pL = (((walk / (Math.PI * 2)) % 1) + 1) % 1, gL = o.walk ? gait(pL) : null, gR = o.walk ? gait((pL + .5) % 1) : null;
+  const flexMax = 62 * Math.PI / 180, smooth = v => v * v * (3 - 2 * v);
+  const liftL = o.walk ? smooth(clamp(gL.knee / flexMax)) : 0, liftR = o.walk ? smooth(clamp(gR.knee / flexMax)) : 0;
+  const bob = o.walk ? -.35 * u * Math.max(liftL, liftR) : 0;
+  const sway = o.walk ? -1.1 * u * Math.cos(Math.PI * 2 * (pL - .25)) : 0; // over the stance foot
+  if (sway) ctx.translate(sway, 0);
   const sy = -81.5 * u - shrug * 2.2 * u + bob, headY = -92 * u - shrug * 1.2 * u + bob;
-  const hipL = [-4.8 * u, -48 * u + bob], hipR = [4.8 * u, -48 * u + bob];
+  const hipTilt = o.walk ? .55 * u * (liftL - liftR) : 0; // swing-side hip drops slightly
+  const hipL = [-4.8 * u, -48 * u + bob + hipTilt], hipR = [4.8 * u, -48 * u + bob - hipTilt];
   const legA = 0;
   const knee = (hp, a) => [hp[0] + Math.sin(a) * 22 * u, hp[1] + Math.cos(a) * 22 * u];
   const kneeL = knee(hipL, -.03), kneeR = knee(hipR, .03); kneeL[0] -= liftL * 2.6 * u; kneeL[1] -= liftL * 6 * u; kneeR[0] += liftR * 2.6 * u; kneeR[1] -= liftR * 6 * u;
-  const ankL = [kneeL[0] + liftL * 3.4 * u - .4 * u, kneeL[1] + 23 * u - liftL * 8 * u - bob], ankR = [kneeR[0] - liftR * 3.4 * u + .4 * u, kneeR[1] + 23 * u - liftR * 8 * u - bob];
-  const shL = [-11.3 * u, sy + 4.4 * u], shR = [11.3 * u, sy + 4.4 * u];
+  const ankL = [kneeL[0] + liftL * 3.4 * u - .4 * u - sway, kneeL[1] + 23 * u - liftL * 8 * u - bob], ankR = [kneeR[0] - liftR * 3.4 * u + .4 * u - sway, kneeR[1] + 23 * u - liftR * 8 * u - bob];
+  const shL = [-11.3 * u, sy + 4.4 * u - hipTilt * .6], shR = [11.3 * u, sy + 4.4 * u + hipTilt * .6];
   const arm = (s, side, ua, fa) => { const e = [s[0] + side * Math.sin(ua) * 16 * u, s[1] + Math.cos(ua) * 16 * u]; return [e, [e[0] + side * Math.sin(fa) * 14.5 * u, e[1] + Math.cos(fa) * 14.5 * u]]; };
   const sw = o.walk ? Math.sin(walk) * .12 : 0;
   let [elL, hdL] = arm(shL, -1, lerp(.1 + sw, .3, shrug), lerp(.05 + sw, 1.75, shrug));
   let [elR, hdR] = arm(shR, 1, lerp(lerp(.1 - sw, .3, shrug), .35, armUp), lerp(lerp(.05 - sw, 1.75, shrug), 2.75, armUp));
   if (o.point) [elR, hdR] = arm(shR, 1, 1.2, 1.5);
   if (o.walk && !shrug && !armUp) { // arm swing seen from the front: the forward arm bends at the elbow and the hand rises; the back arm straightens
-    const frontArm = (s, side, f) => { const e = [s[0] + side * (.9 + .5 * Math.abs(f)) * u, s[1] + 16 * u * (1 - .12 * Math.abs(f))];
-      const fl = 14.5 * u * (f > 0 ? 1 - .68 * f : 1 - .12 * -f), hx = e[0] - side * (f > 0 ? 3.4 * f : -.8 * f) * u; return [e, [hx, e[1] + fl]]; };
-    [elL, hdL] = frontArm(shL, -1, -Math.sin(walk)); [elR, hdR] = frontArm(shR, 1, Math.sin(walk)); }
-  const P = { hipL, hipR, kneeL, kneeR, ankL, ankR, shL, shR, elL, elR, hdL, hdR, sy, headY, tilt: o.tilt || (shrug * .06), mouth: o.mouth, shock: o.shock, liftL, liftR };
+    const frontArm = (s, side, f) => { // f: -1 back … +1 forward; always a little bent at the elbow
+      const e = [s[0] + side * (1 + .35 * Math.abs(f)) * u, s[1] + 16 * u * (1 - .08 * Math.abs(f))];
+      const bend = .18 + .42 * Math.max(0, f), fl = 14.5 * u * (1 - bend), hx = e[0] - side * (1 + 2.4 * Math.max(0, f) - .5 * Math.max(0, -f)) * u;
+      return [e, [hx, e[1] + fl]]; };
+    const lag = .07, sw = Math.cos(Math.PI * 2 * (pL - lag)) * .85; // right arm forward when the left leg is forward
+    [elL, hdL] = frontArm(shL, -1, -sw); [elR, hdR] = frontArm(shR, 1, sw); }
+  const P = { hipL, hipR, kneeL, kneeR, ankL, ankR, shL, shR, elL, elR, hdL, hdR, sy, headY, tilt: o.tilt || (shrug * .06) || (o.walk ? .025 * Math.cos(Math.PI * 2 * (pL - .25)) : 0), mouth: o.mouth, shock: o.shock, liftL, liftR };
   const C = { skin: o.skin || SKIN[o.skinIdx || 0], top: o.top || '#59606e', pants: o.pants || '#2d3f5e', shoe: o.shoe || '#262626', hair: o.hair || '#3a2618',
     cap: o.cap === true ? (o.capColor || '#1f2d55') : (o.cap || null), light: o.light ?? 1, fem: o.fem, headphones: o.headphones, wound: o.wound };
   if (o.backWings) wings(0, sy + 10 * u, o.backWings.s, o.backWings.spread, o.backWings);
