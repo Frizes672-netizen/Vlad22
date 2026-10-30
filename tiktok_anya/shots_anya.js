@@ -1,0 +1,22 @@
+// ===== "The bottle" shot list =====
+shot(0, 0, 'hookBottle');
+shot(1, 1, 'alive');
+shot(2, 4, 'walkHome');
+shot(5, 5, 'noWhistle');
+shot(6, 7, 'impact');
+shot(8, 8, 'noteFound');
+shot(9, 12, 'rooftop');
+shot(13, 14, 'noteRead');
+shot(15, 16, 'flipNote');
+shot(17, 19, 'shoppingList');
+shot(20, 22, 'police');
+shot(23, 25, 'closet');
+shot(26, 26, 'stalker');
+shot(27, 28, 'whoThrew');
+shot(29, 31, 'roofDoor');
+shot(32, 36, 'cctv');
+shot(37, 39, 'faceReveal');
+shot(40, 40, 'weekLater');
+shot(41, 41, 'bag');
+shot(42, 42, 'clock2338');
+shot(43, 43, 'finalQ');

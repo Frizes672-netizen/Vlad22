@@ -1,0 +1,16 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>@font-face{font-family:"Caveat";src:url("fonts/Caveat.ttf")}html,body{margin:0;background:#000}canvas{display:block}</style></head><body>
+<canvas id="c" width="1080" height="1920"></canvas>
+<script src="timeline.js"></script>
+<script src="engine.js"></script>
+<script src="props.js"></script>
+<script src="env.js"></script>
+<script src="main.js"></script>
+<script src="scenes1.js"></script>
+<script src="scenes2.js"></script>
+<script src="scenes_tt.js"></script>
+<script src="scenes_btc.js"></script>
+<script src="scenes_anya.js"></script>
+<script src="shots_anya.js"></script>
+<script>document.fonts.load('700 60px Caveat');buildTimeline(); window.TOTAL = TL.total; window.SHOTINFO = SHOTS.map(s => [s.scene, +s.start.toFixed(2), +s.d.toFixed(2), s.a, s.b]);</script>
+</body></html>
