@@ -578,8 +578,10 @@ function limb3(a, b, c, w0, w1, w2, col, L, sil) {
   shape.quadraticCurveTo(right[1][0], right[1][1], (right[1][0] + right[0][0]) / 2, (right[1][1] + right[0][1]) / 2); shape.lineTo(right[0][0], right[0][1]); shape.closePath();
   const joints = new Path2D(); joints.arc(a[0], a[1], w0, 0, Math.PI * 2); joints.moveTo(c[0] + w2, c[1]); joints.arc(c[0], c[1], w2, 0, Math.PI * 2);
   if (sil) { ctx.fillStyle = sil; ctx.fill(shape); ctx.fill(joints); return; }
-  const mx = (a[0] + c[0]) / 2, ww = Math.max(w0, w1) * 1.1;
-  ctx.fillStyle = grad(mx - ww * L, 0, mx + ww * L, 0, [[0, shade(col, .55)], [.45, col], [.72, shade(col, 1.18)], [1, shade(col, .72)]]); ctx.fill(shape); ctx.fill(joints);
+  // cylinder shading across the limb (perpendicular to its direction), lit side chosen by L
+  const mx = (a[0] + c[0]) / 2, my = (a[1] + c[1]) / 2, ww = Math.max(w0, w1) * 1.15, dl = Math.hypot(c[0] - a[0], c[1] - a[1]) || 1;
+  let nx = (c[1] - a[1]) / dl, ny = -(c[0] - a[0]) / dl; if (nx * L < 0) { nx = -nx; ny = -ny; }
+  ctx.fillStyle = grad(mx - nx * ww, my - ny * ww, mx + nx * ww, my + ny * ww, [[0, shade(col, .6)], [.45, col], [.75, shade(col, 1.15)], [1, shade(col, .78)]]); ctx.fill(shape); ctx.fill(joints);
 }
 function shade(hex, k) {
   const n = parseInt(hex.slice(1), 16); const r = clamp(((n >> 16) & 255) * k, 0, 255) | 0, g = clamp(((n >> 8) & 255) * k, 0, 255) | 0, b = clamp((n & 255) * k, 0, 255) | 0;
@@ -694,19 +696,113 @@ function personBody(u, P, C, sil) {
   }
   ctx.restore();
 }
+// ---------- side-view person with a biomechanical walk cycle (faces right; o.flip faces left) ----------
+function gait(p) { // p ∈ [0,1): 0 = heel strike of this leg; returns angles in radians
+  const D = Math.PI / 180, TAU = Math.PI * 2;
+  const thigh = (21 * Math.cos(TAU * p) + 3) * D;                                          // + forward
+  const knee = (p < .4 ? 13 * Math.sin(Math.PI * p / .4) : p > .55 ? 62 * Math.sin(Math.PI * (p - .55) / .45) : 2) * D; // flexion
+  const foot = (p < .08 ? -16 * (1 - p / .08) : p < .48 ? 0 : p < .64 ? 38 * Math.sin(Math.PI * (p - .48) / .32) : lerp(30, -16, (p - .64) / .36)) * D; // + toe down
+  return { thigh, knee, foot };
+}
+function personSide(x, y, h, o = {}) {
+  const u = h / 100, p = (((o.walk || 0) / (Math.PI * 2)) % 1 + 1) % 1, L = o.light ?? 1;
+  const C = { skin: o.skin || SKIN[o.skinIdx || 0], top: o.top || '#59606e', pants: o.pants || '#2d3f5e', shoe: o.shoe || '#262626', hair: o.hair || '#3a2618',
+    cap: o.cap === true ? (o.capColor || '#1f2d55') : (o.cap || null), fem: o.fem, headphones: o.headphones, wound: o.wound };
+  const sil = (o.silhouette || (o.color && o.color !== 'none' && !o.lit)) ? (o.color || '#0b0d12') : null;
+  const TH = 24 * u, SH = 24 * u, FOOT = 8.4 * u, HEEL = 2 * u, SOLE = 3 * u;
+  const leg = (q) => { const g = gait(q), hip = [0, 0], kn = [Math.sin(g.thigh) * TH, Math.cos(g.thigh) * TH], sa = g.thigh - g.knee, an = [kn[0] + Math.sin(sa) * SH, kn[1] + Math.cos(sa) * SH];
+    const ca = Math.cos(g.foot), sn = Math.sin(g.foot), rot = (dx, dy) => [an[0] + dx * ca - dy * sn, an[1] + dx * sn + dy * ca];
+    return { hip, kn, an, heel: rot(-HEEL, SOLE), toe: rot(FOOT, SOLE), ball: rot(FOOT * .7, SOLE), top: rot(FOOT * .55, -.6 * u), back: rot(-HEEL, -1.2 * u), g }; };
+  const near = leg(p), far = leg((p + .5) % 1);
+  const lowY = Math.max(...[near, far].flatMap(l => [l.heel[1], l.toe[1], l.ball[1]]));
+  const hipY = -lowY; // keep the planted foot on the ground → natural bob
+  const lean = .045;
+  ctx.save(); ctx.translate(x, y); if (o.flip) ctx.scale(-1, 1);
+  const col = (c, k) => sil ? sil : shade(c, k);
+  // arms: opposite phase to the same-side leg; elbow bends more when the arm swings forward
+  const armPose = (legPhase) => { const D = Math.PI / 180, sa = -19 * Math.cos(Math.PI * 2 * legPhase) * D, el = (12 + 22 * Math.max(0, -Math.cos(Math.PI * 2 * legPhase))) * D; return [sa, sa + el]; };
+  const shoulder = [1.3 * u + Math.sin(lean) * 33 * u, hipY - 33 * u];
+  const drawArm = (legPhase, k) => { const [ua, fa] = armPose(legPhase), e = [shoulder[0] + Math.sin(ua) * 16 * u, shoulder[1] + Math.cos(ua) * 16 * u], hd = [e[0] + Math.sin(fa) * 14 * u, e[1] + Math.cos(fa) * 14 * u];
+    limb3(shoulder, e, hd, 3.3 * u, 3 * u, 2.5 * u, sil ? sil : shade(C.top, k), L, sil);
+    ctx.save(); ctx.translate(hd[0], hd[1]); ctx.rotate(-fa); // side hand: palm + fingers + thumb in front
+    ctx.fillStyle = col(C.skin, k); rr(-1.5 * u, -.2 * u, 3 * u, 4.4 * u, 1.3 * u); ctx.fill(); ctx.beginPath(); ctx.ellipse(.2 * u, 5 * u, 1.3 * u, 1.9 * u, 0, 0, 7); ctx.fill();
+    ctx.strokeStyle = col(C.skin, k * .9); ctx.lineWidth = 1.2 * u; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(1.2 * u, 1.2 * u); ctx.lineTo(2 * u, 3.4 * u); ctx.stroke();
+    if (!sil) { ctx.strokeStyle = 'rgba(80,40,25,.35)'; ctx.lineWidth = .14 * u; ctx.beginPath(); ctx.moveTo(-1 * u, 4.2 * u); ctx.lineTo(1.2 * u, 4.2 * u); ctx.stroke(); } ctx.restore(); };
+  const drawLeg = (l, k) => { ctx.save(); ctx.translate(0, hipY);
+    limb3(l.hip, l.kn, l.an, 5.4 * u, 4.2 * u, 3.3 * u, sil ? sil : shade(C.pants, k), L, sil);
+    // shoe: sole + upper following the foot pitch
+    ctx.fillStyle = col(C.shoe, k); ctx.beginPath(); ctx.moveTo(l.back[0], l.back[1]); ctx.quadraticCurveTo(l.top[0] - 2 * u, l.top[1] - 1.4 * u, l.top[0], l.top[1]); ctx.quadraticCurveTo(l.toe[0] + .6 * u, l.toe[1] - 1.6 * u, l.toe[0], l.toe[1]); ctx.lineTo(l.heel[0], l.heel[1]); ctx.closePath(); ctx.fill();
+    ctx.strokeStyle = sil ? sil : (k < 1 ? '#b9b4bf' : '#f1f1f1'); ctx.lineWidth = 1.1 * u; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(l.heel[0], l.heel[1]); ctx.lineTo(l.toe[0], l.toe[1]); ctx.stroke();
+    ctx.restore(); };
+  if (o.rim && !sil) { /* rim drawn via silhouette pass below */ }
+  // far side first (darker), then torso, near leg, near arm, head
+  drawArm(far.g ? (p + .5) % 1 : 0, .72); drawLeg(far, .72);
+  // torso (hoodie, side profile)
+  ctx.save(); ctx.translate(0, hipY); ctx.rotate(lean);
+  ctx.fillStyle = sil ? sil : grad(-5 * u, 0, 6 * u, 0, [[0, shade(C.top, .62)], [.55, C.top], [1, shade(C.top, 1.12)]]);
+  ctx.beginPath(); ctx.moveTo(-4.4 * u, 2 * u); ctx.quadraticCurveTo(-6.2 * u, -16 * u, -4.6 * u, -31 * u); ctx.quadraticCurveTo(-3.4 * u, -35.5 * u, 1 * u, -35 * u);
+  ctx.quadraticCurveTo(4.6 * u, -34 * u, 5.6 * u, -28 * u); ctx.quadraticCurveTo(6.4 * u, -18 * u, 4.9 * u, -8 * u); ctx.quadraticCurveTo(5.2 * u, -1 * u, 4.8 * u, 2 * u); ctx.closePath(); ctx.fill();
+  if (!sil) { ctx.fillStyle = shade(C.top, .7); ctx.beginPath(); ctx.ellipse(-3.4 * u, -33 * u, 3 * u, 2.4 * u, -.4, 0, 7); ctx.fill(); // hood
+    ctx.fillStyle = 'rgba(0,0,0,.16)'; ctx.fillRect(-4.6 * u, -.6 * u, 9.6 * u, 2.6 * u); ctx.strokeStyle = 'rgba(0,0,0,.18)'; ctx.lineWidth = .9 * u; ctx.beginPath(); ctx.moveTo(1.2 * u, -11 * u); ctx.quadraticCurveTo(4 * u, -12 * u, 5 * u, -9 * u); ctx.stroke(); }
+  ctx.restore();
+  drawLeg(near, 1);
+  // neck + head (profile)
+  const hx = shoulder[0] + 1.6 * u, hy = hipY - 43.6 * u;
+  ctx.fillStyle = sil ? sil : shade(C.skin, .78); ctx.fillRect(hx - 2.2 * u, hy + 4 * u, 4.4 * u, 6 * u);
+  ctx.save(); ctx.translate(hx, hy); ctx.rotate(o.tilt || 0);
+  ctx.fillStyle = sil ? sil : rgrad(2 * u * L, -1 * u, .5 * u, 8 * u, [[0, shade(C.skin, 1.06)], [.65, C.skin], [1, shade(C.skin, .7)]]);
+  ctx.beginPath(); ctx.moveTo(-4.8 * u, -2 * u); ctx.bezierCurveTo(-5 * u, -7.6 * u, 3.6 * u, -8.6 * u, 4.8 * u, -3.6 * u); // skull → forehead
+  ctx.quadraticCurveTo(5.5 * u, -1.6 * u, 5.1 * u, -.6 * u); ctx.lineTo(6.9 * u, 2.3 * u); ctx.lineTo(5.6 * u, 3.1 * u); // brow → nose tip → under nose
+  ctx.quadraticCurveTo(6 * u, 3.8 * u, 5.7 * u, 4.4 * u); ctx.quadraticCurveTo(6 * u, 5 * u, 5.5 * u, 5.6 * u); // lips
+  ctx.quadraticCurveTo(5.6 * u, 7 * u, 3.6 * u, 7.4 * u); ctx.quadraticCurveTo(.8 * u, 7.6 * u, -.6 * u, 5.6 * u); ctx.quadraticCurveTo(-4.4 * u, 3.6 * u, -4.8 * u, -2 * u); ctx.fill(); // chin → jaw
+  if (!sil) { ctx.fillStyle = shade(C.skin, .82); ctx.beginPath(); ctx.ellipse(-.6 * u, .6 * u, 1.2 * u, 2 * u, 0, 0, 7); ctx.fill(); // ear
+    ctx.fillStyle = '#fbf7f2'; ctx.beginPath(); ctx.ellipse(3.9 * u, -.3 * u, .75 * u, .45 * u, 0, 0, 7); ctx.fill(); ctx.fillStyle = '#2a170c'; ctx.beginPath(); ctx.arc(4.2 * u, -.3 * u, .36 * u, 0, 7); ctx.fill(); // eye
+    ctx.strokeStyle = shade(C.hair, .9); ctx.lineWidth = .5 * u; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(3 * u, -1.8 * u); ctx.lineTo(5 * u, -1.6 * u); ctx.stroke(); // brow
+    ctx.strokeStyle = 'rgba(120,50,40,.6)'; ctx.lineWidth = .35 * u; ctx.beginPath(); ctx.moveTo(4.6 * u, 4.4 * u); ctx.lineTo(5.7 * u, 4.4 * u); ctx.stroke(); // mouth
+    if (C.wound) { ctx.fillStyle = C.wound === 'bandage' ? '#f4f1ea' : 'rgba(190,30,30,.75)'; ctx.beginPath(); ctx.ellipse(2.6 * u, -3 * u, 1.4 * u, 1 * u, 0, 0, 7); ctx.fill(); } }
+  // hair / cap
+  if (C.fem) { // long hair: crown, fringe, over the ear, falling down the back below the shoulders (sways with the step)
+    const sw = Math.sin(Math.PI * 2 * p) * .9 * u;
+    ctx.fillStyle = sil ? sil : grad(-7 * u, -8 * u, 4 * u, 16 * u, [[0, shade(C.hair, 1.25)], [.45, C.hair], [1, shade(C.hair, .72)]]);
+    ctx.beginPath(); ctx.moveTo(5.1 * u, -3.4 * u);
+    ctx.bezierCurveTo(4.6 * u, -9.4 * u, -3.4 * u, -10.2 * u, -5.8 * u, -4.2 * u);              // fringe → crown → back of the head
+    ctx.bezierCurveTo(-7.4 * u, 1 * u, -7.6 * u, 9 * u, -7 * u + sw, 18.5 * u);              // down the back
+    ctx.quadraticCurveTo(-4.6 * u + sw, 19.6 * u, -2.6 * u + sw * .6, 17.6 * u);             // tips
+    ctx.bezierCurveTo(-2.4 * u, 11 * u, -1.2 * u, 6 * u, .6 * u, 3.2 * u);                   // inner edge, covering the ear
+    ctx.quadraticCurveTo(.4 * u, -1.6 * u, 2.6 * u, -3.6 * u); ctx.quadraticCurveTo(4 * u, -3 * u, 5.1 * u, -3.4 * u); ctx.closePath(); ctx.fill();
+    if (!sil) { ctx.strokeStyle = 'rgba(255,230,200,.18)'; ctx.lineWidth = .35 * u; ctx.lineCap = 'round';
+      for (let k = 0; k < 6; k++) { ctx.beginPath(); ctx.moveTo((-4.6 + k * 1.2) * u, (-7.6 + k * .6) * u); ctx.bezierCurveTo((-6.4 + k * .8) * u, (1 + k) * u, (-6 + k * .7) * u + sw * .5, (9 + k) * u, (-5.4 + k * .6) * u + sw, (16 + k * .3) * u); ctx.stroke(); }
+      ctx.fillStyle = 'rgba(0,0,0,.12)'; ctx.beginPath(); ctx.ellipse(-1.2 * u, 8 * u, 1.4 * u, 6 * u, .1, 0, 7); ctx.fill(); }
+  } else {
+  ctx.fillStyle = sil ? sil : grad(0, -8 * u, 0, -2 * u, [[0, shade(C.hair, 1.2)], [1, C.hair]]);
+  ctx.beginPath(); ctx.moveTo(-5 * u, -1 * u); ctx.bezierCurveTo(-5.6 * u, -8.8 * u, 3.6 * u, -9.6 * u, 5 * u, -3.8 * u); ctx.quadraticCurveTo(1 * u, -6.4 * u, -1.6 * u, -3.4 * u); ctx.quadraticCurveTo(-3.2 * u, -1.2 * u, -5 * u, -1 * u); ctx.fill();
+  }
+  if (C.cap) { ctx.fillStyle = sil ? sil : grad(-5 * u, 0, 5 * u, 0, [[0, shade(C.cap, .6)], [1, shade(C.cap, 1.1)]]); ctx.beginPath(); ctx.moveTo(-5.4 * u, -2.6 * u); ctx.bezierCurveTo(-5.8 * u, -10.4 * u, 4.6 * u, -10.4 * u, 5 * u, -3.2 * u); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = sil ? sil : shade(C.cap, .8); ctx.beginPath(); ctx.moveTo(4 * u, -3.6 * u); ctx.quadraticCurveTo(8 * u, -3.8 * u, 9 * u, -2.6 * u); ctx.lineTo(4 * u, -2.4 * u); ctx.fill(); }
+  if (C.headphones && !sil) { ctx.strokeStyle = '#1b1d24'; ctx.lineWidth = 1 * u; ctx.beginPath(); ctx.arc(-.4 * u, -1 * u, 6.4 * u, Math.PI * 1.15, Math.PI * 1.85); ctx.stroke(); ctx.fillStyle = '#e9eef6'; ctx.beginPath(); ctx.ellipse(-.2 * u, .6 * u, 1.9 * u, 2.5 * u, 0, 0, 7); ctx.fill(); }
+  ctx.restore();
+  drawArm(p, 1);
+  ctx.restore();
+  if (o.rim && !sil) { /* subtle rim on the lit side */ ctx.save(); ctx.globalCompositeOperation = 'lighter'; ctx.globalAlpha = .18; glow(x + (o.flip ? -6 : 6) * u, y - 60 * u, 30 * u, o.rim); ctx.restore(); }
+}
+
 function person(x, y, h, o = {}) {
+  // walking across the screen → profile view with a real gait cycle (o.view: 'front' keeps the front rig)
+  if (o.walk && o.view !== 'front' && !o.backWings && !o.holdCan && !o.holdPhone) return personSide(x, y, h, o);
   ctx.save(); ctx.translate(x, y); if (o.flip) ctx.scale(-1, 1);
   const u = h / 100;
   const shrug = o.shrug || 0, armUp = o.armUp || 0, walk = o.walk || 0;
-  const sy = -81.5 * u - shrug * 2.2 * u, headY = -92 * u - shrug * 1.2 * u;
-  const hipL = [-4.8 * u, -48 * u], hipR = [4.8 * u, -48 * u];
-  const legA = Math.sin(walk) * .32;
+  // front-view walk (towards the camera): alternate knee lift, body bob, arm swing with elbow bend
+  const liftL = o.walk ? Math.max(0, Math.sin(walk)) : 0, liftR = o.walk ? Math.max(0, -Math.sin(walk)) : 0, bob = o.walk ? -1.3 * u * Math.abs(Math.cos(walk)) : 0;
+  const sy = -81.5 * u - shrug * 2.2 * u + bob, headY = -92 * u - shrug * 1.2 * u + bob;
+  const hipL = [-4.8 * u, -48 * u + bob], hipR = [4.8 * u, -48 * u + bob];
+  const legA = 0;
   const knee = (hp, a) => [hp[0] + Math.sin(a) * 22 * u, hp[1] + Math.cos(a) * 22 * u];
-  const kneeL = knee(hipL, -.03 + legA * .5), kneeR = knee(hipR, .03 - legA * .5);
-  const ankL = [kneeL[0] - .4 * u, kneeL[1] + 23 * u - Math.max(0, legA) * 2 * u], ankR = [kneeR[0] + .4 * u, kneeR[1] + 23 * u - Math.max(0, -legA) * 2 * u];
+  const kneeL = knee(hipL, -.03), kneeR = knee(hipR, .03); kneeL[0] -= liftL * 1.2 * u; kneeL[1] -= liftL * 3 * u; kneeR[0] += liftR * 1.2 * u; kneeR[1] -= liftR * 3 * u;
+  const ankL = [kneeL[0] + liftL * .8 * u - .4 * u, kneeL[1] + 23 * u - liftL * 4.5 * u - bob], ankR = [kneeR[0] - liftR * .8 * u + .4 * u, kneeR[1] + 23 * u - liftR * 4.5 * u - bob];
   const shL = [-11.3 * u, sy + 4.4 * u], shR = [11.3 * u, sy + 4.4 * u];
   const arm = (s, side, ua, fa) => { const e = [s[0] + side * Math.sin(ua) * 16 * u, s[1] + Math.cos(ua) * 16 * u]; return [e, [e[0] + side * Math.sin(fa) * 14.5 * u, e[1] + Math.cos(fa) * 14.5 * u]]; };
-  const sw = Math.sin(walk) * .25;
+  const sw = o.walk ? Math.sin(walk) * .12 : 0;
   let [elL, hdL] = arm(shL, -1, lerp(.1 + sw, .3, shrug), lerp(.05 + sw, 1.75, shrug));
   let [elR, hdR] = arm(shR, 1, lerp(lerp(.1 - sw, .3, shrug), .35, armUp), lerp(lerp(.05 - sw, 1.75, shrug), 2.75, armUp));
   if (o.point) [elR, hdR] = arm(shR, 1, 1.2, 1.5);
