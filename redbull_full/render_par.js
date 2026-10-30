@@ -7,7 +7,7 @@ const { chromium } = require('playwright'); const { spawn } = require('child_pro
   await p.goto('file://' + path.resolve('index.html')); await p.evaluate(() => document.fonts.ready);
   const total = await p.evaluate(() => window.TOTAL); const N = Math.round(total * fps);
   const f0 = Math.floor(N * wi / wn), f1 = Math.floor(N * (wi + 1) / wn);
-  const ff = spawn('ffmpeg', ['-y', '-v', 'error', '-f', 'image2pipe', '-framerate', String(fps), '-c:v', 'mjpeg', '-i', '-', '-c:v', 'libx264', '-preset', 'medium', '-crf', '18', '-pix_fmt', 'yuv420p', `out/seg_${wi}.mp4`], { stdio: ['pipe', 'ignore', 'inherit'] });
+  const ff = spawn('ffmpeg', ['-y', '-v', 'error', '-f', 'image2pipe', '-framerate', String(fps), '-c:v', 'mjpeg', '-i', '-', '-vf', 'scale=in_color_matrix=bt601:out_color_matrix=bt709,format=yuv420p', '-c:v', 'libx264', '-profile:v', 'high', '-level:v', '4.1', '-preset', 'medium', '-crf', '18', '-colorspace', 'bt709', '-color_primaries', 'bt709', '-color_trc', 'bt709', `out/seg_${wi}.mp4`], { stdio: ['pipe', 'ignore', 'inherit'] });
   const t0 = Date.now();
   for (let f = f0; f < f1; f++) {
     const b64 = await p.evaluate(t => { window.render(t); return document.getElementById('c').toDataURL('image/jpeg', 0.92).split(',')[1]; }, f / fps);
