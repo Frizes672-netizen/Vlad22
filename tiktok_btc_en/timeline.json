@@ -1,0 +1,1661 @@
+{
+"total": 137.4824375,
+"units": [
+{
+"p": 0,
+"text": "They stole $71 million in Bitcoin.",
+"start": 0.0,
+"words": [
+[
+"they",
+0.0
+],
+[
+"stole",
+0.2
+],
+[
+"71",
+0.78
+],
+[
+"million",
+1.36
+],
+[
+"in",
+2.24
+],
+[
+"bitcoin",
+2.68
+]
+],
+"end": 3.12
+},
+{
+"p": 1,
+"text": "But six years later, those same Bitcoin were worth over $4.5 billion.",
+"start": 3.12,
+"words": [
+[
+"but",
+3.12
+],
+[
+"six",
+3.36
+],
+[
+"years",
+3.72
+],
+[
+"later",
+4.08
+],
+[
+"those",
+4.56
+],
+[
+"same",
+4.8
+],
+[
+"bitcoin",
+5.24
+],
+[
+"were",
+5.68
+],
+[
+"worth",
+5.88
+],
+[
+"over",
+6.16
+],
+[
+"45",
+6.82
+],
+[
+"billion",
+7.48
+]
+],
+"end": 8.8
+},
+{
+"p": 2,
+"text": "They thought they had gotten away with the perfect crime.",
+"start": 8.8,
+"words": [
+[
+"they",
+8.8
+],
+[
+"thought",
+9.12
+],
+[
+"they",
+9.4
+],
+[
+"had",
+9.6
+],
+[
+"gotten",
+9.72
+],
+[
+"away",
+10.08
+],
+[
+"with",
+10.36
+],
+[
+"the",
+10.52
+],
+[
+"perfect",
+10.72
+],
+[
+"crime",
+11.28
+]
+],
+"end": 11.88
+},
+{
+"p": 3,
+"text": "Until the FBI knocked on their door.",
+"start": 11.88,
+"words": [
+[
+"until",
+11.88
+],
+[
+"the",
+12.2
+],
+[
+"fbi",
+12.58
+],
+[
+"knocked",
+12.96
+],
+[
+"on",
+13.32
+],
+[
+"their",
+13.48
+],
+[
+"door",
+13.68
+]
+],
+"end": 14.08
+},
+{
+"p": 4,
+"text": "And what investigators found next was absolutely shocking.",
+"start": 14.08,
+"words": [
+[
+"and",
+14.08
+],
+[
+"what",
+14.32
+],
+[
+"investigators",
+14.52
+],
+[
+"found",
+15.44
+],
+[
+"next",
+15.68
+],
+[
+"was",
+16.12
+],
+[
+"absolutely",
+16.36
+],
+[
+"shocking",
+17.28
+]
+],
+"end": 18.06
+},
+{
+"p": 5,
+"text": "In 2016, someone hacked a cryptocurrency exchange and stole nearly 120,000 Bitcoin.",
+"start": 18.06,
+"words": [
+[
+"in",
+18.06
+],
+[
+"2016",
+18.66
+],
+[
+"someone",
+19.26
+],
+[
+"hacked",
+19.86
+],
+[
+"a",
+20.14
+],
+[
+"cryptocurrency",
+20.64
+],
+[
+"exchange",
+21.14
+],
+[
+"and",
+21.58
+],
+[
+"stole",
+21.78
+],
+[
+"nearly",
+22.1
+],
+[
+"120000",
+22.99
+],
+[
+"bitcoin",
+23.89
+]
+],
+"end": 24.78
+},
+{
+"p": 6,
+"text": "The exchange was called Bitfinex.",
+"start": 24.78,
+"words": [
+[
+"the",
+24.78
+],
+[
+"exchange",
+25.02
+],
+[
+"was",
+25.54
+],
+[
+"called",
+25.7
+],
+[
+"bitfinex",
+26.38
+]
+],
+"end": 27.06
+},
+{
+"p": 7,
+"text": "After the hack, the stolen Bitcoin disappeared into the digital world.",
+"start": 27.06,
+"words": [
+[
+"after",
+27.06
+],
+[
+"the",
+27.38
+],
+[
+"hack",
+27.58
+],
+[
+"the",
+27.94
+],
+[
+"stolen",
+28.14
+],
+[
+"bitcoin",
+28.64
+],
+[
+"disappeared",
+29.14
+],
+[
+"into",
+29.78
+],
+[
+"the",
+29.98
+],
+[
+"digital",
+30.32
+],
+[
+"world",
+30.66
+]
+],
+"end": 31.06
+},
+{
+"p": 7,
+"text": "The criminals moved the money through complicated transactions, hoping to make it impossible to trace.",
+"start": 31.06,
+"words": [
+[
+"the",
+31.06
+],
+[
+"criminals",
+31.3
+],
+[
+"moved",
+31.86
+],
+[
+"the",
+32.1
+],
+[
+"money",
+32.26
+],
+[
+"through",
+32.58
+],
+[
+"complicated",
+32.82
+],
+[
+"transactions",
+33.46
+],
+[
+"hoping",
+34.34
+],
+[
+"to",
+34.66
+],
+[
+"make",
+34.82
+],
+[
+"it",
+35.02
+],
+[
+"impossible",
+35.18
+],
+[
+"to",
+35.86
+],
+[
+"trace",
+36.1
+]
+],
+"end": 36.58
+},
+{
+"p": 8,
+"text": "But there was one problem.",
+"start": 36.58,
+"words": [
+[
+"but",
+36.58
+],
+[
+"there",
+36.94
+],
+[
+"was",
+37.14
+],
+[
+"one",
+37.38
+],
+[
+"problem",
+37.74
+]
+],
+"end": 38.37
+},
+{
+"p": 9,
+"text": "Bitcoin transactions leave a public trail.",
+"start": 38.37,
+"words": [
+[
+"bitcoin",
+38.37
+],
+[
+"transactions",
+39.0
+],
+[
+"leave",
+39.8
+],
+[
+"a",
+40.04
+],
+[
+"public",
+40.16
+],
+[
+"trail",
+40.6
+]
+],
+"end": 41.08
+},
+{
+"p": 10,
+"text": "And investigators kept following it.",
+"start": 41.08,
+"words": [
+[
+"and",
+41.08
+],
+[
+"investigators",
+41.32
+],
+[
+"kept",
+42.2
+],
+[
+"following",
+42.6
+],
+[
+"it",
+43.08
+]
+],
+"end": 43.4
+},
+{
+"p": 11,
+"text": "Eventually, they identified a man named Ilya Lichtenstein and his wife, Heather Morgan.",
+"start": 43.4,
+"words": [
+[
+"eventually",
+43.4
+],
+[
+"they",
+44.16
+],
+[
+"identified",
+44.36
+],
+[
+"a",
+45.0
+],
+[
+"man",
+45.12
+],
+[
+"named",
+45.36
+],
+[
+"ilya",
+45.87
+],
+[
+"lichtenstein",
+46.37
+],
+[
+"and",
+46.88
+],
+[
+"his",
+47.04
+],
+[
+"wife",
+47.2
+],
+[
+"heather",
+47.56
+],
+[
+"morgan",
+47.88
+]
+],
+"end": 48.44
+},
+{
+"p": 12,
+"text": "In February 2022, federal agents arrested them.",
+"start": 48.44,
+"words": [
+[
+"in",
+48.44
+],
+[
+"february",
+48.68
+],
+[
+"2022",
+49.52
+],
+[
+"federal",
+50.36
+],
+[
+"agents",
+50.84
+],
+[
+"arrested",
+51.32
+],
+[
+"them",
+51.92
+]
+],
+"end": 52.28
+},
+{
+"p": 13,
+"text": "Then came the shocking part.",
+"start": 52.28,
+"words": [
+[
+"then",
+52.28
+],
+[
+"came",
+52.68
+],
+[
+"the",
+53.0
+],
+[
+"shocking",
+53.24
+],
+[
+"part",
+53.72
+]
+],
+"end": 54.16
+},
+{
+"p": 14,
+"text": "Investigators discovered a file containing private keys connected to cryptocurrency wallets holding a huge portion of the stolen Bitcoin.",
+"start": 54.16,
+"words": [
+[
+"investigators",
+54.16
+],
+[
+"discovered",
+55.08
+],
+[
+"a",
+55.56
+],
+[
+"file",
+55.68
+],
+[
+"containing",
+56.04
+],
+[
+"private",
+56.56
+],
+[
+"keys",
+56.96
+],
+[
+"connected",
+57.36
+],
+[
+"to",
+57.76
+],
+[
+"cryptocurrency",
+58.26
+],
+[
+"wallets",
+58.76
+],
+[
+"holding",
+59.16
+],
+[
+"a",
+59.52
+],
+[
+"huge",
+59.72
+],
+[
+"portion",
+60.08
+],
+[
+"of",
+60.48
+],
+[
+"the",
+60.6
+],
+[
+"stolen",
+60.72
+],
+[
+"bitcoin",
+61.3
+]
+],
+"end": 61.88
+},
+{
+"p": 15,
+"text": "The government seized approximately 94,000 Bitcoin.",
+"start": 61.88,
+"words": [
+[
+"the",
+61.88
+],
+[
+"government",
+62.04
+],
+[
+"seized",
+62.52
+],
+[
+"approximately",
+62.88
+],
+[
+"94000",
+63.83
+],
+[
+"bitcoin",
+64.77
+]
+],
+"end": 65.72
+},
+{
+"p": 16,
+"text": "At the time, they were worth around $3.6 billion.",
+"start": 65.72,
+"words": [
+[
+"at",
+65.72
+],
+[
+"the",
+65.92
+],
+[
+"time",
+66.12
+],
+[
+"they",
+66.48
+],
+[
+"were",
+66.68
+],
+[
+"worth",
+66.84
+],
+[
+"around",
+67.16
+],
+[
+"36",
+67.84
+],
+[
+"billion",
+68.52
+]
+],
+"end": 69.76
+},
+{
+"p": 17,
+"text": "It became one of the largest financial seizures in the history of the U.S.",
+"start": 69.76,
+"words": [
+[
+"it",
+69.76
+],
+[
+"became",
+70.0
+],
+[
+"one",
+70.4
+],
+[
+"of",
+70.56
+],
+[
+"the",
+70.68
+],
+[
+"largest",
+70.84
+],
+[
+"financial",
+71.32
+],
+[
+"seizures",
+71.88
+],
+[
+"in",
+72.4
+],
+[
+"the",
+72.52
+],
+[
+"history",
+72.68
+],
+[
+"of",
+73.12
+],
+[
+"the",
+73.24
+],
+[
+"us",
+73.46
+]
+],
+"end": 73.68
+},
+{
+"p": 17,
+"text": "Department of Justice.",
+"start": 73.68,
+"words": [
+[
+"department",
+73.68
+],
+[
+"of",
+74.2
+],
+[
+"justice",
+74.36
+]
+],
+"end": 75.12
+},
+{
+"p": 18,
+"text": "But how did investigators connect the money to the suspects?",
+"start": 75.12,
+"words": [
+[
+"but",
+75.12
+],
+[
+"how",
+75.36
+],
+[
+"did",
+75.6
+],
+[
+"investigators",
+75.84
+],
+[
+"connect",
+76.64
+],
+[
+"the",
+76.96
+],
+[
+"money",
+77.12
+],
+[
+"to",
+77.4
+],
+[
+"the",
+77.52
+],
+[
+"suspects",
+77.68
+]
+],
+"end": 78.44
+},
+{
+"p": 19,
+"text": "The answer wasn't a dramatic chase or a secret informant.",
+"start": 78.44,
+"words": [
+[
+"the",
+78.44
+],
+[
+"answer",
+78.68
+],
+[
+"wasnt",
+79.04
+],
+[
+"a",
+79.4
+],
+[
+"dramatic",
+79.52
+],
+[
+"chase",
+80.08
+],
+[
+"or",
+80.44
+],
+[
+"a",
+80.6
+],
+[
+"secret",
+80.72
+],
+[
+"informant",
+81.12
+]
+],
+"end": 81.92
+},
+{
+"p": 20,
+"text": "It was digital evidence.",
+"start": 81.92,
+"words": [
+[
+"it",
+81.92
+],
+[
+"was",
+82.16
+],
+[
+"digital",
+82.36
+],
+[
+"evidence",
+82.96
+]
+],
+"end": 83.68
+},
+{
+"p": 21,
+"text": "Transactions that seemed almost impossible to untangle were connected through years of investigation.",
+"start": 83.68,
+"words": [
+[
+"transactions",
+83.68
+],
+[
+"that",
+84.52
+],
+[
+"seemed",
+84.72
+],
+[
+"almost",
+85.04
+],
+[
+"impossible",
+85.4
+],
+[
+"to",
+86.12
+],
+[
+"untangle",
+86.28
+],
+[
+"were",
+86.92
+],
+[
+"connected",
+87.12
+],
+[
+"through",
+87.64
+],
+[
+"years",
+87.92
+],
+[
+"of",
+88.24
+],
+[
+"investigation",
+88.4
+]
+],
+"end": 89.44
+},
+{
+"p": 21,
+"text": "And a file recovered from Lichtenstein's cloud storage helped authorities access the stolen funds.",
+"start": 89.44,
+"words": [
+[
+"and",
+89.44
+],
+[
+"a",
+89.6
+],
+[
+"file",
+89.72
+],
+[
+"recovered",
+90.04
+],
+[
+"from",
+90.52
+],
+[
+"lichtensteins",
+91.0
+],
+[
+"cloud",
+91.48
+],
+[
+"storage",
+91.76
+],
+[
+"helped",
+92.2
+],
+[
+"authorities",
+92.66
+],
+[
+"access",
+93.12
+],
+[
+"the",
+93.56
+],
+[
+"stolen",
+93.72
+],
+[
+"funds",
+94.16
+]
+],
+"end": 94.72
+},
+{
+"p": 22,
+"text": "In 2023, both Lichtenstein and Morgan pleaded guilty to charges related to money laundering.",
+"start": 94.72,
+"words": [
+[
+"in",
+94.72
+],
+[
+"2023",
+95.4
+],
+[
+"both",
+96.08
+],
+[
+"lichtenstein",
+96.36
+],
+[
+"and",
+97.16
+],
+[
+"morgan",
+97.36
+],
+[
+"pleaded",
+97.8
+],
+[
+"guilty",
+98.2
+],
+[
+"to",
+98.6
+],
+[
+"charges",
+98.76
+],
+[
+"related",
+99.2
+],
+[
+"to",
+99.56
+],
+[
+"money",
+99.72
+],
+[
+"laundering",
+100.0
+]
+],
+"end": 100.64
+},
+{
+"p": 23,
+"text": "Lichtenstein later admitted that he carried out the Bitfinex hack.",
+"start": 100.64,
+"words": [
+[
+"lichtenstein",
+100.64
+],
+[
+"later",
+101.44
+],
+[
+"admitted",
+101.72
+],
+[
+"that",
+102.2
+],
+[
+"he",
+102.36
+],
+[
+"carried",
+102.6
+],
+[
+"out",
+102.96
+],
+[
+"the",
+103.12
+],
+[
+"bitfinex",
+103.56
+],
+[
+"hack",
+104.0
+]
+],
+"end": 104.46
+},
+{
+"p": 24,
+"text": "Think about that.",
+"start": 104.46,
+"words": [
+[
+"think",
+104.46
+],
+[
+"about",
+104.82
+],
+[
+"that",
+105.1
+]
+],
+"end": 105.46
+},
+{
+"p": 25,
+"text": "When the Bitcoin were stolen, they were worth around $71 million.",
+"start": 105.46,
+"words": [
+[
+"when",
+105.46
+],
+[
+"the",
+105.66
+],
+[
+"bitcoin",
+106.02
+],
+[
+"were",
+106.38
+],
+[
+"stolen",
+106.58
+],
+[
+"they",
+107.06
+],
+[
+"were",
+107.18
+],
+[
+"worth",
+107.38
+],
+[
+"around",
+107.66
+],
+[
+"71",
+108.22
+],
+[
+"million",
+108.78
+]
+],
+"end": 109.82
+},
+{
+"p": 25,
+"text": "But as Bitcoin's value increased, the case turned into a multibillion-dollar story.",
+"start": 109.82,
+"words": [
+[
+"but",
+109.82
+],
+[
+"as",
+110.02
+],
+[
+"bitcoins",
+110.42
+],
+[
+"value",
+110.82
+],
+[
+"increased",
+111.18
+],
+[
+"the",
+111.82
+],
+[
+"case",
+111.98
+],
+[
+"turned",
+112.38
+],
+[
+"into",
+112.7
+],
+[
+"a",
+112.94
+],
+[
+"multibilliondollar",
+113.72
+],
+[
+"story",
+114.5
+]
+],
+"end": 115.02
+},
+{
+"p": 26,
+"text": "The criminals tried to move the money.",
+"start": 115.02,
+"words": [
+[
+"the",
+115.02
+],
+[
+"criminals",
+115.18
+],
+[
+"tried",
+115.78
+],
+[
+"to",
+116.02
+],
+[
+"move",
+116.22
+],
+[
+"the",
+116.46
+],
+[
+"money",
+116.62
+]
+],
+"end": 117.06
+},
+{
+"p": 27,
+"text": "They tried to hide their tracks.",
+"start": 117.06,
+"words": [
+[
+"they",
+117.06
+],
+[
+"tried",
+117.26
+],
+[
+"to",
+117.54
+],
+[
+"hide",
+117.7
+],
+[
+"their",
+117.94
+],
+[
+"tracks",
+118.14
+]
+],
+"end": 118.66
+},
+{
+"p": 28,
+"text": "But the blockchain kept recording every transaction.",
+"start": 118.66,
+"words": [
+[
+"but",
+118.66
+],
+[
+"the",
+118.82
+],
+[
+"blockchain",
+119.24
+],
+[
+"kept",
+119.66
+],
+[
+"recording",
+120.06
+],
+[
+"every",
+120.7
+],
+[
+"transaction",
+121.02
+]
+],
+"end": 122.08
+},
+{
+"p": 29,
+"text": "And here's the unexpected twist:",
+"start": 122.08,
+"words": [
+[
+"and",
+122.08
+],
+[
+"heres",
+122.24
+],
+[
+"the",
+122.68
+],
+[
+"unexpected",
+122.8
+],
+[
+"twist",
+123.52
+]
+],
+"end": 124.04
+},
+{
+"p": 30,
+"text": "The same technology that helped make Bitcoin valuable also helped investigators track down the stolen fortune.",
+"start": 124.04,
+"words": [
+[
+"the",
+124.04
+],
+[
+"same",
+124.24
+],
+[
+"technology",
+124.56
+],
+[
+"that",
+125.24
+],
+[
+"helped",
+125.4
+],
+[
+"make",
+125.72
+],
+[
+"bitcoin",
+126.1
+],
+[
+"valuable",
+126.48
+],
+[
+"also",
+127.12
+],
+[
+"helped",
+127.44
+],
+[
+"investigators",
+127.76
+],
+[
+"track",
+128.56
+],
+[
+"down",
+128.88
+],
+[
+"the",
+129.12
+],
+[
+"stolen",
+129.24
+],
+[
+"fortune",
+129.68
+]
+],
+"end": 130.28
+},
+{
+"p": 31,
+"text": "Because on the internet, money can move incredibly fast.",
+"start": 130.28,
+"words": [
+[
+"because",
+130.28
+],
+[
+"on",
+130.56
+],
+[
+"the",
+130.72
+],
+[
+"internet",
+131.1
+],
+[
+"money",
+131.48
+],
+[
+"can",
+131.8
+],
+[
+"move",
+132.0
+],
+[
+"incredibly",
+132.24
+],
+[
+"fast",
+133.04
+]
+],
+"end": 133.52
+},
+{
+"p": 32,
+"text": "But the digital footprints it leaves behind can last for years.",
+"start": 133.52,
+"words": [
+[
+"but",
+133.52
+],
+[
+"the",
+133.68
+],
+[
+"digital",
+133.84
+],
+[
+"footprints",
+134.28
+],
+[
+"it",
+134.8
+],
+[
+"leaves",
+134.96
+],
+[
+"behind",
+135.24
+],
+[
+"can",
+135.8
+],
+[
+"last",
+136.08
+],
+[
+"for",
+136.44
+],
+[
+"years",
+136.76
+]
+],
+"end": 137.48
+}
+]
+}

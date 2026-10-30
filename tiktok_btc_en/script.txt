@@ -1,0 +1,65 @@
+They stole $71 million in Bitcoin.
+
+But six years later, those same Bitcoin were worth over $4.5 billion.
+
+They thought they had gotten away with the perfect crime.
+
+Until the FBI knocked on their door.
+
+And what investigators found next was absolutely shocking.
+
+In 2016, someone hacked a cryptocurrency exchange and stole nearly 120,000 Bitcoin.
+
+The exchange was called Bitfinex.
+
+After the hack, the stolen Bitcoin disappeared into the digital world. The criminals moved the money through complicated transactions, hoping to make it impossible to trace.
+
+But there was one problem.
+
+Bitcoin transactions leave a public trail.
+
+And investigators kept following it.
+
+Eventually, they identified a man named Ilya Lichtenstein and his wife, Heather Morgan.
+
+In February 2022, federal agents arrested them.
+
+Then came the shocking part.
+
+Investigators discovered a file containing private keys connected to cryptocurrency wallets holding a huge portion of the stolen Bitcoin.
+
+The government seized approximately 94,000 Bitcoin.
+
+At the time, they were worth around $3.6 billion.
+
+It became one of the largest financial seizures in the history of the U.S. Department of Justice.
+
+But how did investigators connect the money to the suspects?
+
+The answer wasn't a dramatic chase or a secret informant.
+
+It was digital evidence.
+
+Transactions that seemed almost impossible to untangle were connected through years of investigation. And a file recovered from Lichtenstein's cloud storage helped authorities access the stolen funds.
+
+In 2023, both Lichtenstein and Morgan pleaded guilty to charges related to money laundering.
+
+Lichtenstein later admitted that he carried out the Bitfinex hack.
+
+Think about that.
+
+When the Bitcoin were stolen, they were worth around $71 million. But as Bitcoin's value increased, the case turned into a multibillion-dollar story.
+
+The criminals tried to move the money.
+
+They tried to hide their tracks.
+
+But the blockchain kept recording every transaction.
+
+And here's the unexpected twist:
+
+The same technology that helped make Bitcoin valuable also helped investigators track down the stolen fortune.
+
+Because on the internet, money can move incredibly fast.
+
+But the digital footprints it leaves behind can last for years.
