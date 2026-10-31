@@ -5,7 +5,10 @@ window.strip=()=>{ bg('#1c2433','#0b0f17'); ctx.fillStyle='#2a3142'; ctx.fillRec
   for(let i=0;i<8;i++){ person(80+i*130,900,560,{fem:true,headphones:true,top:'#6d2433',pants:'#1e2433',hair:'#4a2e1c',shoe:'#e9e4ee',walk:i/8*Math.PI*2}); }
   for(let i=0;i<8;i++){ person(80+i*130,1800,560,{cap:true,top:'#3a4250',walk:i/8*Math.PI*2}); } };
 window.demo=(t)=>{ bg('#1c2433','#0b0f17'); ctx.fillStyle=grad(0,1300,0,H,[[0,'#232a38'],[1,'#0b0e14']]); ctx.fillRect(0,1300,W,H-1300);
-  const h=620, stride=.68*h; const xa=-150+t*170; person(xa,1380,h,{fem:true,headphones:true,top:'#6d2433',pants:'#1e2433',hair:'#4a2e1c',shoe:'#e9e4ee',walk:(xa/stride)*Math.PI*2+.01});
-  const xb=1250-t*150; person(xb,1560,700,{cap:true,top:'#3a4250',flip:true,walk:((1250-xb)/(.68*700))*Math.PI*2+.01});
-  const s=lerp(380,900,t/6); person(540,lerp(1330,1860,t/6),s,{top:'#2f5a3a',hair:'#2a1a12',view:'front',walk:t*5.6+.4}); };
+  const h=620, stride=.64*h; const xa=-250+t*290; person(xa,1380,h,{fem:true,headphones:true,top:'#6d2433',pants:'#1e2433',hair:'#4a2e1c',shoe:'#e9e4ee',walk:(xa/stride)*Math.PI*2+.01});
+  const xb=1900-t*320; person(xb,1560,700,{cap:true,top:'#3a4250',flip:true,walk:((1900-xb)/(.64*700))*Math.PI*2+.01});
+  const s=lerp(380,900,t/7); person(540,lerp(1330,1860,t/7),s,{top:'#2f5a3a',hair:'#2a1a12',view:'front',walk:t*5.0+.4}); };
+window.faces=()=>{ bg('#1c2433','#0b0f17'); person(290,4300,4200,{top:'#2f5a3a',hair:'#2a1a12'}); person(800,4300,4200,{fem:true,top:'#6d2433',hair:'#4a2e1c',light:-1});
+  personSide(260,3350,2600,{walk:.0001,top:'#3a4250',hair:'#2a1a12'}); personSide(780,3350,2600,{fem:true,walk:.0001,top:'#6d2433',hair:'#4a2e1c'}); };
+window.bodies=()=>{ bg('#1c2433','#0b0f17'); person(270,1850,1500,{top:'#2f5a3a',hair:'#2a1a12',view:'front',walk:.4}); person(800,1850,1500,{fem:true,top:'#6d2433',hair:'#4a2e1c',view:'front',walk:2.2}); };
 </script></body></html>
