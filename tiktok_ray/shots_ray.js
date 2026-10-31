@@ -1,0 +1,21 @@
+// ===== "$1,013 a month" shot list (unit ranges from timeline.json) =====
+const S = (a, b, sc, p = {}) => shot(a, b, sc, Object.assign({ noGlitch: true }, p));
+S(0, 0, 'hookPayments', { cut: true });
+S(1, 3, 'transferCard', { cut: true });
+S(4, 4, 'million', { cut: true });
+S(5, 7, 'evidence');
+S(8, 8, 'funeral');
+S(9, 10, 'hitAndRun');
+S(11, 12, 'headstoneWalk');
+S(13, 14, 'dateMatch');
+S(15, 15, 'theyKnew', { noGlitch: false });
+S(16, 18, 'lastNote');
+S(19, 19, 'estate');
+S(20, 23, 'nameReveal');
+S(24, 25, 'birthdayCollege');
+S(26, 28, 'noCar');
+S(29, 32, 'momKnew');
+S(33, 33, 'whyNot', { noGlitch: false });
+S(34, 35, 'dadPhoto');
+S(36, 36, 'untouched');
+S(37, 37, 'finalQ');
