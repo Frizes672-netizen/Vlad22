@@ -305,7 +305,7 @@ SC.untouched = {
   sfx(d) { return [[.3, 'stamp', .35]]; }
 };
 SC.finalQ = {
-  draw(t, d) { bg('#0b0a10', '#020204'); glow(540, 900, 900, 'rgba(255,200,120,.2)'); ctx.save(); ctx.globalAlpha = .35; person(540, 2600, 2000, RAY({ silhouette: true, color: '#020306', rim: 'rgba(255,200,140,.6)' })); ctx.restore();
+  draw(t, d) { bg('#0b0a10', '#020204'); glow(540, 900, 900, 'rgba(255,200,120,.2)'); handWrite('"Sorry."', 540, 1000, 150, 1, 'rgba(196,35,47,.35)', { rot: -.08 });
     caption('WOULD YOU HAVE\nFORGIVEN HIM?', 520, prog(t, .1, .5), { size: 72, accent: GOLD });
     pill('YES', 330, 1300, 64, prog(t, .7, 1.0), MONEY, '#fff'); pill('NEVER', 750, 1300, 64, prog(t, .9, 1.2), INK, '#fff');
     label('TELL ME IN THE COMMENTS ↓', 540, 1560, 44, { weight: 900, color: 'rgba(255,255,255,.85)', alpha: prog(t, 1.4, 1.8) }); },
