@@ -64,7 +64,7 @@ function mountains(t, o = {}) { ctx.fillStyle = grad(0, 0, 0, H, [[0, o.s1 || '#
   ctx.fillStyle = '#eef2f6'; ctx.beginPath(); ctx.moveTo(560, 540); ctx.lineTo(620, 480); ctx.lineTo(690, 545); ctx.lineTo(640, 530); ctx.fill(); ctx.beginPath(); ctx.moveTo(160, 610); ctx.lineTo(200, 560); ctx.lineTo(250, 605); ctx.fill();
   const R = rnd(4); for (let i = 0; i < 26; i++) pine(R() * W, 860 + R() * 120, 110 + R() * 60, .6, '#4b6157');
   ctx.fillStyle = grad(0, 950, 0, H, [[0, '#e9eef3'], [1, '#c7d2dc']]); ctx.beginPath(); ctx.moveTo(0, 1000); ctx.quadraticCurveTo(540, 900, W, 1040); ctx.lineTo(W, H); ctx.lineTo(0, H); ctx.fill(); }
-function forestFront(t, seed = 8) { const R = rnd(seed); for (let i = 0; i < 9; i++) { const x = R() * W, h = 380 + R() * 260; pine(x, 1160 + R() * 60, h, .75, '#1d3529'); } }
+function forestFront(t, seed = 8) { const R = rnd(seed); for (let i = 0; i < 6; i++) { const x = R() * W, h = 700 + R() * 450; pine(x, 1200 + R() * 60, h, .75, '#1d3529'); } }
 function cabin(t, o = {}) { // DC-9 cabin in one-point perspective
   bg('#3a3f46', '#1b1e22'); const vx = 540, vy = 760; ctx.fillStyle = '#d9d4c8'; ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(W, 0); ctx.lineTo(vx + 120, vy - 90); ctx.lineTo(vx - 120, vy - 90); ctx.fill(); // ceiling
   ctx.fillStyle = '#bfb8aa'; ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(vx - 120, vy - 90); ctx.lineTo(vx - 150, vy); ctx.lineTo(0, 520); ctx.fill(); ctx.beginPath(); ctx.moveTo(W, 0); ctx.lineTo(vx + 120, vy - 90); ctx.lineTo(vx + 150, vy); ctx.lineTo(W, 520); ctx.fill(); // bins
@@ -186,18 +186,21 @@ SC.pinned = { // cut-away of the tail section: Vesna pinned by the food cart
 };
 SC.tailCrash = { // the tail cuts through snowy pines onto the mountainside
   draw(t, d, P, E) { const th = E('hits', 1, 1.8); mountains(t); const k = eio(prog(t, 0, th + .1)), land = t > th;
-    const tx = lerp(1250, 600, k), ty = lerp(-300, 1180, k); if (!land) { smokeTrail(tx, ty, t, -Math.PI / 2 + .5, 500, 4); jet(tx, ty, .55, { part: 'tail', rot: lerp(2.4, .55, k), t }); }
-    else { const b = t - th; jet(600, 1180, .55, { part: 'tail', rot: .55 }); const R = rnd(3); for (let i = 0; i < 40; i++) { const a = -Math.PI * (R()), dd = eout(prog(b, 0, 1.2)) * (60 + R() * 420);
-        ctx.fillStyle = `rgba(255,255,255,${.85 * (1 - prog(b, .4, 2))})`; ctx.beginPath(); ctx.arc(600 + Math.cos(a) * dd, 1180 + Math.sin(a) * dd * .6 + prog(b, 0, 2) * 80, 14 + R() * 30, 0, 7); ctx.fill(); } }
-    forestFront(t); snow(t, .7, 90, 3, .8); if (land && t - th < .2) { ctx.fillStyle = 'rgba(255,255,255,.4)'; ctx.fillRect(0, 0, W, H); }
-    label('A SNOWY, WOODED MOUNTAINSIDE', 540, 260, 44, { weight: 900, color: '#1d2a3a', alpha: prog(t, th, th + .4) }); },
+    forestFront(t); const tx = lerp(1150, 250, k), ty = lerp(-520, 1160, k); if (!land) { smokeTrail(tx, ty, t, -Math.PI / 2 + .5, 600, 4); jet(tx, ty, 1.1, { part: 'tail', rot: lerp(2.4, .5, k), t }); }
+    else { const b = t - th; jet(250, 1160, 1.1, { part: 'tail', rot: .5 }); const R = rnd(3); for (let i = 0; i < 40; i++) { const a = -Math.PI * (R()), dd = eout(prog(b, 0, 1.2)) * (60 + R() * 420);
+        ctx.fillStyle = `rgba(255,255,255,${.85 * (1 - prog(b, .4, 2))})`; ctx.beginPath(); ctx.arc(560 + Math.cos(a) * dd, 1330 + Math.sin(a) * dd * .6 + prog(b, 0, 2) * 80, 14 + R() * 30, 0, 7); ctx.fill(); } }
+    snow(t, .7, 90, 3, .8); if (land && t - th < .2) { ctx.fillStyle = 'rgba(255,255,255,.4)'; ctx.fillRect(0, 0, W, H); }
+    label('A SNOWY, WOODED MOUNTAINSIDE', 540, 260, 44, { weight: 900, color: '#fff', shadow: 'rgba(0,0,0,.7)', alpha: prog(t, th, th + .4) }); },
   sfx(d, P, E) { const th = E('hits', 1, 1.8); return [[0, 'whoosh', .45], [0, 'wind', .35, { dur: d }], [th, 'thud_soft', .6], [th + .02, 'boom', .3]]; }
 };
 SC.honke = { // a walker hears screaming, a former wartime medic, finds her alive
   draw(t, d, P, E) { const tsc = E('screaming', 1, 1.6), tm = E('medic', 1, 3.6), ta = E('alive', 1, 5.6); blurred(3, () => mountains(0), 'mtn');
-    const h = 700, stride = .64 * h, x = lerp(-120, 460, eout(prog(t, 0, ta))); jet(900, 1240, .45, { part: 'tail', rot: .5 });
-    person(x, 1300, h, HONKE({ walk: (x / stride) * Math.PI * 2 + .01 })); forestFront(t, 12); snow(t, .8, 120, 6, .9);
-    if (t > tsc && t < tm) for (let i = 0; i < 3; i++) { const k = ((t - tsc) * .8 + i / 3) % 1; ctx.strokeStyle = `rgba(255,255,255,${.7 * (1 - k)})`; ctx.lineWidth = 6; ctx.beginPath(); ctx.arc(900, 1100, 40 + k * 260, Math.PI * .9, Math.PI * 1.5); ctx.stroke(); }
+    blurred(2, () => { for (const [px, ph] of [[40, 1050], [250, 860], [700, 980], [960, 1120], [520, 760]]) pine(px, 1250, ph, .6, '#3a5646'); }, 'midpines'); // tall pines behind him (20–30 m trees)
+    ctx.fillStyle = grad(0, 1240, 0, H, [[0, '#eef2f6'], [1, '#c9d3dc']]); ctx.fillRect(0, 1250, W, H);
+    jet(620, 1160, .85, { part: 'tail', rot: .5 }); const h = 430, stride = .64 * h, x = lerp(-80, 470, eout(prog(t, 0, ta)));
+    person(x, 1330, h, HONKE({ walk: (x / stride) * Math.PI * 2 + .01 }));
+    pine(-200, 1760, 1500, .75, '#18301f'); pine(1290, 1800, 1600, .75, '#152b1c'); snow(t, .8, 120, 6, .9);
+    if (t > tsc && t < tm) for (let i = 0; i < 3; i++) { const k = ((t - tsc) * .8 + i / 3) % 1; ctx.strokeStyle = `rgba(255,255,255,${.7 * (1 - k)})`; ctx.lineWidth = 6; ctx.beginPath(); ctx.arc(860, 1200, 40 + k * 260, Math.PI * .9, Math.PI * 1.5); ctx.stroke(); }
     if (t > tm) { ctx.save(); ctx.translate(540, 300); const k = eback(prog(t, tm, tm + .35)); ctx.scale(k, k); ctx.fillStyle = 'rgba(255,255,255,.92)'; rr(-280, -70, 560, 140, 30); ctx.fill(); medCrossV(-200, 0, .38); label('FORMER WWII MEDIC', 50, 14, 38, { weight: 900, color: '#1b1b1b' }); ctx.restore(); }
     if (t > ta) { label('ALIVE', 540, 520, 120, { weight: 900, color: '#5dff9a', shadow: 'rgba(0,0,0,.6)', alpha: prog(t, ta, ta + .3) }); } },
   sfx(d, P, E) { return [[0, 'wind', .4, { dur: d }], [.1, 'steps', .3, { dur: d - 1 }], [E('screaming', 1, 1.6), 'drone', .2, { dur: 1.5 }], [E('medic', 1, 3.6), 'pop', .3], [E('alive', 1, 5.6), 'chime', .4]]; }
