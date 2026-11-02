@@ -1,0 +1,855 @@
+{
+"total": 64.026125,
+"units": [
+{
+"p": 0,
+"text": "What happens if you don't eat\u2026 for 382 days?",
+"start": 0.0,
+"words": [
+[
+"what",
+0.0,
+"What"
+],
+[
+"happens",
+0.2,
+"happens"
+],
+[
+"if",
+0.68,
+"if"
+],
+[
+"you",
+0.88,
+"you"
+],
+[
+"dont",
+1.08,
+"don't"
+],
+[
+"eat",
+1.48,
+"eat\u2026"
+],
+[
+"for",
+2.08,
+"for"
+],
+[
+"382",
+3.08,
+"382"
+],
+[
+"days",
+4.08,
+"days?"
+]
+],
+"end": 5.0
+},
+{
+"p": 1,
+"text": "In 1965, a 456-pound man walked into a hospital in Scotland.",
+"start": 5.0,
+"words": [
+[
+"in",
+5.0,
+"In"
+],
+[
+"1965",
+5.98,
+"1965,"
+],
+[
+"a",
+6.96,
+"a"
+],
+[
+"456pound",
+8.0,
+"456-pound"
+],
+[
+"man",
+9.04,
+"man"
+],
+[
+"walked",
+9.28,
+"walked"
+],
+[
+"into",
+9.68,
+"into"
+],
+[
+"a",
+9.92,
+"a"
+],
+[
+"hospital",
+10.04,
+"hospital"
+],
+[
+"in",
+10.64,
+"in"
+],
+[
+"scotland",
+10.88,
+"Scotland."
+]
+],
+"end": 11.72
+},
+{
+"p": 1,
+"text": "His name was Angus Barbieri.",
+"start": 11.72,
+"words": [
+[
+"his",
+11.72,
+"His"
+],
+[
+"name",
+12.08,
+"name"
+],
+[
+"was",
+12.48,
+"was"
+],
+[
+"angus",
+12.76,
+"Angus"
+],
+[
+"barbieri",
+13.28,
+"Barbieri."
+]
+],
+"end": 14.24
+},
+{
+"p": 1,
+"text": "He asked the doctors:",
+"start": 14.24,
+"words": [
+[
+"he",
+14.24,
+"He"
+],
+[
+"asked",
+14.64,
+"asked"
+],
+[
+"the",
+14.96,
+"the"
+],
+[
+"doctors",
+15.12,
+"doctors:"
+]
+],
+"end": 16.04
+},
+{
+"p": 1,
+"text": "\"Let me stop eating.\" They agreed.",
+"start": 16.04,
+"words": [
+[
+"let",
+16.04,
+"\"Let"
+],
+[
+"me",
+16.32,
+"me"
+],
+[
+"stop",
+16.56,
+"stop"
+],
+[
+"eating",
+16.96,
+"eating.\""
+],
+[
+"they",
+17.76,
+"They"
+],
+[
+"agreed",
+18.04,
+"agreed."
+]
+],
+"end": 18.8
+},
+{
+"p": 1,
+"text": "For a few days.",
+"start": 18.8,
+"words": [
+[
+"for",
+18.8,
+"For"
+],
+[
+"a",
+19.08,
+"a"
+],
+[
+"few",
+19.28,
+"few"
+],
+[
+"days",
+19.64,
+"days."
+]
+],
+"end": 20.44
+},
+{
+"p": 2,
+"text": "He never stopped.",
+"start": 20.44,
+"words": [
+[
+"he",
+20.44,
+"He"
+],
+[
+"never",
+20.76,
+"never"
+],
+[
+"stopped",
+21.24,
+"stopped."
+]
+],
+"end": 22.48
+},
+{
+"p": 3,
+"text": "Day one.",
+"start": 22.48,
+"words": [
+[
+"day",
+22.48,
+"Day"
+],
+[
+"one",
+22.96,
+"one."
+]
+],
+"end": 23.76
+},
+{
+"p": 3,
+"text": "Hunger.",
+"start": 23.76,
+"words": [
+[
+"hunger",
+23.76,
+"Hunger."
+]
+],
+"end": 24.8
+},
+{
+"p": 3,
+"text": "Headaches.",
+"start": 24.8,
+"words": [
+[
+"headaches",
+24.8,
+"Headaches."
+]
+],
+"end": 26.16
+},
+{
+"p": 4,
+"text": "Day three.",
+"start": 26.16,
+"words": [
+[
+"day",
+26.16,
+"Day"
+],
+[
+"three",
+26.64,
+"three."
+]
+],
+"end": 27.44
+},
+{
+"p": 4,
+"text": "The hunger fades.",
+"start": 27.44,
+"words": [
+[
+"the",
+27.44,
+"The"
+],
+[
+"hunger",
+27.64,
+"hunger"
+],
+[
+"fades",
+28.12,
+"fades."
+]
+],
+"end": 28.84
+},
+{
+"p": 4,
+"text": "His body starts burning its own fat.",
+"start": 28.84,
+"words": [
+[
+"his",
+28.84,
+"His"
+],
+[
+"body",
+29.16,
+"body"
+],
+[
+"starts",
+29.56,
+"starts"
+],
+[
+"burning",
+30.0,
+"burning"
+],
+[
+"its",
+30.48,
+"its"
+],
+[
+"own",
+30.76,
+"own"
+],
+[
+"fat",
+31.08,
+"fat."
+]
+],
+"end": 31.92
+},
+{
+"p": 5,
+"text": "Week two.",
+"start": 31.92,
+"words": [
+[
+"week",
+31.92,
+"Week"
+],
+[
+"two",
+32.48,
+"two."
+]
+],
+"end": 33.04
+},
+{
+"p": 5,
+"text": "He goes back to work at his family's fish and chip shop.",
+"start": 33.04,
+"words": [
+[
+"he",
+33.04,
+"He"
+],
+[
+"goes",
+33.36,
+"goes"
+],
+[
+"back",
+33.68,
+"back"
+],
+[
+"to",
+33.92,
+"to"
+],
+[
+"work",
+34.08,
+"work"
+],
+[
+"at",
+34.36,
+"at"
+],
+[
+"his",
+34.52,
+"his"
+],
+[
+"familys",
+34.64,
+"family's"
+],
+[
+"fish",
+35.16,
+"fish"
+],
+[
+"and",
+35.4,
+"and"
+],
+[
+"chip",
+35.56,
+"chip"
+],
+[
+"shop",
+35.88,
+"shop."
+]
+],
+"end": 36.44
+},
+{
+"p": 5,
+"text": "Frying food he can't eat.",
+"start": 36.44,
+"words": [
+[
+"frying",
+36.44,
+"Frying"
+],
+[
+"food",
+37.04,
+"food"
+],
+[
+"he",
+37.52,
+"he"
+],
+[
+"cant",
+37.76,
+"can't"
+],
+[
+"eat",
+38.16,
+"eat."
+]
+],
+"end": 38.72
+},
+{
+"p": 6,
+"text": "He lives on water, tea, coffee, and vitamins.",
+"start": 38.72,
+"words": [
+[
+"he",
+38.72,
+"He"
+],
+[
+"lives",
+39.08,
+"lives"
+],
+[
+"on",
+39.48,
+"on"
+],
+[
+"water",
+39.72,
+"water,"
+],
+[
+"tea",
+40.36,
+"tea,"
+],
+[
+"coffee",
+40.92,
+"coffee,"
+],
+[
+"and",
+41.56,
+"and"
+],
+[
+"vitamins",
+41.8,
+"vitamins."
+]
+],
+"end": 42.72
+},
+{
+"p": 7,
+"text": "And the strangest part?",
+"start": 42.72,
+"words": [
+[
+"and",
+42.72,
+"And"
+],
+[
+"the",
+42.92,
+"the"
+],
+[
+"strangest",
+43.16,
+"strangest"
+],
+[
+"part",
+43.8,
+"part?"
+]
+],
+"end": 44.2
+},
+{
+"p": 7,
+"text": "He goes to the bathroom once every 40 to 50 days.",
+"start": 44.2,
+"words": [
+[
+"he",
+44.2,
+"He"
+],
+[
+"goes",
+44.48,
+"goes"
+],
+[
+"to",
+44.84,
+"to"
+],
+[
+"the",
+44.96,
+"the"
+],
+[
+"bathroom",
+45.08,
+"bathroom"
+],
+[
+"once",
+45.76,
+"once"
+],
+[
+"every",
+46.12,
+"every"
+],
+[
+"40",
+46.5,
+"40"
+],
+[
+"to",
+46.88,
+"to"
+],
+[
+"50",
+47.3,
+"50"
+],
+[
+"days",
+47.72,
+"days."
+]
+],
+"end": 48.8
+},
+{
+"p": 8,
+"text": "Day 382.",
+"start": 48.8,
+"words": [
+[
+"day",
+48.8,
+"Day"
+],
+[
+"382",
+49.97,
+"382."
+]
+],
+"end": 51.14
+},
+{
+"p": 8,
+"text": "His first meal: a boiled egg and bread with butter.",
+"start": 51.14,
+"words": [
+[
+"his",
+51.14,
+"His"
+],
+[
+"first",
+51.46,
+"first"
+],
+[
+"meal",
+51.82,
+"meal:"
+],
+[
+"a",
+52.46,
+"a"
+],
+[
+"boiled",
+52.7,
+"boiled"
+],
+[
+"egg",
+53.22,
+"egg"
+],
+[
+"and",
+53.54,
+"and"
+],
+[
+"bread",
+53.74,
+"bread"
+],
+[
+"with",
+54.14,
+"with"
+],
+[
+"butter",
+54.42,
+"butter."
+]
+],
+"end": 55.02
+},
+{
+"p": 9,
+"text": "He lost 276 pounds.",
+"start": 55.02,
+"words": [
+[
+"he",
+55.02,
+"He"
+],
+[
+"lost",
+55.34,
+"lost"
+],
+[
+"276",
+56.46,
+"276"
+],
+[
+"pounds",
+57.58,
+"pounds."
+]
+],
+"end": 58.22
+},
+{
+"p": 9,
+"text": "And kept it off.",
+"start": 58.22,
+"words": [
+[
+"and",
+58.22,
+"And"
+],
+[
+"kept",
+58.54,
+"kept"
+],
+[
+"it",
+58.98,
+"it"
+],
+[
+"off",
+59.22,
+"off."
+]
+],
+"end": 59.94
+},
+{
+"p": 10,
+"text": "Never try this without doctors.",
+"start": 59.94,
+"words": [
+[
+"never",
+59.94,
+"Never"
+],
+[
+"try",
+60.38,
+"try"
+],
+[
+"this",
+60.74,
+"this"
+],
+[
+"without",
+60.98,
+"without"
+],
+[
+"doctors",
+61.34,
+"doctors."
+]
+],
+"end": 62.34
+},
+{
+"p": 11,
+"text": "Could you go one day?",
+"start": 62.34,
+"words": [
+[
+"could",
+62.34,
+"Could"
+],
+[
+"you",
+62.58,
+"you"
+],
+[
+"go",
+62.86,
+"go"
+],
+[
+"one",
+63.22,
+"one"
+],
+[
+"day",
+63.58,
+"day?"
+]
+],
+"end": 64.03
+}
+]
+}
