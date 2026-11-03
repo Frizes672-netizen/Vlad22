@@ -162,6 +162,6 @@ SC.plan = { // the route: through the connecting door, never in the hallway came
 SC.again = { // "Did you catch it?" — the pocket again, then loop back into frame 0
   draw(t, d, P, E) { if (t < d * .55) { pocketZoom(t, 1); const R = 110 + 8 * Math.sin(t * 8); ctx.strokeStyle = LIAR_RED; ctx.lineWidth = 10; ctx.beginPath(); ctx.arc(540, 960, R, 0, 7); ctx.stroke(); bigTitle('DID YOU CATCH IT?', 300, prog(t, 0, .2), { size: 84, col: '#fff' }); return; }
     bg('#1a0d10', '#07040a'); woodTable(1120, { c1: '#4a2e1c', c2: '#1a100a' }); alarmBeacon(t); velvetBox(540, 1180, 1.1); goldWatch(540, 1000, 1.0, -.15, .8); bigTitle('WATCH AGAIN', 300, prog(t, d * .55, d * .55 + .2), { size: 96, col: '#ffd23f' }); },
-  sfx(d) { return [[0, 'pop', .3], [d * .55, 'rewind', .3, { dur: .8 }]]; }
+  sfx(d) { return [[0, 'pop', .3], [d * .55, 'swoosh_up', .3]]; }
 };
 window.render = function (t) { _baseRenderAng(t); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; if (t < TL.total) drawSubs(t); };
