@@ -1,9 +1,9 @@
 const TL = {
-"total": 48.83000000000006,
+"total": 50.33000000000006,
 "units": [
 {
 "p": 0,
-"text": "Someone stole a two-million-dollar watch from room 1208.",
+"text": "Someone stole a two-million-dollar gold watch from room 1208.",
 "start": 0.0,
 "words": [
 [
@@ -27,732 +27,758 @@ const TL = {
 "two-million-dollar"
 ],
 [
-"watch",
+"gold",
 1.7,
+"gold"
+],
+[
+"watch",
+2.04,
 "watch"
 ],
 [
 "from",
-2.08,
+2.42,
 "from"
 ],
 [
 "room",
-2.42,
+2.76,
 "room"
 ],
 [
 "1208",
-2.76,
+3.1,
 "1208."
 ]
 ],
-"end": 3.73
+"end": 4.07
 },
 {
 "p": 0,
 "text": "One of these three is lying.",
-"start": 3.73,
+"start": 4.07,
 "words": [
 [
 "one",
-3.73,
+4.07,
 "One"
 ],
 [
 "of",
-4.03,
+4.37,
 "of"
 ],
 [
 "these",
-4.28,
+4.62,
 "these"
 ],
 [
 "three",
-4.66,
+5.0,
 "three"
 ],
 [
 "is",
-5.05,
+5.39,
 "is"
 ],
 [
 "lying",
-5.3,
+5.64,
 "lying."
 ]
 ],
-"end": 6.06
+"end": 6.4
 },
 {
 "p": 0,
 "text": "Can you spot who?",
-"start": 6.06,
+"start": 6.4,
 "words": [
 [
 "can",
-6.06,
+6.4,
 "Can"
 ],
 [
 "you",
-6.36,
+6.7,
 "you"
 ],
 [
 "spot",
-6.65,
+6.99,
 "spot"
 ],
 [
 "who",
-6.99,
+7.33,
 "who?"
 ]
 ],
-"end": 7.67
+"end": 8.01
 },
 {
 "p": 1,
 "text": "The maid:",
-"start": 7.67,
+"start": 8.01,
 "words": [
 [
 "the",
-7.67,
+8.01,
 "The"
 ],
 [
 "maid",
-7.96,
+8.3,
 "maid:"
 ]
 ],
-"end": 8.3
+"end": 8.64
 },
 {
 "p": 1,
 "text": "\"I finished this floor at eight.",
-"start": 8.3,
+"start": 8.64,
 "words": [
 [
 "i",
-8.3,
+8.64,
 "\"I"
 ],
 [
 "finished",
-8.52,
+8.86,
 "finished"
 ],
 [
 "this",
-9.04,
+9.38,
 "this"
 ],
 [
 "floor",
-9.38,
+9.72,
 "floor"
 ],
 [
 "at",
-9.77,
+10.11,
 "at"
 ],
 [
 "eight",
-10.02,
+10.36,
 "eight."
 ]
 ],
-"end": 10.78
+"end": 11.12
 },
 {
 "p": 1,
 "text": "Then I was in the laundry room all night.\"",
-"start": 10.78,
+"start": 11.12,
 "words": [
 [
 "then",
-10.78,
+11.12,
 "Then"
 ],
 [
 "i",
-11.12,
+11.46,
 "I"
 ],
 [
 "was",
-11.34,
+11.68,
 "was"
 ],
 [
 "in",
-11.64,
+11.98,
 "in"
 ],
 [
 "the",
-11.89,
+12.23,
 "the"
 ],
 [
 "laundry",
-12.18,
+12.52,
 "laundry"
 ],
 [
 "room",
-12.66,
+13.0,
 "room"
 ],
 [
 "all",
-13.0,
+13.34,
 "all"
 ],
 [
 "night",
-13.29,
+13.63,
 "night.\""
 ]
 ],
-"end": 13.68
+"end": 14.02
 },
 {
 "p": 2,
 "text": "The man next door:",
-"start": 13.68,
+"start": 14.02,
 "words": [
 [
 "the",
-13.68,
+14.02,
 "The"
 ],
 [
 "man",
-13.97,
+14.31,
 "man"
 ],
 [
 "next",
-14.27,
+14.61,
 "next"
 ],
 [
 "door",
-14.61,
+14.95,
 "door:"
 ]
 ],
-"end": 14.95
+"end": 15.29
 },
 {
 "p": 2,
 "text": "\"I went to bed at nine.",
-"start": 14.95,
+"start": 15.29,
 "words": [
 [
 "i",
-14.95,
+15.29,
 "\"I"
 ],
 [
 "went",
-15.17,
+15.51,
 "went"
 ],
 [
 "to",
-15.51,
+15.85,
 "to"
 ],
 [
 "bed",
-15.76,
+16.1,
 "bed"
 ],
 [
 "at",
-16.05,
+16.39,
 "at"
 ],
 [
 "nine",
-16.3,
+16.64,
 "nine."
 ]
 ],
-"end": 17.02
+"end": 17.36
 },
 {
 "p": 2,
 "text": "I slept right through it.\"",
-"start": 17.02,
+"start": 17.36,
 "words": [
 [
 "i",
-17.02,
+17.36,
 "I"
 ],
 [
 "slept",
-17.24,
+17.58,
 "slept"
 ],
 [
 "right",
-17.63,
+17.97,
 "right"
 ],
 [
 "through",
-18.02,
+18.36,
 "through"
 ],
 [
 "it",
-18.49,
+18.83,
 "it.\""
 ]
 ],
-"end": 18.74
+"end": 19.08
 },
 {
 "p": 3,
 "text": "The night guard:",
-"start": 18.74,
+"start": 19.08,
 "words": [
 [
 "the",
-18.74,
+19.08,
 "The"
 ],
 [
 "night",
-19.04,
+19.38,
 "night"
 ],
 [
 "guard",
-19.42,
+19.76,
 "guard:"
 ]
 ],
-"end": 19.81
+"end": 20.15
 },
 {
 "p": 3,
 "text": "\"I watched the hallway camera.",
-"start": 19.81,
+"start": 20.15,
 "words": [
 [
 "i",
-19.81,
+20.15,
 "\"I"
 ],
 [
 "watched",
-20.03,
+20.37,
 "watched"
 ],
 [
 "the",
-20.5,
+20.84,
 "the"
 ],
 [
 "hallway",
-20.8,
+21.14,
 "hallway"
 ],
 [
 "camera",
-21.27,
+21.61,
 "camera."
 ]
 ],
-"end": 22.08
+"end": 22.42
 },
 {
 "p": 3,
 "text": "Nobody came in or out.\"",
-"start": 22.08,
+"start": 22.42,
 "words": [
 [
 "nobody",
-22.08,
+22.42,
 "Nobody"
 ],
 [
 "came",
-22.51,
+22.85,
 "came"
 ],
 [
 "in",
-22.85,
+23.19,
 "in"
 ],
 [
 "or",
-23.1,
+23.44,
 "or"
 ],
 [
 "out",
-23.35,
+23.69,
 "out.\""
 ]
 ],
-"end": 23.65
+"end": 23.99
 },
 {
 "p": 4,
 "text": "You have three seconds.",
-"start": 23.65,
+"start": 23.99,
 "words": [
 [
 "you",
-23.65,
+23.99,
 "You"
 ],
 [
 "have",
-23.94,
+24.28,
 "have"
 ],
 [
 "three",
-24.28,
+24.62,
 "three"
 ],
 [
 "seconds",
-24.67,
+25.01,
 "seconds."
 ]
 ],
-"end": 28.12
+"end": 28.46
 },
 {
 "p": 5,
 "text": "It's the man next door.",
-"start": 28.12,
+"start": 28.46,
 "words": [
 [
 "its",
-28.12,
+28.46,
 "It's"
 ],
 [
 "the",
-28.42,
+28.76,
 "the"
 ],
 [
 "man",
-28.71,
+29.05,
 "man"
 ],
 [
 "next",
-29.01,
+29.35,
 "next"
 ],
 [
 "door",
-29.35,
+29.69,
 "door."
 ]
 ],
-"end": 30.07
+"end": 30.41
 },
 {
 "p": 6,
-"text": "He says he slept all night \u2014 but look at his bed.",
-"start": 30.07,
+"text": "Look at his robe pocket.",
+"start": 30.41,
 "words": [
 [
-"he",
-30.07,
-"He"
-],
-[
-"says",
-30.32,
-"says"
-],
-[
-"he",
-30.66,
-"he"
-],
-[
-"slept",
-30.91,
-"slept"
-],
-[
-"all",
-31.29,
-"all"
-],
-[
-"night",
-31.59,
-"night"
-],
-[
-"but",
-31.97,
-"but"
-],
-[
 "look",
-32.27,
-"look"
+30.41,
+"Look"
 ],
 [
 "at",
-32.61,
+30.75,
 "at"
 ],
 [
 "his",
-32.86,
+31.0,
+"his"
+],
+[
+"robe",
+31.29,
+"robe"
+],
+[
+"pocket",
+31.63,
+"pocket."
+]
+],
+"end": 32.44
+},
+{
+"p": 6,
+"text": "That little gold thing isn't a button.",
+"start": 32.44,
+"words": [
+[
+"that",
+32.44,
+"That"
+],
+[
+"little",
+32.78,
+"little"
+],
+[
+"gold",
+33.21,
+"gold"
+],
+[
+"thing",
+33.55,
+"thing"
+],
+[
+"isnt",
+33.94,
+"isn't"
+],
+[
+"a",
+34.28,
+"a"
+],
+[
+"button",
+34.5,
+"button."
+]
+],
+"end": 35.31
+},
+{
+"p": 6,
+"text": "It's the watch's bracelet.",
+"start": 35.31,
+"words": [
+[
+"its",
+35.31,
+"It's"
+],
+[
+"the",
+35.6,
+"the"
+],
+[
+"watchs",
+35.9,
+"watch's"
+],
+[
+"bracelet",
+36.33,
+"bracelet."
+]
+],
+"end": 37.23
+},
+{
+"p": 7,
+"text": "And his bed?",
+"start": 37.23,
+"words": [
+[
+"and",
+37.23,
+"And"
+],
+[
+"his",
+37.52,
 "his"
 ],
 [
 "bed",
-33.15,
-"bed."
+37.82,
+"bed?"
 ]
 ],
-"end": 33.83
+"end": 38.49
 },
 {
-"p": 6,
+"p": 7,
 "text": "Still perfectly made.",
-"start": 33.83,
+"start": 38.49,
 "words": [
 [
 "still",
-33.83,
+38.49,
 "Still"
 ],
 [
 "perfectly",
-34.21,
+38.88,
 "perfectly"
 ],
 [
 "made",
-34.78,
+39.44,
 "made."
 ]
 ],
-"end": 35.5
-},
-{
-"p": 6,
-"text": "And the chocolate the maid left on his pillow at eight\u2026 is still there.",
-"start": 35.5,
-"words": [
-[
-"and",
-35.5,
-"And"
-],
-[
-"the",
-35.79,
-"the"
-],
-[
-"chocolate",
-36.09,
-"chocolate"
-],
-[
-"the",
-36.65,
-"the"
-],
-[
-"maid",
-36.95,
-"maid"
-],
-[
-"left",
-37.29,
-"left"
-],
-[
-"on",
-37.63,
-"on"
-],
-[
-"his",
-37.88,
-"his"
-],
-[
-"pillow",
-38.17,
-"pillow"
-],
-[
-"at",
-38.6,
-"at"
-],
-[
-"eight",
-38.85,
-"eight\u2026"
-],
-[
-"is",
-39.69,
-"is"
-],
-[
-"still",
-39.94,
-"still"
-],
-[
-"there",
-40.32,
-"there."
-]
-],
-"end": 41.09
+"end": 40.16
 },
 {
 "p": 7,
 "text": "He never went to bed.",
-"start": 41.09,
+"start": 40.16,
 "words": [
 [
 "he",
-41.09,
+40.16,
 "He"
 ],
 [
 "never",
-41.34,
+40.41,
 "never"
 ],
 [
 "went",
-41.72,
+40.8,
 "went"
 ],
 [
 "to",
-42.06,
+41.14,
 "to"
 ],
 [
 "bed",
-42.31,
+41.39,
 "bed."
 ]
 ],
-"end": 42.99
+"end": 42.06
 },
 {
-"p": 7,
-"text": "He went through the connecting door.",
-"start": 42.99,
+"p": 8,
+"text": "He went through the connecting door \u2014 so the hallway camera never saw him.",
+"start": 42.06,
 "words": [
 [
 "he",
-42.99,
+42.06,
 "He"
 ],
 [
 "went",
-43.24,
+42.31,
 "went"
 ],
 [
 "through",
-43.58,
+42.65,
 "through"
 ],
 [
 "the",
-44.05,
+43.13,
 "the"
 ],
 [
 "connecting",
-44.35,
+43.42,
 "connecting"
 ],
 [
 "door",
-44.96,
-"door."
+44.03,
+"door"
+],
+[
+"so",
+44.37,
+"so"
+],
+[
+"the",
+44.62,
+"the"
+],
+[
+"hallway",
+44.92,
+"hallway"
+],
+[
+"camera",
+45.39,
+"camera"
+],
+[
+"never",
+45.82,
+"never"
+],
+[
+"saw",
+46.21,
+"saw"
+],
+[
+"him",
+46.5,
+"him."
 ]
 ],
-"end": 45.68
+"end": 47.18
 },
 {
-"p": 8,
+"p": 9,
 "text": "Did you catch it?",
-"start": 45.68,
+"start": 47.18,
 "words": [
 [
 "did",
-45.68,
+47.18,
 "Did"
 ],
 [
 "you",
-45.97,
+47.47,
 "you"
 ],
 [
 "catch",
-46.27,
+47.77,
 "catch"
 ],
 [
 "it",
-46.65,
+48.15,
 "it?"
 ]
 ],
-"end": 47.28
+"end": 48.78
 },
 {
-"p": 8,
+"p": 9,
 "text": "Watch again.",
-"start": 47.28,
+"start": 48.78,
 "words": [
 [
 "watch",
-47.28,
+48.78,
 "Watch"
 ],
 [
 "again",
-47.67,
+49.17,
 "again."
 ]
 ],
-"end": 48.83
+"end": 50.33
 }
 ]
 };

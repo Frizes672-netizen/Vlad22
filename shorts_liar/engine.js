@@ -777,6 +777,7 @@ function personBody(u, P, C, sil) {
     ctx.fillStyle = grad(-7 * u, 0, 7 * u, 0, [[0, '#dcd8cf'], [.5, '#fbfaf6'], [1, '#d8d4ca']]); ctx.beginPath(); ctx.moveTo(-4.2 * u, sy + 6 * u); ctx.lineTo(4.2 * u, sy + 6 * u); ctx.lineTo(4.6 * u, -54 * u); ctx.lineTo(8.6 * u, -50 * u); ctx.lineTo(9.4 * u, -34 * u); ctx.lineTo(-9.4 * u, -34 * u); ctx.lineTo(-8.6 * u, -50 * u); ctx.lineTo(-4.6 * u, -54 * u); ctx.closePath(); ctx.fill();
     ctx.strokeStyle = 'rgba(0,0,0,.12)'; ctx.lineWidth = .35 * u; ctx.stroke(); ctx.fillStyle = '#e9e5dc'; ctx.fillRect(-9 * u, -54.6 * u, 18 * u, 1.6 * u); // waist band
     ctx.fillStyle = '#e7e3da'; for (let i = 0; i < 3; i++) { ctx.beginPath(); ctx.arc(0, sy + 8.5 * u + i * 3 * u, .45 * u, 0, 7); ctx.fill(); }
+    if (C.keycard) { ctx.strokeStyle = '#8a1c2a'; ctx.lineWidth = .3 * u; ctx.beginPath(); ctx.moveTo(4 * u, -54 * u); ctx.lineTo(5 * u, -50 * u); ctx.stroke(); ctx.fillStyle = '#e8e8ea'; rr(3.6 * u, -50.4 * u, 3 * u, 2 * u, .3 * u); ctx.fill(); ctx.fillStyle = '#8a1c2a'; ctx.fillRect(3.6 * u, -50.4 * u, 3 * u, .5 * u); } // master key card (red herring)
   }
   else if (!sil && C.uniform === 'robe') { // bathrobe: shawl lapels, V of undershirt, tied belt
     ctx.fillStyle = '#efe9df'; ctx.beginPath(); ctx.moveTo(-2.8 * u, ny); ctx.lineTo(2.8 * u, ny); ctx.lineTo(0, sy + 9 * u); ctx.closePath(); ctx.fill(); // undershirt V
@@ -784,6 +785,8 @@ function personBody(u, P, C, sil) {
     ctx.strokeStyle = 'rgba(0,0,0,.12)'; ctx.lineWidth = .3 * u; for (let i = 0; i < 6; i++) { ctx.beginPath(); ctx.moveTo(-9 * u + i * 3.6 * u, sy + 8 * u); ctx.lineTo(-9.5 * u + i * 3.7 * u, -50 * u); ctx.stroke(); } // terry texture
     ctx.fillStyle = shade(C.top, .75); ctx.fillRect(-10.4 * u, -56 * u, 20.8 * u, 2.2 * u); ctx.beginPath(); ctx.ellipse(2 * u, -55 * u, 1.6 * u, 1.2 * u, 0, 0, 7); ctx.fill();
     ctx.fillRect(1.2 * u, -55 * u, 1.2 * u, 7 * u); ctx.fillRect(2.8 * u, -55 * u, 1.2 * u, 6 * u); // belt knot + tails
+    ctx.fillStyle = shade(C.top, .9); rr(-9.4 * u, -67 * u, 5.6 * u, 6.4 * u, .8 * u); ctx.fill(); ctx.strokeStyle = 'rgba(0,0,0,.18)'; ctx.lineWidth = .3 * u; ctx.stroke(); // patch pocket
+    if (C.pocketGold) { ctx.fillStyle = '#d9b45a'; rr(-8.2 * u, -67.9 * u, 1.6 * u, 1.1 * u, .3 * u); ctx.fill(); rr(-6.5 * u, -67.6 * u, 1.4 * u, .9 * u, .3 * u); ctx.fill(); ctx.fillStyle = 'rgba(255,245,210,.9)'; ctx.fillRect(-7.9 * u, -67.8 * u, .5 * u, .3 * u); } // a gold link peeking out
   }
   else if (!sil && C.uniform === 'guard') { // security shirt: collar, badge, shoulder patches, pocket flaps, radio, belt
     ctx.fillStyle = shade(C.top, .8); for (const k of [-1, 1]) { ctx.beginPath(); ctx.moveTo(k * .4 * u, ny + 3.4 * u); ctx.lineTo(k * 4 * u, ny - .3 * u); ctx.lineTo(k * 2.6 * u, ny + 4.6 * u); ctx.closePath(); ctx.fill(); }
@@ -907,7 +910,7 @@ function gait(p) { // p ∈ [0,1): 0 = heel strike of this leg; returns angles i
 function personSide(x, y, h, o = {}) {
   const u = h / 100, p = (((o.walk || 0) / (Math.PI * 2)) % 1 + 1) % 1, L = o.light ?? 1;
   const C = { skin: o.skin || SKIN[o.skinIdx || 0], top: o.top || '#59606e', pants: o.pants || '#2d3f5e', shoe: o.shoe || '#262626', hair: o.hair || '#3a2618',
-    cap: o.cap === true ? (o.capColor || '#1f2d55') : (o.cap || null), fem: o.fem, headphones: o.headphones, wound: o.wound, heavy: o.heavy || 0, scarf: o.scarf, uniform: o.uniform };
+    cap: o.cap === true ? (o.capColor || '#1f2d55') : (o.cap || null), fem: o.fem, headphones: o.headphones, wound: o.wound, heavy: o.heavy || 0, scarf: o.scarf, uniform: o.uniform, pocketGold: o.pocketGold, keycard: o.keycard };
   const sil = (o.silhouette || (o.color && o.color !== 'none' && !o.lit)) ? (o.color || '#0b0d12') : null;
   const TH = 24 * u, SH = 24 * u, FOOT = 8.4 * u, HEEL = 2 * u, SOLE = 3 * u;
   const leg = (q) => { const g = gait(q), hip = [0, 0], kn = [Math.sin(g.thigh) * TH, Math.cos(g.thigh) * TH], sa = g.thigh - g.knee, an = [kn[0] + Math.sin(sa) * SH, kn[1] + Math.cos(sa) * SH];
@@ -1067,7 +1070,7 @@ function person(x, y, h, o = {}) {
     [elL, hdL] = frontArm(shL, -1, -sw); [elR, hdR] = frontArm(shR, 1, sw); }
   const P = { hipL, hipR, kneeL, kneeR, ankL, ankR, shL, shR, elL, elR, hdL, hdR, sy, headY, tilt: o.tilt || (shrug * .06) || (o.walk ? .025 * Math.cos(Math.PI * 2 * (pL - .25)) : 0), mouth: o.mouth, shock: o.shock, closed: o.closed || 0, fall: !!o.fall, fallT: o.fallT || 0, liftL, liftR, depthL, depthR, handEdge: !!(o.walk && !shrug && !armUp && !o.point && !o.fall) };
   const C = { skin: o.skin || SKIN[o.skinIdx || 0], top: o.top || '#59606e', pants: o.pants || '#2d3f5e', shoe: o.shoe || '#262626', hair: o.hair || '#3a2618',
-    cap: o.cap === true ? (o.capColor || '#1f2d55') : (o.cap || null), light: o.light ?? 1, fem: o.fem, headphones: o.headphones, wound: o.wound, heavy: o.heavy || 0, scarf: o.scarf, uniform: o.uniform };
+    cap: o.cap === true ? (o.capColor || '#1f2d55') : (o.cap || null), light: o.light ?? 1, fem: o.fem, headphones: o.headphones, wound: o.wound, heavy: o.heavy || 0, scarf: o.scarf, uniform: o.uniform, pocketGold: o.pocketGold, keycard: o.keycard };
   if (o.backWings) wings(0, sy + 10 * u, o.backWings.s, o.backWings.spread, o.backWings);
   if (o.rim) { ctx.save(); ctx.globalAlpha *= .55; ctx.translate(o.light === -1 ? -.7 * u : .7 * u, -.3 * u); personBody(u, P, C, o.rim); ctx.restore(); }
   const sil = (o.silhouette || (o.color && o.color !== 'none' && !o.lit)) ? (o.color || '#0b0d12') : null;

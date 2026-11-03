@@ -39,7 +39,7 @@ function hotelRoom(t, o = {}) { // room 1210: tufted headboard, crisp made bed, 
   ctx.strokeStyle = 'rgba(160,170,180,.5)'; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(190, 920); ctx.lineTo(770, 920); ctx.stroke(); ctx.fillStyle = '#5b2633'; ctx.beginPath(); ctx.moveTo(176, 1010); ctx.lineTo(784, 1010); ctx.lineTo(796, 1070); ctx.lineTo(166, 1070); ctx.closePath(); ctx.fill(); // fold line + bed runner
   ctx.fillStyle = '#e8eaee'; ctx.fillRect(160, 1100, 640, 70); ctx.fillStyle = '#3a2d22'; ctx.fillRect(170, 1170, 620, 30);
   for (const px of [330, 590]) { ctx.fillStyle = grad(px - 120, 760, px + 120, 880, [[0, '#ffffff'], [1, '#d7dbe0']]); rr(px - 120, 780, 240, 100, 40); ctx.fill(); ctx.fillStyle = 'rgba(0,0,0,.06)'; rr(px - 110, 860, 220, 14, 7); ctx.fill(); }
-  chocolatePiece(o.chocX || 600, o.chocY || 828, o.chocS || 1); // the clue: still on the pillow
+  ctx.fillStyle = grad(0, 836, 0, 880, [[0, '#7a3446'], [1, '#4e1f2c']]); rr(250, 836, 470, 44, 22); ctx.fill(); ctx.fillStyle = 'rgba(255,255,255,.12)'; rr(270, 842, 430, 8, 4); ctx.fill(); // bolster cushion
   for (const nx of [120, 840]) { ctx.fillStyle = '#4a3828'; ctx.fillRect(nx - 70, 860, 140, 160); ctx.fillStyle = '#e8dcc4'; ctx.beginPath(); ctx.moveTo(nx - 46, 700); ctx.lineTo(nx + 46, 700); ctx.lineTo(nx + 62, 780); ctx.lineTo(nx - 62, 780); ctx.closePath(); ctx.fill(); ctx.fillStyle = '#6b5a44'; ctx.fillRect(nx - 6, 780, 12, 80); glow(nx, 760, 280, 'rgba(255,200,120,.45)'); }
   ctx.fillStyle = '#111'; rr(805, 820, 80, 40, 8); ctx.fill(); label('11:52', 845, 850, 26, { weight: 900, color: '#ff4d4d', font: MONO }); // alarm clock
   ctx.fillStyle = grad(0, 1250, 0, H, [[0, '#5a3a30'], [1, '#2a1a15']]); ctx.fillRect(0, 1200, W, H); ctx.fillStyle = 'rgba(255,255,255,.04)'; for (let i = 0; i < 12; i++) ctx.fillRect(i * 100, 1200, 50, H); }
@@ -55,7 +55,7 @@ function laundryRoom(t) { bg('#cfd6da', '#9aa4aa'); ctx.fillStyle = '#e9eef0'; c
 function cart(x, y, s) { ctx.save(); ctx.translate(x, y); ctx.scale(s, s); ctx.fillStyle = 'rgba(0,0,0,.3)'; ctx.beginPath(); ctx.ellipse(0, 10, 260, 26, 0, 0, 7); ctx.fill();
   ctx.fillStyle = '#6b5a4a'; rr(-240, -420, 480, 410, 16); ctx.fill(); ctx.fillStyle = '#8a7660'; rr(-230, -410, 460, 120, 10); ctx.fill();
   for (let k = 0; k < 3; k++) { ctx.fillStyle = ['#ffffff', '#eef2f5', '#f5f0e6'][k]; rr(-210, -260 + k * 70, 200, 56, 10); ctx.fill(); rr(10, -260 + k * 70, 200, 56, 10); ctx.fill(); }
-  ctx.fillStyle = '#2a2a2e'; rr(-200, -470, 200, 60, 10); ctx.fill(); for (let i = 0; i < 5; i++) chocolatePiece(-170 + i * 36, -440, .5); // tray of pillow chocolates (fair-play hint)
+  ctx.fillStyle = '#2a2a2e'; rr(-200, -470, 200, 60, 10); ctx.fill(); for (let i = 0; i < 5; i++) { ctx.fillStyle = ['#e8f1f5', '#f5e9d8'][i % 2]; rr(-188 + i * 38, -500, 26, 40, 6); ctx.fill(); } // tray of toiletries
   ctx.fillStyle = '#3aa0d8'; rr(80, -520, 50, 110, 12); ctx.fill(); ctx.fillStyle = '#e9e9e9'; rr(90, -550, 30, 34, 6); ctx.fill(); // spray bottle
   ctx.fillStyle = '#111'; for (const wx of [-200, 200]) { ctx.beginPath(); ctx.arc(wx, 0, 22, 0, 7); ctx.fill(); } ctx.restore(); }
 function corridorFeed(x, y, w, h, t, o = {}) { ctx.save(); ctx.beginPath(); ctx.rect(x, y, w, h); ctx.clip(); ctx.fillStyle = '#2b2f2a'; ctx.fillRect(x, y, w, h); const vx = x + w / 2, vy = y + h * .42;
@@ -68,7 +68,7 @@ function corridorFeed(x, y, w, h, t, o = {}) { ctx.save(); ctx.beginPath(); ctx.
   if (Math.floor(t * 2) % 2 === 0) { ctx.fillStyle = '#ff3b3b'; ctx.beginPath(); ctx.arc(x + w - 30, y + 26, 8, 0, 7); ctx.fill(); } }
 function securityOffice(t) { bg('#0d1117', '#05070a'); ctx.fillStyle = '#161b22'; ctx.fillRect(40, 180, 1000, 820); glow(540, 560, 800, 'rgba(120,200,160,.18)');
   corridorFeed(80, 220, 600, 400, t, { ts: 'CAM 12  23:' + String(40 + Math.floor(t / 6) % 20).padStart(2, '0') + ':' + String(Math.floor(t * 7) % 60).padStart(2, '0') });
-  for (let i = 0; i < 4; i++) { const mx = 700 + (i % 2) * 170, my = 220 + Math.floor(i / 2) * 200; ctx.fillStyle = '#0a0d12'; ctx.fillRect(mx, my, 160, 190); corridorFeed(mx + 6, my + 6, 148, 178, t + i, { ts: 'CAM ' + (13 + i) }); }
+  for (let i = 0; i < 4; i++) { const mx = 700 + (i % 2) * 170, my = 220 + Math.floor(i / 2) * 200; ctx.fillStyle = '#0a0d12'; ctx.fillRect(mx, my, 160, 190); if (i === 3) { const R = rnd(Math.floor(t * 24)); for (let k = 0; k < 260; k++) { ctx.fillStyle = `rgba(255,255,255,${R() * .5})`; ctx.fillRect(mx + 6 + R() * 148, my + 6 + R() * 178, 3, 2); } label('NO SIGNAL', mx + 80, my + 100, 18, { weight: 900, color: '#fff' }); label('CAM 16 · LOBBY', mx + 80, my + 128, 13, { weight: 800, color: '#9aa' }); } else corridorFeed(mx + 6, my + 6, 148, 178, t + i, { ts: 'CAM ' + (13 + i) }); }
   ctx.fillStyle = '#0a0d12'; ctx.fillRect(80, 640, 960, 340); for (let i = 0; i < 3; i++) { ctx.fillStyle = '#10151c'; rr(100 + i * 310, 660, 290, 300, 10); ctx.fill(); corridorFeed(110 + i * 310, 670, 270, 280, t + 9 + i, { ts: 'CAM ' + (20 + i) }); }
   floor(1180, '#1a1f26', '#0a0d12'); }
 function desk(y) { ctx.fillStyle = grad(0, y, 0, y + 60, [[0, '#3a3f46'], [1, '#22262b']]); ctx.fillRect(-20, y, W + 40, 60); ctx.fillStyle = '#1b1e22'; ctx.fillRect(-20, y + 60, W + 40, H); ctx.fillStyle = '#2a2e34'; rr(300, y - 30, 420, 40, 8); ctx.fill(); }
@@ -89,7 +89,7 @@ function floorPlan(t, pathK, o = {}) { // top-down: rooms 1208 & 1210, hallway w
   ctx.fillStyle = '#0d1b2a'; ctx.fillRect(250, 970, 140, 24); ctx.fillRect(690, 970, 140, 24); // room doors
   ctx.fillStyle = 'rgba(232,241,255,.05)'; ctx.fillRect(60, 1000, 960, 200); label('HALLWAY', 540, 1120, 40, { weight: 900, color: 'rgba(232,241,255,.6)', spacing: 8 });
   ctx.fillStyle = 'rgba(255,80,80,.16)'; ctx.beginPath(); ctx.moveTo(990, 1100); ctx.lineTo(70, 1010); ctx.lineTo(70, 1190); ctx.closePath(); ctx.fill(); ctx.fillStyle = '#ff5a5a'; rr(975, 1080, 50, 40, 8); ctx.fill(); label('CAM', 1000, 1150, 24, { weight: 900, color: '#ff8a8a' }); // camera cone
-  ctx.fillStyle = '#e8f1ff'; rr(Rm.x + 220, Rm.y + 160, 150, 220, 16); ctx.fill(); chocolatePiece(Rm.x + 295, Rm.y + 210, .7); label('BED', Rm.x + 295, Rm.y + 300, 26, { weight: 900, color: '#0d1b2a' }); // bed (not slept in)
+  ctx.fillStyle = '#e8f1ff'; rr(Rm.x + 220, Rm.y + 160, 150, 220, 16); ctx.fill(); label('BED', Rm.x + 295, Rm.y + 280, 26, { weight: 900, color: '#0d1b2a' }); // bed (not slept in)
   ctx.fillStyle = '#1d2a5c'; rr(L.x + 60, L.y + 160, 110, 70, 10); ctx.fill(); label('SAFE', L.x + 115, L.y + 205, 24, { weight: 900, color: '#ffd23f' });
   if (pathK > 0) { const pts = [[Rm.x + 200, Rm.y + 470], [Rm.x + 60, Rm.y + 280], [520, 700], [L.x + 300, L.y + 260], [L.x + 115, L.y + 250]]; ctx.strokeStyle = '#ff4d5a'; ctx.lineWidth = 10; ctx.setLineDash([24, 16]); ctx.lineDashOffset = -t * 60; ctx.beginPath();
     let total = 0; const seg = []; for (let i = 1; i < pts.length; i++) { const l = Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]); seg.push(l); total += l; } let rem = total * clamp(pathK); ctx.moveTo(pts[0][0], pts[0][1]); let end = pts[0];
@@ -110,12 +110,12 @@ SC.hook = { // FRAME 0: a gloved hand lifts the gold watch out of its box; alarm
   sfx(d, P, E) { return [[0, 'alarm', .3, { dur: E('one', 1, 3.6) }], [0, 'boom', .35], [E('one', 1, 3.6) - .2, 'shutter', .45], [E('spot', 1, 6.2) - .1, 'stamp', .45]]; }
 };
 SC.maid = {
-  draw(t, d, P, E) { const tl = E('laundry', 1, 3.6); laundryRoom(t); cart(270, 1250, 1.0); ctx.save(); cam(540, 900, 1.0 + t * .015); person(760, 2050, 1500, MAID({ mouth: Math.abs(Math.sin(t * 12)) * .5 })); ctx.restore();
+  draw(t, d, P, E) { const tl = E('laundry', 1, 3.6); laundryRoom(t); cart(270, 1250, 1.0); ctx.save(); cam(540, 900, 1.0 + t * .015); person(760, 2050, 1500, MAID({ keycard: true, mouth: Math.abs(Math.sin(t * 12)) * .5 })); ctx.restore();
     counterBox('SUSPECT #1', 'THE MAID', 540, 300, prog(t, 0, .25), { size: 58, accent: '#ffd23f' }); if (t > tl - .2) label('“LAUNDRY ROOM · ALL NIGHT”', 540, 470, 38, { weight: 900, color: '#1b1f24', alpha: prog(t, tl - .2, tl + .1) }); },
   sfx(d) { return [[0, 'washer', .35, { dur: d }], [0, 'pop', .3]]; }
 };
 SC.neighbor = { // the clue is in plain sight: crisp bed, chocolate still on the pillow
-  draw(t, d, P, E) { hotelRoom(t); ctx.save(); cam(540, 900, 1.0 + t * .012); person(860, 2080, 1480, NEIGH({ mouth: Math.abs(Math.sin(t * 11)) * .5 })); ctx.restore();
+  draw(t, d, P, E) { hotelRoom(t); ctx.save(); cam(540, 900, 1.0 + t * .012); person(860, 2080, 1480, NEIGH({ pocketGold: true, mouth: Math.abs(Math.sin(t * 11)) * .5 })); ctx.restore();
     counterBox('SUSPECT #2', 'THE MAN NEXT DOOR', 540, 300, prog(t, 0, .25), { size: 50, accent: '#ffd23f' }); label('“ASLEEP SINCE 9 PM”', 540, 470, 40, { weight: 900, color: '#2a1f14', alpha: prog(t, 1, 1.3) }); },
   sfx(d) { return [[0, 'hum', .25, { dur: d }], [0, 'pop', .3]]; }
 };
@@ -133,23 +133,35 @@ SC.countdown = { // 3 seconds to decide
     if (t > ts) { const left = 3 - (t - ts), n = Math.max(1, Math.ceil(left)); const frac = left - Math.floor(left); if (left > 0) { dayRing(540, 1150, 120, 1 - (t - ts) / 3, '#ffd23f'); bigNum(String(n), 540, 1150, 170, '#fff', { glow: 'rgba(255,210,80,.8)' }); } } },
   sfx(d, P, E) { const ts = E('seconds', 1, 1.2) + .25; return [[ts, 'tick', .5], [ts + 1, 'tick', .5], [ts + 2, 'tick', .5]]; }
 };
-SC.reveal = { // it's the man next door: the made bed and the chocolate
-  draw(t, d, P, E) { const tb = E('bed', 1, 3.6), tm = E('perfectly', 1, 5.6), tc = E('chocolate', 1, 7.6), tt = E('still', 2, 10);
-    if (t < tb - .3) { bg('#101318', '#050608'); glow(540, 900, 900, 'rgba(255,60,70,.2)'); suspectCard(540, 820, 520, 2, 'Next door', () => { hotelRoom(0); person(560, 2100, 1650, NEIGH()); }, { liar: prog(t, .1, .4) }); return; }
-    const z = eio(prog(t, tb - .3, tc)); bg('#101318', '#050608'); ctx.save(); cam(lerp(540, 600, z), lerp(960, 828, z), lerp(1.0, 2.1, z)); hotelRoom(t, {}); ctx.restore();
-    if (t > tm) { ctx.strokeStyle = 'rgba(255,210,63,.9)'; ctx.lineWidth = 6; ctx.setLineDash([18, 12]); rr(80, 760, 920, 600, 30); ctx.globalAlpha = prog(t, tm, tm + .3) * (1 - prog(t, tc - .2, tc)); ctx.stroke(); ctx.setLineDash([]); ctx.globalAlpha = 1;
-      if (t < tc - .2) label('NOT SLEPT IN', 540, 330, 70, { weight: 900, color: '#ffd23f', shadow: 'rgba(0,0,0,.7)', alpha: prog(t, tm, tm + .3) }); }
-    if (t > tc - .2) { const k = eback(prog(t, tc - .2, tc + .2)); ctx.strokeStyle = LIAR_RED; ctx.lineWidth = 10; ctx.shadowColor = LIAR_RED; ctx.shadowBlur = 30; ctx.beginPath(); ctx.arc(540, 960, 120 * k, 0, 7); ctx.stroke(); ctx.shadowBlur = 0;
-      label(t > tt - .1 ? 'STILL THERE' : 'LEFT AT 8:00 PM', 540, 330, 70, { weight: 900, color: '#fff', shadow: 'rgba(0,0,0,.7)' }); } },
-  sfx(d, P, E) { return [[.1, 'stamp', .5], [E('bed', 1, 3.6) - .3, 'whoosh', .35], [E('chocolate', 1, 7.6) - .2, 'chime', .45], [E('still', 2, 10), 'boom', .3]]; }
+const POCKET_CAM = [860 - 7.4 * 14.8, 2080 - 67.6 * 14.8]; // the robe pocket of the neighbor in the room shot (h = 1480)
+function pocketZoom(t, z) { bg('#101318', '#050608'); ctx.save(); cam(lerp(540, POCKET_CAM[0], eio(clamp(z))), lerp(960, POCKET_CAM[1], eio(clamp(z))), lerp(1.0, 2.8, eio(clamp(z)))); hotelRoom(t); person(860, 2080, 1480, NEIGH({ pocketGold: true })); ctx.restore(); }
+SC.liar = { // "It's the man next door."
+  draw(t, d) { bg('#101318', '#050608'); glow(540, 900, 900, 'rgba(255,60,70,.2)'); suspectCard(540, 820, 520, 2, 'Next door', () => { hotelRoom(0); person(560, 2100, 1650, NEIGH({ pocketGold: true })); }, { liar: prog(t, .1, .4) }); },
+  sfx() { return [[.1, 'stamp', .5]]; }
+};
+SC.pocket = { // look at his robe pocket — that gold "button" is the watch's bracelet
+  draw(t, d, P, E) { const tb = E('button', 1, 2.2), tr = E('bracelet', 1, 4.6);
+    if (t < tr - .2) { pocketZoom(t, prog(t, 0, 1.2)); if (t > .9) { const k = eback(prog(t, .9, 1.25)); ctx.strokeStyle = LIAR_RED; ctx.lineWidth = 10; ctx.shadowColor = LIAR_RED; ctx.shadowBlur = 26; ctx.beginPath(); ctx.arc(540, 960, 110 * k, 0, 7); ctx.stroke(); ctx.shadowBlur = 0; }
+      bigTitle(t < tb - .1 ? 'LOOK AT HIS POCKET' : 'NOT A BUTTON…', 300, prog(t, 0, .2), { size: 80, col: '#fff' }); return; }
+    const R = rnd(3); ctx.fillStyle = '#b9a48c'; ctx.fillRect(0, 0, W, H); ctx.strokeStyle = 'rgba(0,0,0,.08)'; ctx.lineWidth = 3; for (let x = 0; x < W; x += 18) { ctx.beginPath(); ctx.moveTo(x + R() * 4, 0); ctx.lineTo(x + R() * 4, H); ctx.stroke(); } // terry cloth
+    const k = eout(prog(t, tr - .2, tr + .8)); goldWatch(540, lerp(1150, 760, k), 1.3, -.1, .6 + .4 * Math.sin(t * 6));
+    ctx.fillStyle = grad(0, 900, 0, 1400, [[0, '#a8937a'], [1, '#8f7b63']]); rr(200, 920, 680, 520, 40); ctx.fill(); ctx.strokeStyle = 'rgba(0,0,0,.2)'; ctx.lineWidth = 5; rr(200, 920, 680, 520, 40); ctx.stroke(); ctx.fillStyle = 'rgba(0,0,0,.18)'; ctx.fillRect(220, 920, 640, 18); // pocket in front of the watch
+    bigTitle("IT'S THE WATCH", 300, prog(t, tr - .1, tr + .2), { size: 90, col: '#ffd23f' }); },
+  sfx(d, P, E) { return [[.9, 'pop', .35], [E('bracelet', 1, 4.6) - .2, 'gold', .5]]; }
+};
+SC.bed = { // and his bed? still perfectly made — he never went to bed
+  draw(t, d, P, E) { const tm = E('perfectly', 1, 1.4); const z = eio(prog(t, 0, 1.2)); bg('#101318', '#050608'); ctx.save(); cam(lerp(540, 480, z), lerp(960, 900, z), lerp(1.0, 1.6, z)); hotelRoom(t); ctx.restore();
+    if (t > tm - .1) { ctx.strokeStyle = 'rgba(255,210,63,.95)'; ctx.lineWidth = 7; ctx.setLineDash([20, 12]); ctx.globalAlpha = prog(t, tm - .1, tm + .2); rr(60, 640, 900, 620, 30); ctx.stroke(); ctx.setLineDash([]); ctx.globalAlpha = 1; }
+    bigTitle(t > tm - .1 ? 'NOT SLEPT IN' : 'AND HIS BED?', 300, prog(t, 0, .2), { size: 84, col: t > tm - .1 ? '#ffd23f' : '#fff' }); },
+  sfx(d, P, E) { return [[0, 'whoosh', .3], [E('perfectly', 1, 1.4) - .1, 'chime', .4]]; }
 };
 SC.plan = { // the route: through the connecting door, never in the hallway camera
-  draw(t, d, P, E) { const tc = E('connecting', 1, 2.6); floorPlan(t, prog(t, tc - .6, d - .3), { door: prog(t, tc - .2, tc + .2) }); label('HE NEVER USED THE HALLWAY', 540, 300, 52, { weight: 900, color: '#fff', alpha: prog(t, .2, .5) }); },
+  draw(t, d, P, E) { const tc = E('connecting', 1, .6), tcam = E('camera', 1, 3); floorPlan(t, prog(t, tc - .3, tcam), { door: prog(t, tc - .2, tc + .2) }); label(t > tcam - .2 ? 'THE CAMERA NEVER SAW HIM' : 'THROUGH THE CONNECTING DOOR', 540, 300, 50, { weight: 900, color: '#fff', alpha: prog(t, .1, .4) }); },
   sfx(d, P, E) { return [[0, 'hum', .25, { dur: d }], [E('connecting', 1, 2.6) - .3, 'creak', .4], [E('connecting', 1, 2.6), 'steps', .3, { dur: 1.6 }]]; }
 };
-SC.again = { // replay prompt, then loop back into frame 0
-  draw(t, d, P, E) { const k = prog(t, 0, d); if (t < d * .55) { bg('#101318', '#050608'); ctx.save(); cam(600, 828, 2.4); hotelRoom(t); ctx.restore(); const R = 120 + 10 * Math.sin(t * 8); ctx.strokeStyle = LIAR_RED; ctx.lineWidth = 10; ctx.beginPath(); ctx.arc(540, 960, R, 0, 7); ctx.stroke(); bigTitle('DID YOU CATCH IT?', 300, prog(t, 0, .2), { size: 84, col: '#fff' }); return; }
-    bg('#1a0d10', '#07040a'); woodTable(1180, { c1: '#4a2e1c', c2: '#1a100a' }); alarmBeacon(t); velvetBox(540, 1240, 1.2); goldWatch(540, 1150, 1.15, -.3, .8); bigTitle('WATCH AGAIN', 300, prog(t, d * .55, d * .55 + .2), { size: 96, col: '#ffd23f' }); },
+SC.again = { // "Did you catch it?" — the pocket again, then loop back into frame 0
+  draw(t, d, P, E) { if (t < d * .55) { pocketZoom(t, 1); const R = 110 + 8 * Math.sin(t * 8); ctx.strokeStyle = LIAR_RED; ctx.lineWidth = 10; ctx.beginPath(); ctx.arc(540, 960, R, 0, 7); ctx.stroke(); bigTitle('DID YOU CATCH IT?', 300, prog(t, 0, .2), { size: 84, col: '#fff' }); return; }
+    bg('#1a0d10', '#07040a'); woodTable(1120, { c1: '#4a2e1c', c2: '#1a100a' }); alarmBeacon(t); velvetBox(540, 1180, 1.1); goldWatch(540, 1000, 1.0, -.15, .8); bigTitle('WATCH AGAIN', 300, prog(t, d * .55, d * .55 + .2), { size: 96, col: '#ffd23f' }); },
   sfx(d) { return [[0, 'pop', .3], [d * .55, 'rewind', .3, { dur: .8 }]]; }
 };
 window.render = function (t) { _baseRenderAng(t); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; if (t < TL.total) drawSubs(t); };
