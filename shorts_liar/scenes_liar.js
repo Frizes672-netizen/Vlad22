@@ -124,14 +124,35 @@ SC.guard = {
     counterBox('SUSPECT #3', 'THE NIGHT GUARD', 540, 300, prog(t, 0, .25), { size: 52, accent: '#ffd23f' }); if (t > tn - .2) label('“NOBODY IN THE HALLWAY”', 540, 470, 38, { weight: 900, color: '#e8f5ea', alpha: prog(t, tn - .2, tn + .1) }); },
   sfx(d) { return [[0, 'hum', .3, { dur: d }], [0, 'pop', .3]]; }
 };
-SC.countdown = { // 3 seconds to decide
-  draw(t, d, P, E) { const ts = E('seconds', 1, 1.2) + .25; bg('#101318', '#050608'); glow(540, 900, 900, 'rgba(255,210,80,.18)');
-    suspectCard(190, 760, 300, 1, 'The maid', () => { laundryRoom(0); person(540, 2100, 1650, MAID()); }, { rot: -.05 });
-    suspectCard(540, 730, 300, 2, 'Next door', () => { hotelRoom(0); person(560, 2100, 1650, NEIGH()); }, { rot: .02 });
-    suspectCard(890, 760, 300, 3, 'The guard', () => { securityOffice(0); person(540, 2100, 1650, GUARDN()); }, { rot: .05 });
-    bigTitle("WHO'S LYING?", 300, prog(t, 0, .25), { size: 96, col: '#ffd23f' });
-    if (t > ts) { const left = 3 - (t - ts), n = Math.max(1, Math.ceil(left)); const frac = left - Math.floor(left); if (left > 0) { dayRing(540, 1150, 120, 1 - (t - ts) / 3, '#ffd23f'); bigNum(String(n), 540, 1150, 170, '#fff', { glow: 'rgba(255,210,80,.8)' }); } } },
-  sfx(d, P, E) { const ts = E('seconds', 1, 1.2) + .25; return [[ts, 'tick', .5], [ts + 1, 'tick', .5], [ts + 2, 'tick', .5]]; }
+SC.doubt = { // "But wait." — red herrings: the maid's master key, the guard's dead camera
+  draw(t, d, P, E) { const tk = E('key', 1, 1.6), tc = E('cameras', 1, 3.8);
+    if (t < tk - .3) { bg('#120608', '#050203'); glow(540, 900, 900, 'rgba(255,60,70,.25)'); bigTitle('BUT WAIT…', 860, eback(prog(t, 0, .25)), { size: 150, col: '#fff', glow: 'rgba(255,60,70,.7)' }); return; }
+    if (t < tc - .3) { bg('#2f3542', '#1b1f27'); ctx.fillStyle = grad(0, 0, 0, H, [[0, '#f4f2ec'], [1, '#d8d4ca']]); rr(140, 440, 800, 920, 60); ctx.fill(); // the apron close-up
+      const k = eback(prog(t, tk - .3, tk + .1)); ctx.save(); ctx.translate(540, 900); ctx.scale(k, k); ctx.rotate(-.08 + Math.sin(t * 3) * .03);
+      ctx.strokeStyle = '#8a1c2a'; ctx.lineWidth = 14; ctx.beginPath(); ctx.moveTo(-40, -420); ctx.quadraticCurveTo(0, -300, 0, -200); ctx.stroke();
+      ctx.fillStyle = 'rgba(0,0,0,.3)'; rr(-250 + 14, -200 + 18, 500, 320, 30); ctx.fill(); ctx.fillStyle = '#f7f7f9'; rr(-250, -200, 500, 320, 30); ctx.fill(); ctx.fillStyle = '#8a1c2a'; rr(-250, -200, 500, 80, 30); ctx.fillRect(-250, -150, 500, 30);
+      label('MASTER KEY', 0, -140, 54, { weight: 900, color: '#fff', spacing: 4 }); label('ALL ROOMS · FLOOR 12', 0, -20, 34, { weight: 800, color: '#333' }); ctx.fillStyle = '#222'; ctx.fillRect(-250, 40, 500, 40); ctx.restore();
+      label('A KEY TO EVERY ROOM', 540, 300, 64, { weight: 900, color: '#fff', alpha: prog(t, tk - .2, tk + .1) }); return; }
+    bg('#0d1117', '#05070a'); const mx = 140, my = 480, mw = 800, mh = 600; ctx.fillStyle = '#0a0d12'; rr(mx - 30, my - 30, mw + 60, mh + 60, 20); ctx.fill();
+    const R = rnd(Math.floor(t * 24)); ctx.fillStyle = '#111'; ctx.fillRect(mx, my, mw, mh); for (let k = 0; k < 1400; k++) { ctx.fillStyle = `rgba(255,255,255,${R() * .55})`; ctx.fillRect(mx + R() * mw, my + R() * mh, 4, 3); }
+    label('NO SIGNAL', 540, my + mh / 2, 90, { weight: 900, color: '#fff' }); label('CAM 16 · LOBBY', 540, my + mh / 2 + 80, 40, { weight: 800, color: '#9aa' }); label('23:40:00', mx + 20, my + 50, 40, { align: 'left', weight: 800, color: '#ff4d4d', font: MONO });
+    label('A CAMERA WENT DARK', 540, 300, 64, { weight: 900, color: '#fff', alpha: prog(t, tc - .2, tc + .1) }); },
+  sfx(d, P, E) { return [[0, 'dundun', .4], [E('key', 1, 1.6) - .3, 'cuffs', .4], [E('cameras', 1, 3.8) - .3, 'static', .35, { dur: 1.8 }]]; }
+};
+SC.countdown = { // 5 seconds: the suspects again, full screen, so the viewer can hunt for the clue
+  draw(t, d, P, E) { const ts = E('seconds', 1, 1.6) + .25;
+    if (t < ts) { bg('#101318', '#050608'); glow(540, 900, 900, 'rgba(255,210,80,.18)');
+      suspectCard(190, 820, 300, 1, 'The maid', () => { laundryRoom(0); person(540, 2100, 1650, MAID({ keycard: true })); }, { rot: -.05 });
+      suspectCard(540, 790, 300, 2, 'Next door', () => { hotelRoom(0); person(560, 2100, 1650, NEIGH({ pocketGold: true })); }, { rot: .02 });
+      suspectCard(890, 820, 300, 3, 'The guard', () => { securityOffice(0); person(540, 2100, 1650, GUARDN()); }, { rot: .05 });
+      bigTitle("WHO'S LYING?", 330, prog(t, 0, .25), { size: 96, col: '#ffd23f' }); return; }
+    const e = t - ts, i = Math.min(2, Math.floor(e / 1.67)); // each suspect ~1.7 s, full frame
+    if (i === 0) { laundryRoom(t); cart(270, 1250, 1.0); person(760, 2050, 1500, MAID({ keycard: true })); }
+    else if (i === 1) { hotelRoom(t); person(860, 2080, 1480, NEIGH({ pocketGold: true })); }
+    else { securityOffice(t); person(300, 2150, 1500, GUARDN({ light: 1 })); desk(1300); coffee(820, 1300, t); }
+    ctx.fillStyle = 'rgba(0,0,0,.25)'; ctx.fillRect(0, 0, W, 470); const left = Math.max(0, 5 - e), n = Math.max(1, Math.ceil(left));
+    if (left > 0) { dayRing(540, 330, 105, left / 5, '#ffd23f'); bigNum(String(n), 540, 330, 150, '#fff', { glow: 'rgba(255,210,80,.8)' }); } },
+  sfx(d, P, E) { const ts = E('seconds', 1, 1.6) + .25; return [0, 1, 2, 3, 4].map(k => [ts + k, 'tick', .55]).concat([[ts, 'heartbeat', .35, { dur: 5 }]]); }
 };
 const POCKET_CAM = [860 - 7.4 * 14.8, 2080 - 67.6 * 14.8]; // the robe pocket of the neighbor in the room shot (h = 1480)
 function pocketZoom(t, z) { bg('#101318', '#050608'); ctx.save(); cam(lerp(540, POCKET_CAM[0], eio(clamp(z))), lerp(960, POCKET_CAM[1], eio(clamp(z))), lerp(1.0, 2.8, eio(clamp(z)))); hotelRoom(t); person(860, 2080, 1480, NEIGH({ pocketGold: true })); ctx.restore(); }
@@ -140,14 +161,14 @@ SC.liar = { // "It's the man next door."
   sfx() { return [[.1, 'stamp', .5]]; }
 };
 SC.pocket = { // look at his robe pocket — that gold "button" is the watch's bracelet
-  draw(t, d, P, E) { const tb = E('button', 1, 2.2), tr = E('bracelet', 1, 4.6);
-    if (t < tr - .2) { pocketZoom(t, prog(t, 0, 1.2)); if (t > .9) { const k = eback(prog(t, .9, 1.25)); ctx.strokeStyle = LIAR_RED; ctx.lineWidth = 10; ctx.shadowColor = LIAR_RED; ctx.shadowBlur = 26; ctx.beginPath(); ctx.arc(540, 960, 110 * k, 0, 7); ctx.stroke(); ctx.shadowBlur = 0; }
+  draw(t, d, P, E) { const tb = E('button', 1, 1), tr = E('bracelet', 1, 3.4);
+    if (t < tr - .2) { pocketZoom(t, prog(t, 0, .8)); if (t > .6) { const k = eback(prog(t, .6, .9)); ctx.strokeStyle = LIAR_RED; ctx.lineWidth = 10; ctx.shadowColor = LIAR_RED; ctx.shadowBlur = 26; ctx.beginPath(); ctx.arc(540, 960, 110 * k, 0, 7); ctx.stroke(); ctx.shadowBlur = 0; }
       bigTitle(t < tb - .1 ? 'LOOK AT HIS POCKET' : 'NOT A BUTTON…', 300, prog(t, 0, .2), { size: 80, col: '#fff' }); return; }
     const R = rnd(3); ctx.fillStyle = '#b9a48c'; ctx.fillRect(0, 0, W, H); ctx.strokeStyle = 'rgba(0,0,0,.08)'; ctx.lineWidth = 3; for (let x = 0; x < W; x += 18) { ctx.beginPath(); ctx.moveTo(x + R() * 4, 0); ctx.lineTo(x + R() * 4, H); ctx.stroke(); } // terry cloth
     const k = eout(prog(t, tr - .2, tr + .8)); goldWatch(540, lerp(1150, 760, k), 1.3, -.1, .6 + .4 * Math.sin(t * 6));
     ctx.fillStyle = grad(0, 900, 0, 1400, [[0, '#a8937a'], [1, '#8f7b63']]); rr(200, 920, 680, 520, 40); ctx.fill(); ctx.strokeStyle = 'rgba(0,0,0,.2)'; ctx.lineWidth = 5; rr(200, 920, 680, 520, 40); ctx.stroke(); ctx.fillStyle = 'rgba(0,0,0,.18)'; ctx.fillRect(220, 920, 640, 18); // pocket in front of the watch
     bigTitle("IT'S THE WATCH", 300, prog(t, tr - .1, tr + .2), { size: 90, col: '#ffd23f' }); },
-  sfx(d, P, E) { return [[.9, 'pop', .35], [E('bracelet', 1, 4.6) - .2, 'gold', .5]]; }
+  sfx(d, P, E) { return [[.6, 'pop', .35], [E('bracelet', 1, 3.4) - .2, 'gold', .5]]; }
 };
 SC.bed = { // and his bed? still perfectly made — he never went to bed
   draw(t, d, P, E) { const tm = E('perfectly', 1, 1.4); const z = eio(prog(t, 0, 1.2)); bg('#101318', '#050608'); ctx.save(); cam(lerp(540, 480, z), lerp(960, 900, z), lerp(1.0, 1.6, z)); hotelRoom(t); ctx.restore();
@@ -155,13 +176,21 @@ SC.bed = { // and his bed? still perfectly made — he never went to bed
     bigTitle(t > tm - .1 ? 'NOT SLEPT IN' : 'AND HIS BED?', 300, prog(t, 0, .2), { size: 84, col: t > tm - .1 ? '#ffd23f' : '#fff' }); },
   sfx(d, P, E) { return [[0, 'whoosh', .3], [E('perfectly', 1, 1.4) - .1, 'chime', .4]]; }
 };
+SC.bedplan = { // "His bed was never slept in — and the connecting door leads right into 1208."
+  draw(t, d, P, E) { const tc = E('connecting', 1, 2.4);
+    if (t < tc - .3) { const z = eio(prog(t, 0, .6)); bg('#101318', '#050608'); ctx.save(); cam(lerp(540, 480, z), lerp(960, 900, z), lerp(1.0, 1.6, z)); hotelRoom(t); ctx.restore();
+      ctx.strokeStyle = 'rgba(255,210,63,.95)'; ctx.lineWidth = 7; ctx.setLineDash([20, 12]); ctx.globalAlpha = prog(t, .4, .7); rr(60, 640, 900, 620, 30); ctx.stroke(); ctx.setLineDash([]); ctx.globalAlpha = 1; bigTitle('NEVER SLEPT IN', 300, prog(t, .2, .45), { size: 84, col: '#ffd23f' }); return; }
+    floorPlan(t, prog(t, tc - .3, d - .2), { door: prog(t, tc - .3, tc) }); label('THROUGH THE CONNECTING DOOR', 540, 300, 50, { weight: 900, color: '#fff', alpha: prog(t, tc - .3, tc) }); },
+  sfx(d, P, E) { return [[0, 'whoosh', .3], [E('connecting', 1, 2.4) - .3, 'creak', .4], [E('connecting', 1, 2.4), 'steps', .3, { dur: 1.4 }]]; }
+};
 SC.plan = { // the route: through the connecting door, never in the hallway camera
   draw(t, d, P, E) { const tc = E('connecting', 1, .6), tcam = E('camera', 1, 3); floorPlan(t, prog(t, tc - .3, tcam), { door: prog(t, tc - .2, tc + .2) }); label(t > tcam - .2 ? 'THE CAMERA NEVER SAW HIM' : 'THROUGH THE CONNECTING DOOR', 540, 300, 50, { weight: 900, color: '#fff', alpha: prog(t, .1, .4) }); },
   sfx(d, P, E) { return [[0, 'hum', .25, { dur: d }], [E('connecting', 1, 2.6) - .3, 'creak', .4], [E('connecting', 1, 2.6), 'steps', .3, { dur: 1.6 }]]; }
 };
-SC.again = { // "Did you catch it?" — the pocket again, then loop back into frame 0
-  draw(t, d, P, E) { if (t < d * .55) { pocketZoom(t, 1); const R = 110 + 8 * Math.sin(t * 8); ctx.strokeStyle = LIAR_RED; ctx.lineWidth = 10; ctx.beginPath(); ctx.arc(540, 960, R, 0, 7); ctx.stroke(); bigTitle('DID YOU CATCH IT?', 300, prog(t, 0, .2), { size: 84, col: '#fff' }); return; }
-    bg('#1a0d10', '#07040a'); woodTable(1120, { c1: '#4a2e1c', c2: '#1a100a' }); alarmBeacon(t); velvetBox(540, 1180, 1.1); goldWatch(540, 1000, 1.0, -.15, .8); bigTitle('WATCH AGAIN', 300, prog(t, d * .55, d * .55 + .2), { size: 96, col: '#ffd23f' }); },
-  sfx(d) { return [[0, 'pop', .3], [d * .55, 'swoosh_up', .3]]; }
+SC.again = { // "Watch again." — the pocket one last time, then straight back into frame 0
+  draw(t, d) { if (t < d * .45) { pocketZoom(t, 1); ctx.strokeStyle = LIAR_RED; ctx.lineWidth = 10; ctx.beginPath(); ctx.arc(540, 960, 110 + 8 * Math.sin(t * 8), 0, 7); ctx.stroke(); }
+    else { bg('#1a0d10', '#07040a'); woodTable(1120, { c1: '#4a2e1c', c2: '#1a100a' }); alarmBeacon(t); velvetBox(540, 1180, 1.1); goldWatch(540, 1000, 1.0, -.15, .8); }
+    bigTitle('WATCH AGAIN', 300, prog(t, 0, .15), { size: 96, col: '#ffd23f' }); },
+  sfx(d) { return [[0, 'pop', .3], [d * .45, 'swoosh_up', .3]]; }
 };
 window.render = function (t) { _baseRenderAng(t); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; if (t < TL.total) drawSubs(t); };
