@@ -1,5 +1,5 @@
 const TL = {
-"total": 51.97500000000008,
+"total": 45.7926875,
 "units": [
 {
 "p": 0,
@@ -13,717 +13,717 @@ const TL = {
 ],
 [
 "17000",
-0.25,
+0.68,
 "17,000"
 ],
 [
 "feet",
-0.87,
+1.36,
 "feet,"
 ],
 [
 "the",
-1.41,
+1.76,
 "the"
 ],
 [
 "windshield",
-1.71,
+2.0,
 "windshield"
 ],
 [
 "blew",
-2.31,
+2.64,
 "blew"
 ],
 [
 "out",
-2.65,
+2.96,
 "out\u2026"
 ],
 [
 "and",
-3.4,
+3.36,
 "and"
 ],
 [
 "the",
-3.69,
+3.56,
 "the"
 ],
 [
 "pilot",
-3.99,
+3.76,
 "pilot"
 ],
 [
 "was",
-4.38,
+4.32,
 "was"
 ],
 [
 "sucked",
-4.67,
+4.56,
 "sucked"
 ],
 [
 "out",
-5.1,
+4.96,
 "out"
 ],
 [
 "of",
-5.39,
+5.12,
 "of"
 ],
 [
 "the",
-5.64,
+5.2,
 "the"
 ],
 [
 "plane",
-5.94,
+5.4,
 "plane."
 ]
 ],
-"end": 6.7
+"end": 6.08
 },
 {
 "p": 1,
 "text": "June 1990.",
-"start": 6.7,
+"start": 6.08,
 "words": [
 [
 "june",
-6.7,
+6.08,
 "June"
 ],
 [
 "1990",
-7.04,
+6.92,
 "1990."
 ]
 ],
-"end": 8.01
+"end": 7.76
 },
 {
 "p": 1,
 "text": "British Airways Flight 5390. 81 passengers on board.",
-"start": 8.01,
+"start": 7.76,
 "words": [
 [
 "british",
-8.01,
+7.76,
 "British"
 ],
 [
 "airways",
-8.49,
+8.24,
 "Airways"
 ],
 [
 "flight",
-8.96,
+8.76,
 "Flight"
 ],
 [
 "5390",
-9.39,
+9.55,
 "5390."
 ],
 [
 "81",
-10.36,
+10.33,
 "81"
 ],
 [
 "passengers",
-10.86,
+11.12,
 "passengers"
 ],
 [
 "on",
-11.47,
+11.76,
 "on"
 ],
 [
 "board",
-11.72,
+12.0,
 "board."
 ]
 ],
-"end": 12.49
+"end": 12.48
 },
 {
 "p": 2,
 "text": "Bang.",
-"start": 12.49,
+"start": 12.48,
 "words": [
 [
 "bang",
-12.49,
+12.48,
 "Bang."
 ]
 ],
-"end": 13.21
+"end": 13.2
 },
 {
 "p": 2,
 "text": "The captain's window explodes.",
-"start": 13.21,
+"start": 13.2,
 "words": [
 [
 "the",
-13.21,
+13.2,
 "The"
 ],
 [
 "captains",
-13.5,
+13.48,
 "captain's"
 ],
 [
 "window",
-14.02,
+14.16,
 "window"
 ],
 [
 "explodes",
-14.45,
+14.6,
 "explodes."
 ]
 ],
-"end": 15.35
+"end": 15.4
 },
 {
 "p": 2,
 "text": "Captain Tim Lancaster is ripped out of his seat.",
-"start": 15.35,
+"start": 15.4,
 "words": [
 [
 "captain",
-15.35,
+15.4,
 "Captain"
 ],
 [
 "tim",
-15.83,
+15.96,
 "Tim"
 ],
 [
 "lancaster",
-16.12,
+16.24,
 "Lancaster"
 ],
 [
 "is",
-16.69,
+16.96,
 "is"
 ],
 [
 "ripped",
-16.94,
+17.2,
 "ripped"
 ],
 [
 "out",
-17.37,
+17.56,
 "out"
 ],
 [
 "of",
-17.67,
+17.72,
 "of"
 ],
 [
 "his",
-17.92,
+17.84,
 "his"
 ],
 [
 "seat",
-18.21,
+18.04,
 "seat."
 ]
 ],
-"end": 18.93
+"end": 18.56
 },
 {
 "p": 2,
 "text": "Half his body is outside the plane \u2014 in freezing wind, at hundreds of miles an hour.",
-"start": 18.93,
+"start": 18.56,
 "words": [
 [
 "half",
-18.93,
+18.56,
 "Half"
 ],
 [
 "his",
-19.27,
+18.84,
 "his"
 ],
 [
 "body",
-19.57,
+19.04,
 "body"
 ],
 [
 "is",
-19.91,
+19.4,
 "is"
 ],
 [
 "outside",
-20.16,
+19.56,
 "outside"
 ],
 [
 "the",
-20.63,
+20.0,
 "the"
 ],
 [
 "plane",
-20.93,
+20.16,
 "plane"
 ],
 [
 "in",
-21.31,
+20.64,
 "in"
 ],
 [
 "freezing",
-21.56,
+20.88,
 "freezing"
 ],
 [
 "wind",
-22.08,
+21.52,
 "wind,"
 ],
 [
 "at",
-22.62,
+21.92,
 "at"
 ],
 [
 "hundreds",
-22.87,
+22.16,
 "hundreds"
 ],
 [
 "of",
-23.39,
+22.64,
 "of"
 ],
 [
 "miles",
-23.64,
+22.76,
 "miles"
 ],
 [
 "an",
-24.03,
+23.12,
 "an"
 ],
 [
 "hour",
-24.28,
+23.32,
 "hour."
 ]
 ],
-"end": 25.0
+"end": 23.66
 },
 {
 "p": 3,
 "text": "A flight attendant grabs his legs.",
-"start": 25.0,
+"start": 23.66,
 "words": [
 [
 "a",
-25.0,
+23.66,
 "A"
 ],
 [
 "flight",
-25.22,
+23.78,
 "flight"
 ],
 [
 "attendant",
-25.65,
+24.14,
 "attendant"
 ],
 [
 "grabs",
-26.21,
+24.7,
 "grabs"
 ],
 [
 "his",
-26.6,
+25.1,
 "his"
 ],
 [
 "legs",
-26.89,
+25.26,
 "legs."
 ]
 ],
-"end": 27.61
+"end": 25.74
 },
 {
 "p": 3,
 "text": "And doesn't let go.",
-"start": 27.61,
+"start": 25.74,
 "words": [
 [
 "and",
-27.61,
+25.74,
 "And"
 ],
 [
 "doesnt",
-27.91,
+25.94,
 "doesn't"
 ],
 [
 "let",
-28.34,
+26.42,
 "let"
 ],
 [
 "go",
-28.63,
+26.66,
 "go."
 ]
 ],
-"end": 29.26
+"end": 27.02
 },
 {
 "p": 4,
 "text": "The co-pilot takes control and dives for the nearest airport.",
-"start": 29.26,
+"start": 27.02,
 "words": [
 [
 "the",
-29.26,
+27.02,
 "The"
 ],
 [
 "copilot",
-29.56,
+27.22,
 "co-pilot"
 ],
 [
 "takes",
-30.03,
+27.9,
 "takes"
 ],
 [
 "control",
-30.42,
+28.22,
 "control"
 ],
 [
 "and",
-30.89,
+28.7,
 "and"
 ],
 [
 "dives",
-31.19,
+28.94,
 "dives"
 ],
 [
 "for",
-31.57,
+29.38,
 "for"
 ],
 [
 "the",
-31.87,
+29.5,
 "the"
 ],
 [
 "nearest",
-32.16,
+29.62,
 "nearest"
 ],
 [
 "airport",
-32.64,
+30.02,
 "airport."
 ]
 ],
-"end": 33.49
+"end": 30.7
 },
 {
 "p": 5,
 "text": "For twenty minutes, the crew holds on.",
-"start": 33.49,
+"start": 30.7,
 "words": [
 [
 "for",
-33.49,
+30.7,
 "For"
 ],
 [
 "twenty",
-33.79,
+30.9,
 "twenty"
 ],
 [
 "minutes",
-34.22,
+31.42,
 "minutes,"
 ],
 [
 "the",
-34.89,
+31.82,
 "the"
 ],
 [
 "crew",
-35.19,
+32.02,
 "crew"
 ],
 [
 "holds",
-35.53,
+32.38,
 "holds"
 ],
 [
 "on",
-35.91,
+32.82,
 "on."
 ]
 ],
-"end": 36.54
+"end": 33.1
 },
 {
 "p": 5,
 "text": "They're sure he's dead.",
-"start": 36.54,
+"start": 33.1,
 "words": [
 [
 "theyre",
-36.54,
+33.1,
 "They're"
 ],
 [
 "sure",
-36.97,
+33.46,
 "sure"
 ],
 [
 "hes",
-37.31,
+33.78,
 "he's"
 ],
 [
 "dead",
-37.61,
+34.14,
 "dead."
 ]
 ],
-"end": 38.33
+"end": 34.5
 },
 {
 "p": 5,
 "text": "But they refuse to let him go.",
-"start": 38.33,
+"start": 34.5,
 "words": [
 [
 "but",
-38.33,
+34.5,
 "But"
 ],
 [
 "they",
-38.62,
+34.7,
 "they"
 ],
 [
 "refuse",
-38.96,
+34.9,
 "refuse"
 ],
 [
 "to",
-39.39,
+35.46,
 "to"
 ],
 [
 "let",
-39.64,
+35.62,
 "let"
 ],
 [
 "him",
-39.94,
+35.86,
 "him"
 ],
 [
 "go",
-40.23,
+36.06,
 "go."
 ]
 ],
-"end": 40.86
+"end": 36.44
 },
 {
 "p": 6,
 "text": "The plane lands in Southampton.",
-"start": 40.86,
+"start": 36.44,
 "words": [
 [
 "the",
-40.86,
+36.44,
 "The"
 ],
 [
 "plane",
-41.16,
+36.6,
 "plane"
 ],
 [
 "lands",
-41.54,
+36.92,
 "lands"
 ],
 [
 "in",
-41.93,
+37.28,
 "in"
 ],
 [
 "southampton",
-42.18,
+37.48,
 "Southampton."
 ]
 ],
-"end": 43.18
+"end": 38.32
 },
 {
 "p": 7,
 "text": "And Tim Lancaster\u2026 is alive.",
-"start": 43.18,
+"start": 38.32,
 "words": [
 [
 "and",
-43.18,
+38.32,
 "And"
 ],
 [
 "tim",
-43.47,
+38.52,
 "Tim"
 ],
 [
 "lancaster",
-43.77,
+38.84,
 "Lancaster\u2026"
 ],
 [
 "is",
-44.78,
+39.72,
 "is"
 ],
 [
 "alive",
-45.03,
+40.0,
 "alive."
 ]
 ],
-"end": 45.8
+"end": 40.84
 },
 {
 "p": 7,
 "text": "Frostbite.",
-"start": 45.8,
+"start": 40.84,
 "words": [
 [
 "frostbite",
-45.8,
+40.84,
 "Frostbite."
 ]
 ],
-"end": 46.74
+"end": 41.72
 },
 {
 "p": 7,
 "text": "Broken bones.",
-"start": 46.74,
+"start": 41.72,
 "words": [
 [
 "broken",
-46.74,
+41.72,
 "Broken"
 ],
 [
 "bones",
-47.17,
+42.28,
 "bones."
 ]
 ],
-"end": 47.94
+"end": 42.88
 },
 {
 "p": 8,
 "text": "Five months later, he was back in the cockpit.",
-"start": 47.94,
+"start": 42.88,
 "words": [
 [
 "five",
-47.94,
+42.88,
 "Five"
 ],
 [
 "months",
-48.28,
+43.24,
 "months"
 ],
 [
 "later",
-48.71,
+43.72,
 "later,"
 ],
 [
 "he",
-49.29,
+44.16,
 "he"
 ],
 [
 "was",
-49.54,
+44.32,
 "was"
 ],
 [
 "back",
-49.84,
+44.56,
 "back"
 ],
 [
 "in",
-50.18,
+44.8,
 "in"
 ],
 [
 "the",
-50.43,
+44.92,
 "the"
 ],
 [
 "cockpit",
-50.72,
+45.08,
 "cockpit."
 ]
 ],
-"end": 51.98
+"end": 45.79
 }
 ]
 };
