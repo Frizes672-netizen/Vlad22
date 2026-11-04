@@ -194,7 +194,7 @@ SC.hook = { // FRAME 0: POV — her phone rings in her hand; everything the call
     dataCard(300, 560, 420, 'ИМЯ', 'Галина', prog(t, tn - .1, tn + .25), { rot: -.08 }); dataCard(790, 720, 420, 'ОТЧЕСТВО', 'Петровна', prog(t, to - .1, to + .25), { rot: .07, col: '#7dd3fc' });
     dataCard(290, 1180, 420, 'КАРТА', '•••• 4417', prog(t, tc - .1, tc + .25), { rot: .06, col: '#86efac', font: MONO }); dataCard(780, 1060, 440, 'АДРЕС', 'Садовая, 12', prog(t, ta - .1, ta + .25), { rot: -.06, col: '#fca5a5' });
     bigTitle('ЗНАЛ О НЕЙ ВСЁ', 300, prog(t, 0, .2), { size: 92, col: '#fff', glow: 'rgba(255,60,70,.55)' }); },
-  sfx(d, P, E) { const out = [[0, 'vibrate', .5], [1.05, 'vibrate', .45], [2.1, 'vibrate', .45], [3.15, 'vibrate', .4], [0, 'kitchen', .3, { dur: d }]];
+  sfx(d, P, E) { const out = [[0, 'kitchen', .3, { dur: d }]]; for (let k = 0; k * 1.05 < d - .6; k++) out.push([k * 1.05, 'vibrate', k ? .4 : .5]);
     ['имя', 'отчество', 'цифры', 'адрес'].forEach((w, i) => out.push([E(w, 1, [.9, 1.6, 2.5, 3.6][i]) - .08, 'pop', .35])); return out; }
 };
 SC.choice = { // "Это банк — или развод? Решай сам." — the series question, two buttons
