@@ -1,0 +1,21 @@
+CHANNEL NAME: Guess The Crash
+HANDLE: @GuessTheCrash   (если занято: @GuessTheCrashHQ / @GuessTheCrashDaily)
+
+DESCRIPTION (English):
+Can you guess what happens before the impact?
+Every Short is a crash experiment with a twist: you get 5 seconds to call it — survive, wreck, or something nobody expects. Then we show you, in slow motion.
+
+New crash every day. Comment your guess BEFORE the reveal.
+
+All crashes are virtual, filmed in the BeamNG.drive physics simulator. No real people or cars were harmed. Don't try any of this in real life.
+
+KEYWORDS (Settings → Channel → Basic info → Keywords):
+crash test, car crash simulation, BeamNG drive, guess the crash, crash physics, slow motion crash, which car survives, car vs, shorts
+
+LINKS: (none yet)
+COUNTRY: United States (или страна, где ты реально находишься)
+CHANNEL LANGUAGE / VIDEO LANGUAGE: English
+
+FILES:
+avatar_800.png         → аватар (Customization → Branding → Picture)
+banner_2560x1440.png   → баннер (Customization → Branding → Banner image); вся важная часть в безопасной зоне 1546×423
