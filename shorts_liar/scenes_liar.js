@@ -140,7 +140,7 @@ SC.doubt = { // "But wait." — red herrings: the maid's master key, the guard's
   sfx(d, P, E) { return [[0, 'dundun', .4], [E('key', 1, 1.6) - .3, 'cuffs', .4], [E('cameras', 1, 3.8) - .3, 'static', .35, { dur: 1.8 }]]; }
 };
 SC.countdown = { // 5 seconds: the suspects again, full screen, so the viewer can hunt for the clue
-  draw(t, d, P, E) { const ts = E('seconds', 1, 1.6) + .25;
+  draw(t, d, P, E) { const ts = E('seconds', 1, 1.6) + .1;
     if (t < ts) { bg('#101318', '#050608'); glow(540, 900, 900, 'rgba(255,210,80,.18)');
       suspectCard(190, 820, 300, 1, 'The maid', () => { laundryRoom(0); person(540, 2100, 1650, MAID({ keycard: true })); }, { rot: -.05 });
       suspectCard(540, 790, 300, 2, 'Next door', () => { hotelRoom(0); person(560, 2100, 1650, NEIGH({ pocketGold: true })); }, { rot: .02 });
@@ -152,7 +152,7 @@ SC.countdown = { // 5 seconds: the suspects again, full screen, so the viewer ca
     else { securityOffice(t); person(300, 2150, 1500, GUARDN({ light: 1 })); desk(1300); coffee(820, 1300, t); }
     ctx.fillStyle = 'rgba(0,0,0,.25)'; ctx.fillRect(0, 0, W, 470); const left = Math.max(0, 5 - e), n = Math.max(1, Math.ceil(left));
     if (left > 0) { dayRing(540, 330, 105, left / 5, '#ffd23f'); bigNum(String(n), 540, 330, 150, '#fff', { glow: 'rgba(255,210,80,.8)' }); } },
-  sfx(d, P, E) { const ts = E('seconds', 1, 1.6) + .25; return [0, 1, 2, 3, 4].map(k => [ts + k, 'tick', .55]).concat([[ts, 'heartbeat', .35, { dur: 5 }]]); }
+  sfx(d, P, E) { const ts = E('seconds', 1, 1.6) + .1; return [0, 1, 2, 3, 4].map(k => [ts + k, 'tick', .55]).concat([[ts, 'heartbeat', .35, { dur: 5 }]]); }
 };
 const POCKET_CAM = [860 - 7.4 * 14.8, 2080 - 67.6 * 14.8]; // the robe pocket of the neighbor in the room shot (h = 1480)
 function pocketZoom(t, z) { bg('#101318', '#050608'); ctx.save(); cam(lerp(540, POCKET_CAM[0], eio(clamp(z))), lerp(960, POCKET_CAM[1], eio(clamp(z))), lerp(1.0, 2.8, eio(clamp(z)))); hotelRoom(t); person(860, 2080, 1480, NEIGH({ pocketGold: true })); ctx.restore(); }

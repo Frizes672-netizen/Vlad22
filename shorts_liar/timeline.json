@@ -1,5 +1,5 @@
 {
-"total": 53.11500000000007,
+"total": 48.5775625,
 "units": [
 {
 "p": 0,
@@ -13,159 +13,159 @@
 ],
 [
 "stole",
-0.47,
+0.44,
 "stole"
 ],
 [
 "a",
-0.86,
+0.76,
 "a"
 ],
 [
 "twomilliondollar",
-1.08,
+1.36,
 "two-million-dollar"
 ],
 [
 "gold",
-1.7,
+1.96,
 "gold"
 ],
 [
 "watch",
-2.04,
+2.32,
 "watch"
 ],
 [
 "from",
-2.42,
+2.68,
 "from"
 ],
 [
 "room",
-2.76,
+2.88,
 "room"
 ],
 [
 "1208",
-3.1,
+3.64,
 "1208."
 ]
 ],
-"end": 4.07
+"end": 4.4
 },
 {
 "p": 0,
 "text": "One of these three is lying.",
-"start": 4.07,
+"start": 4.4,
 "words": [
 [
 "one",
-4.07,
+4.4,
 "One"
 ],
 [
 "of",
-4.37,
+4.72,
 "of"
 ],
 [
 "these",
-4.62,
+4.88,
 "these"
 ],
 [
 "three",
-5.0,
+5.28,
 "three"
 ],
 [
 "is",
-5.39,
+5.6,
 "is"
 ],
 [
 "lying",
-5.64,
+5.84,
 "lying."
 ]
 ],
-"end": 6.4
+"end": 6.6
 },
 {
 "p": 0,
 "text": "Can you spot who?",
-"start": 6.4,
+"start": 6.6,
 "words": [
 [
 "can",
-6.4,
+6.6,
 "Can"
 ],
 [
 "you",
-6.7,
+6.8,
 "you"
 ],
 [
 "spot",
-6.99,
+7.0,
 "spot"
 ],
 [
 "who",
-7.33,
+7.4,
 "who?"
 ]
 ],
-"end": 8.01
+"end": 8.0
 },
 {
 "p": 1,
 "text": "The maid:",
-"start": 8.01,
+"start": 8.0,
 "words": [
 [
 "the",
-8.01,
+8.0,
 "The"
 ],
 [
 "maid",
-8.3,
+8.36,
 "maid:"
 ]
 ],
-"end": 8.64
+"end": 9.0
 },
 {
 "p": 1,
 "text": "\"I finished this floor at eight.",
-"start": 8.64,
+"start": 9.0,
 "words": [
 [
 "i",
-8.64,
+9.0,
 "\"I"
 ],
 [
 "finished",
-8.86,
+9.16,
 "finished"
 ],
 [
 "this",
-9.38,
+9.68,
 "this"
 ],
 [
 "floor",
-9.72,
+9.88,
 "floor"
 ],
 [
 "at",
-10.11,
+10.16,
 "at"
 ],
 [
@@ -174,620 +174,620 @@
 "eight."
 ]
 ],
-"end": 11.12
+"end": 10.84
 },
 {
 "p": 1,
 "text": "Then I was in the laundry room all night.\"",
-"start": 11.12,
+"start": 10.84,
 "words": [
 [
 "then",
-11.12,
+10.84,
 "Then"
 ],
 [
 "i",
-11.46,
+11.12,
 "I"
 ],
 [
 "was",
-11.68,
+11.32,
 "was"
 ],
 [
 "in",
-11.98,
+11.48,
 "in"
 ],
 [
 "the",
-12.23,
+11.6,
 "the"
 ],
 [
 "laundry",
-12.52,
+11.76,
 "laundry"
 ],
 [
 "room",
-13.0,
+12.16,
 "room"
 ],
 [
 "all",
-13.34,
+12.48,
 "all"
 ],
 [
 "night",
-13.63,
+12.76,
 "night.\""
 ]
 ],
-"end": 14.02
+"end": 13.32
 },
 {
 "p": 2,
 "text": "The man next door:",
-"start": 14.02,
+"start": 13.32,
 "words": [
 [
 "the",
-14.02,
+13.32,
 "The"
 ],
 [
 "man",
-14.31,
+13.56,
 "man"
 ],
 [
 "next",
-14.61,
+13.84,
 "next"
 ],
 [
 "door",
-14.95,
+14.2,
 "door:"
 ]
 ],
-"end": 15.29
+"end": 14.72
 },
 {
 "p": 2,
 "text": "\"I went to bed at nine.",
-"start": 15.29,
+"start": 14.72,
 "words": [
 [
 "i",
-15.29,
+14.72,
 "\"I"
 ],
 [
 "went",
-15.51,
+14.92,
 "went"
 ],
 [
 "to",
-15.85,
+15.16,
 "to"
 ],
 [
 "bed",
-16.1,
+15.28,
 "bed"
 ],
 [
 "at",
-16.39,
+15.52,
 "at"
 ],
 [
 "nine",
-16.64,
+15.76,
 "nine."
 ]
 ],
-"end": 17.36
+"end": 16.16
 },
 {
 "p": 2,
 "text": "I slept right through it.\"",
-"start": 17.36,
+"start": 16.16,
 "words": [
 [
 "i",
-17.36,
+16.16,
 "I"
 ],
 [
 "slept",
-17.58,
+16.36,
 "slept"
 ],
 [
 "right",
-17.97,
+16.8,
 "right"
 ],
 [
 "through",
-18.36,
+17.12,
 "through"
 ],
 [
 "it",
-18.83,
+17.4,
 "it.\""
 ]
 ],
-"end": 19.08
+"end": 17.8
 },
 {
 "p": 3,
 "text": "The night guard:",
-"start": 19.08,
+"start": 17.8,
 "words": [
 [
 "the",
-19.08,
+17.8,
 "The"
 ],
 [
 "night",
-19.38,
+18.12,
 "night"
 ],
 [
 "guard",
-19.76,
+18.44,
 "guard:"
 ]
 ],
-"end": 20.15
+"end": 19.18
 },
 {
 "p": 3,
 "text": "\"I watched the hallway camera.",
-"start": 20.15,
+"start": 19.18,
 "words": [
 [
 "i",
-20.15,
+19.18,
 "\"I"
 ],
 [
 "watched",
-20.37,
+19.3,
 "watched"
 ],
 [
 "the",
-20.84,
+19.66,
 "the"
 ],
 [
 "hallway",
-21.14,
+19.78,
 "hallway"
 ],
 [
 "camera",
-21.61,
+20.26,
 "camera."
 ]
 ],
-"end": 22.42
+"end": 20.74
 },
 {
 "p": 3,
 "text": "Nobody came in or out.\"",
-"start": 22.42,
+"start": 20.74,
 "words": [
 [
 "nobody",
-22.42,
+20.74,
 "Nobody"
 ],
 [
 "came",
-22.85,
+21.38,
 "came"
 ],
 [
 "in",
-23.19,
+21.66,
 "in"
 ],
 [
 "or",
-23.44,
+21.98,
 "or"
 ],
 [
 "out",
-23.69,
+22.3,
 "out.\""
 ]
 ],
-"end": 23.99
+"end": 22.74
 },
 {
 "p": 4,
 "text": "But wait.",
-"start": 23.99,
+"start": 22.74,
 "words": [
 [
 "but",
-23.99,
+22.74,
 "But"
 ],
 [
 "wait",
-24.28,
+23.14,
 "wait."
 ]
 ],
-"end": 25.0
+"end": 23.7
 },
 {
 "p": 4,
 "text": "The maid has a key to every room.",
-"start": 25.0,
+"start": 23.7,
 "words": [
 [
 "the",
-25.0,
+23.7,
 "The"
 ],
 [
 "maid",
-25.3,
+23.98,
 "maid"
 ],
 [
 "has",
-25.64,
+24.38,
 "has"
 ],
 [
 "a",
-25.93,
+24.58,
 "a"
 ],
 [
 "key",
-26.15,
+24.74,
 "key"
 ],
 [
 "to",
-26.45,
+25.06,
 "to"
 ],
 [
 "every",
-26.7,
+25.3,
 "every"
 ],
 [
 "room",
-27.08,
+25.66,
 "room."
 ]
 ],
-"end": 27.8
+"end": 26.1
 },
 {
 "p": 4,
 "text": "And one of the guard's cameras went dark at 11:40.",
-"start": 27.8,
+"start": 26.1,
 "words": [
 [
 "and",
-27.8,
+26.1,
 "And"
 ],
 [
 "one",
-28.1,
+26.38,
 "one"
 ],
 [
 "of",
-28.39,
+26.62,
 "of"
 ],
 [
 "the",
-28.64,
+26.7,
 "the"
 ],
 [
 "guards",
-28.94,
+26.86,
 "guard's"
 ],
 [
 "cameras",
-29.37,
+27.22,
 "cameras"
 ],
 [
 "went",
-29.84,
+27.7,
 "went"
 ],
 [
 "dark",
-30.18,
+27.94,
 "dark"
 ],
 [
 "at",
-30.52,
+28.18,
 "at"
 ],
 [
 "1140",
-30.77,
+28.8,
 "11:40."
 ]
 ],
-"end": 31.74
+"end": 29.42
 },
 {
 "p": 5,
 "text": "So who is it?",
-"start": 31.74,
+"start": 29.42,
 "words": [
 [
 "so",
-31.74,
+29.42,
 "So"
 ],
 [
 "who",
-31.99,
+29.74,
 "who"
 ],
 [
 "is",
-32.29,
+29.98,
 "is"
 ],
 [
 "it",
-32.54,
+30.18,
 "it?"
 ]
 ],
-"end": 33.17
+"end": 30.54
 },
 {
 "p": 5,
 "text": "You have five seconds.",
-"start": 33.17,
+"start": 30.54,
 "words": [
 [
 "you",
-33.17,
+30.54,
 "You"
 ],
 [
 "have",
-33.46,
+30.82,
 "have"
 ],
 [
 "five",
-33.8,
+31.06,
 "five"
 ],
 [
 "seconds",
-34.14,
+31.42,
 "seconds."
 ]
 ],
-"end": 39.8
+"end": 36.84
 },
 {
 "p": 6,
 "text": "It's the man next door.",
-"start": 39.8,
+"start": 36.84,
 "words": [
 [
 "its",
-39.8,
+36.84,
 "It's"
 ],
 [
 "the",
-40.09,
+37.36,
 "the"
 ],
 [
 "man",
-40.39,
+37.56,
 "man"
 ],
 [
 "next",
-40.68,
+37.84,
 "next"
 ],
 [
 "door",
-41.02,
+38.2,
 "door."
 ]
 ],
-"end": 41.74
+"end": 38.84
 },
 {
 "p": 7,
 "text": "That gold \"button\" on his robe pocket is the watch's bracelet.",
-"start": 41.74,
+"start": 38.84,
 "words": [
 [
 "that",
-41.74,
+38.84,
 "That"
 ],
 [
 "gold",
-42.08,
+39.16,
 "gold"
 ],
 [
 "button",
-42.42,
+39.64,
 "\"button\""
 ],
 [
 "on",
-42.85,
+40.2,
 "on"
 ],
 [
 "his",
-43.1,
+40.32,
 "his"
 ],
 [
 "robe",
-43.4,
+40.52,
 "robe"
 ],
 [
 "pocket",
-43.74,
+40.84,
 "pocket"
 ],
 [
 "is",
-44.17,
+41.2,
 "is"
 ],
 [
 "the",
-44.42,
+41.36,
 "the"
 ],
 [
 "watchs",
-44.71,
+41.48,
 "watch's"
 ],
 [
 "bracelet",
-45.14,
+41.96,
 "bracelet."
 ]
 ],
-"end": 46.04
+"end": 42.76
 },
 {
 "p": 8,
 "text": "His bed was never slept in \u2014 and the connecting door leads right into 1208.",
-"start": 46.04,
+"start": 42.76,
 "words": [
 [
 "his",
-46.04,
+42.76,
 "His"
 ],
 [
 "bed",
-46.34,
+42.96,
 "bed"
 ],
 [
 "was",
-46.63,
+43.24,
 "was"
 ],
 [
 "never",
-46.93,
+43.48,
 "never"
 ],
 [
 "slept",
-47.31,
+43.8,
 "slept"
 ],
 [
 "in",
-47.7,
+44.24,
 "in"
 ],
 [
 "and",
-47.95,
+44.44,
 "and"
 ],
 [
 "the",
-48.24,
+44.64,
 "the"
 ],
 [
 "connecting",
-48.54,
+44.76,
 "connecting"
 ],
 [
 "door",
-49.15,
+45.32,
 "door"
 ],
 [
 "leads",
-49.49,
+45.56,
 "leads"
 ],
 [
 "right",
-49.87,
+45.92,
 "right"
 ],
 [
 "into",
-50.26,
+46.2,
 "into"
 ],
 [
 "1208",
-50.6,
+46.92,
 "1208."
 ]
 ],
-"end": 51.57
+"end": 47.64
 },
 {
 "p": 9,
 "text": "Watch again.",
-"start": 51.57,
+"start": 47.64,
 "words": [
 [
 "watch",
-51.57,
+47.64,
 "Watch"
 ],
 [
 "again",
-51.95,
+48.04,
 "again."
 ]
 ],
-"end": 53.12
+"end": 48.58
 }
 ]
 }
