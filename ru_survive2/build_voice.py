@@ -4,7 +4,7 @@ TEMPO, PAUSE, HOOK_PH = 1.07, 2.4, 4.6
 hook = sys.argv[1] if len(sys.argv) > 1 else None
 NOHOOK = hook == 'none'
 if NOHOOK: hook = None
-W = json.load(open('/home/user/asr/words_rusurvive.json'))['words']
+W = json.load(open('/home/user/asr/words_ice.json'))['words']
 PW, PREV, ENDW = os.environ.get('PAUSE_WORD', 'seconds'), os.environ.get('PAUSE_PREV', 'three'), os.environ.get('END_WORD', '')
 i = next(k for k, w in enumerate(W) if w['w'] == PW and k and W[k - 1]['w'] == PREV); cut_raw = (W[i]['t'] + W[i + 1]['t']) / 2 + .05   # inside the pause after "three seconds"
 END_RAW = None
