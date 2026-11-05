@@ -1,0 +1,1 @@
+../ru_survive2/scenes_ice.js
