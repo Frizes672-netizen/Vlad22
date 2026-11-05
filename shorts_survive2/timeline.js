@@ -1,5 +1,5 @@
 const TL = {
-"total": 64.15500000000017,
+"total": 56.210204,
 "units": [
 {
 "p": 0,
@@ -13,925 +13,925 @@ const TL = {
 ],
 [
 "just",
-0.3,
+0.22,
 "just"
 ],
 [
 "fell",
-0.64,
+0.51,
 "fell"
 ],
 [
 "through",
-0.97,
+0.8,
 "through"
 ],
 [
 "the",
-1.45,
+1.02,
 "the"
 ],
 [
 "ice",
-1.75,
+1.2,
 "ice"
 ],
 [
 "and",
-2.04,
+1.67,
 "and"
 ],
 [
 "the",
-2.33,
+1.89,
 "the"
 ],
 [
 "most",
-2.63,
+2.04,
 "most"
 ],
 [
 "dangerous",
-2.97,
+2.29,
 "dangerous"
 ],
 [
 "thing",
-3.53,
+2.87,
 "thing"
 ],
 [
 "right",
-3.92,
+3.09,
 "right"
 ],
 [
 "now",
-4.3,
+3.42,
 "now"
 ],
 [
 "isnt",
-4.6,
+3.71,
 "isn't"
 ],
 [
 "the",
-4.94,
+4.15,
 "the"
 ],
 [
 "cold",
-5.23,
+4.33,
 "cold."
 ]
 ],
-"end": 5.95
+"end": 4.98
 },
 {
 "p": 1,
 "text": "The icy water knocks the air out of your chest.",
-"start": 5.95,
+"start": 4.98,
 "words": [
 [
 "the",
-5.95,
+4.98,
 "The"
 ],
 [
 "icy",
-6.25,
+5.31,
 "icy"
 ],
 [
 "water",
-6.54,
+5.78,
 "water"
 ],
 [
 "knocks",
-6.93,
+6.15,
 "knocks"
 ],
 [
 "the",
-7.36,
+6.55,
 "the"
 ],
 [
 "air",
-7.65,
+6.69,
 "air"
 ],
 [
 "out",
-7.95,
+6.95,
 "out"
 ],
 [
 "of",
-8.24,
+7.09,
 "of"
 ],
 [
 "your",
-8.49,
+7.24,
 "your"
 ],
 [
 "chest",
-8.83,
+7.42,
 "chest."
 ]
 ],
-"end": 9.6
+"end": 8.18
 },
 {
 "p": 1,
 "text": "For the first minute, you'll be gasping.",
-"start": 9.6,
+"start": 8.18,
 "words": [
 [
 "for",
-9.6,
+8.18,
 "For"
 ],
 [
 "the",
-9.89,
+8.33,
 "the"
 ],
 [
 "first",
-10.19,
+8.47,
 "first"
 ],
 [
 "minute",
-10.57,
+8.76,
 "minute,"
 ],
 [
 "youll",
-11.2,
+9.2,
 "you'll"
 ],
 [
 "be",
-11.59,
+9.49,
 "be"
 ],
 [
 "gasping",
-11.84,
+9.67,
 "gasping."
+]
+],
+"end": 10.51
+},
+{
+"p": 2,
+"text": "Don't panic.",
+"start": 10.51,
+"words": [
+[
+"dont",
+10.51,
+"Don't"
+],
+[
+"panic",
+10.98,
+"panic."
+]
+],
+"end": 11.78
+},
+{
+"p": 2,
+"text": "Breathe.",
+"start": 11.78,
+"words": [
+[
+"breathe",
+11.78,
+"Breathe."
 ]
 ],
 "end": 12.69
 },
 {
 "p": 2,
-"text": "Don't panic.",
+"text": "That minute will pass.",
 "start": 12.69,
 "words": [
 [
-"dont",
-12.69,
-"Don't"
-],
-[
-"panic",
-13.03,
-"panic."
-]
-],
-"end": 13.8
-},
-{
-"p": 2,
-"text": "Breathe.",
-"start": 13.8,
-"words": [
-[
-"breathe",
-13.8,
-"Breathe."
-]
-],
-"end": 14.65
-},
-{
-"p": 2,
-"text": "That minute will pass.",
-"start": 14.65,
-"words": [
-[
 "that",
-14.65,
+12.69,
 "That"
 ],
 [
 "minute",
-14.99,
+13.05,
 "minute"
 ],
 [
 "will",
-15.42,
+13.6,
 "will"
 ],
 [
 "pass",
-15.76,
+14.0,
 "pass."
 ]
 ],
-"end": 16.48
+"end": 14.8
 },
 {
 "p": 3,
 "text": "Now the choice.",
-"start": 16.48,
+"start": 14.8,
 "words": [
 [
 "now",
-16.48,
+14.8,
 "Now"
 ],
 [
 "the",
-16.78,
+15.24,
 "the"
 ],
 [
 "choice",
-17.08,
+15.53,
 "choice."
 ]
 ],
-"end": 17.89
+"end": 16.36
 },
 {
 "p": 3,
 "text": "Climb out with your arms \u2014 or hold the edge and wait for help?",
-"start": 17.89,
+"start": 16.36,
 "words": [
 [
 "climb",
-17.89,
+16.36,
 "Climb"
 ],
 [
 "out",
-18.27,
+16.8,
 "out"
 ],
 [
 "with",
-18.57,
+16.95,
 "with"
 ],
 [
 "your",
-18.91,
+17.09,
 "your"
 ],
 [
 "arms",
-19.25,
+17.35,
 "arms"
 ],
 [
 "or",
-19.59,
+17.85,
 "or"
 ],
 [
 "hold",
-19.84,
+18.07,
 "hold"
 ],
 [
 "the",
-20.18,
+18.4,
 "the"
 ],
 [
 "edge",
-20.47,
+18.58,
 "edge"
 ],
 [
 "and",
-20.81,
+18.91,
 "and"
 ],
 [
 "wait",
-21.11,
+19.09,
 "wait"
 ],
 [
 "for",
-21.45,
+19.38,
 "for"
 ],
 [
 "help",
-21.74,
+19.56,
 "help?"
 ]
 ],
-"end": 22.46
+"end": 20.15
 },
 {
 "p": 4,
 "text": "You have three seconds.",
-"start": 22.46,
+"start": 20.15,
 "words": [
 [
 "you",
-22.46,
+20.15,
 "You"
 ],
 [
 "have",
-22.76,
+20.4,
 "have"
 ],
 [
 "three",
-23.1,
+20.65,
 "three"
 ],
 [
 "seconds",
-23.48,
+21.02,
 "seconds."
 ]
 ],
-"end": 27.34
+"end": 24.51
 },
 {
 "p": 5,
 "text": "Neither.",
-"start": 27.34,
+"start": 24.51,
 "words": [
 [
 "neither",
-27.34,
+24.51,
 "Neither."
 ]
 ],
-"end": 28.19
+"end": 25.27
 },
 {
 "p": 6,
 "text": "Thin ice will keep breaking under your arms.",
-"start": 28.19,
+"start": 25.27,
 "words": [
 [
 "thin",
-28.19,
+25.27,
 "Thin"
 ],
 [
 "ice",
-28.53,
+25.82,
 "ice"
 ],
 [
 "will",
-28.83,
+26.15,
 "will"
 ],
 [
 "keep",
-29.17,
+26.36,
 "keep"
 ],
 [
 "breaking",
-29.51,
+26.62,
 "breaking"
 ],
 [
 "under",
-30.03,
+27.05,
 "under"
 ],
 [
 "your",
-30.41,
+27.24,
 "your"
 ],
 [
 "arms",
-30.75,
+27.49,
 "arms."
 ]
 ],
-"end": 31.47
+"end": 27.93
 },
 {
 "p": 6,
 "text": "And you can't wait: you have about ten minutes before your hands stop working.",
-"start": 31.47,
+"start": 27.93,
 "words": [
 [
 "and",
-31.47,
+27.93,
 "And"
 ],
 [
 "you",
-31.77,
+28.15,
 "you"
 ],
 [
 "cant",
-32.06,
+28.29,
 "can't"
 ],
 [
 "wait",
-32.4,
+28.69,
 "wait:"
 ],
 [
 "you",
-32.74,
+29.13,
 "you"
 ],
 [
 "have",
-33.04,
+29.38,
 "have"
 ],
 [
 "about",
-33.38,
+29.56,
 "about"
 ],
 [
 "ten",
-33.76,
+29.82,
 "ten"
 ],
 [
 "minutes",
-34.06,
+30.11,
 "minutes"
 ],
 [
 "before",
-34.53,
+30.55,
 "before"
 ],
 [
 "your",
-34.96,
+30.76,
 "your"
 ],
 [
 "hands",
-35.3,
+30.98,
 "hands"
 ],
 [
 "stop",
-35.69,
+31.27,
 "stop"
 ],
 [
 "working",
-36.03,
+31.6,
 "working."
 ]
 ],
-"end": 36.88
+"end": 32.11
 },
 {
 "p": 7,
 "text": "Turn back the way you came \u2014 that ice already held you.",
-"start": 36.88,
+"start": 32.11,
 "words": [
 [
 "turn",
-36.88,
+32.11,
 "Turn"
 ],
 [
 "back",
-37.22,
+32.58,
 "back"
 ],
 [
 "the",
-37.56,
+32.84,
 "the"
 ],
 [
 "way",
-37.86,
+33.02,
 "way"
 ],
 [
 "you",
-38.15,
+33.2,
 "you"
 ],
 [
 "came",
-38.45,
+33.42,
 "came"
 ],
 [
 "that",
-38.79,
+33.85,
 "that"
 ],
 [
 "ice",
-39.13,
+34.15,
 "ice"
 ],
 [
 "already",
-39.42,
+34.47,
 "already"
 ],
 [
 "held",
-39.9,
+35.09,
 "held"
 ],
 [
 "you",
-40.24,
+35.45,
 "you."
 ]
 ],
-"end": 40.91
+"end": 35.96
 },
 {
 "p": 8,
 "text": "Arms on the ice.",
-"start": 40.91,
+"start": 35.96,
 "words": [
 [
 "arms",
-40.91,
+35.96,
 "Arms"
 ],
 [
 "on",
-41.25,
+36.55,
 "on"
 ],
 [
 "the",
-41.5,
+36.73,
 "the"
 ],
 [
 "ice",
-41.8,
+36.95,
 "ice."
 ]
 ],
-"end": 42.47
+"end": 37.49
 },
 {
 "p": 8,
 "text": "Kick like you're swimming until your body is flat.",
-"start": 42.47,
+"start": 37.49,
 "words": [
 [
 "kick",
-42.47,
+37.49,
 "Kick"
 ],
 [
 "like",
-42.81,
+37.89,
 "like"
 ],
 [
 "youre",
-43.15,
+38.07,
 "you're"
 ],
 [
 "swimming",
-43.54,
+38.25,
 "swimming"
 ],
 [
 "until",
-44.06,
+38.65,
 "until"
 ],
 [
 "your",
-44.44,
+38.87,
 "your"
 ],
 [
 "body",
-44.78,
+39.09,
 "body"
 ],
 [
 "is",
-45.12,
+39.35,
 "is"
 ],
 [
 "flat",
-45.37,
+39.53,
 "flat."
 ]
 ],
-"end": 46.09
+"end": 40.11
 },
 {
 "p": 9,
 "text": "Then slide out on your belly \u2014 like a seal.",
-"start": 46.09,
+"start": 40.11,
 "words": [
 [
 "then",
-46.09,
+40.11,
 "Then"
 ],
 [
 "slide",
-46.43,
+40.51,
 "slide"
 ],
 [
 "out",
-46.82,
+41.02,
 "out"
 ],
 [
 "on",
-47.11,
+41.2,
 "on"
 ],
 [
 "your",
-47.36,
+41.31,
 "your"
 ],
 [
 "belly",
-47.7,
+41.49,
 "belly"
 ],
 [
 "like",
-48.09,
+41.93,
 "like"
 ],
 [
 "a",
-48.43,
+42.15,
 "a"
 ],
 [
 "seal",
-48.65,
+42.29,
 "seal."
 ]
 ],
-"end": 49.37
+"end": 42.84
 },
 {
 "p": 10,
 "text": "Don't stand up.",
-"start": 49.37,
+"start": 42.84,
 "words": [
 [
 "dont",
-49.37,
+42.84,
 "Don't"
 ],
 [
 "stand",
-49.71,
+43.38,
 "stand"
 ],
 [
 "up",
-50.09,
+43.78,
 "up."
 ]
 ],
-"end": 50.72
+"end": 44.25
 },
 {
 "p": 10,
 "text": "Roll away, and crawl back to shore along your own tracks.",
-"start": 50.72,
+"start": 44.25,
 "words": [
 [
 "roll",
-50.72,
+44.25,
 "Roll"
 ],
 [
 "away",
-51.06,
+44.65,
 "away,"
 ],
 [
 "and",
-51.6,
+44.98,
 "and"
 ],
 [
 "crawl",
-51.9,
+45.2,
 "crawl"
 ],
 [
 "back",
-52.28,
+45.6,
 "back"
 ],
 [
 "to",
-52.62,
+45.75,
 "to"
 ],
 [
 "shore",
-52.87,
+45.93,
 "shore"
 ],
 [
 "along",
-53.26,
+46.22,
 "along"
 ],
 [
 "your",
-53.64,
+46.55,
 "your"
 ],
 [
 "own",
-53.98,
+46.73,
 "own"
 ],
 [
 "tracks",
-54.28,
+46.98,
 "tracks."
 ]
 ],
-"end": 55.09
+"end": 47.96
 },
 {
 "p": 11,
 "text": "Turn.",
-"start": 55.09,
+"start": 47.96,
 "words": [
 [
 "turn",
-55.09,
+47.96,
 "Turn."
 ]
 ],
-"end": 55.81
+"end": 48.65
 },
 {
 "p": 11,
 "text": "Lie flat.",
-"start": 55.81,
+"start": 48.65,
 "words": [
 [
 "lie",
-55.81,
+48.65,
 "Lie"
 ],
 [
 "flat",
-56.1,
+49.02,
 "flat."
 ]
 ],
-"end": 56.82
+"end": 49.6
 },
 {
 "p": 11,
 "text": "Slide out.",
-"start": 56.82,
+"start": 49.6,
 "words": [
 [
 "slide",
-56.82,
+49.6,
 "Slide"
 ],
 [
 "out",
-57.21,
+50.18,
 "out."
 ]
 ],
-"end": 57.88
+"end": 50.62
 },
 {
 "p": 11,
 "text": "Roll away.",
-"start": 57.88,
+"start": 50.62,
 "words": [
 [
 "roll",
-57.88,
+50.62,
 "Roll"
 ],
 [
 "away",
-58.22,
+51.05,
 "away."
 ]
 ],
-"end": 58.94
+"end": 51.56
 },
 {
 "p": 12,
 "text": "And remember: the most dangerous thing isn't the cold.",
-"start": 58.94,
+"start": 51.56,
 "words": [
 [
 "and",
-58.94,
+51.56,
 "And"
 ],
 [
 "remember",
-59.24,
+51.85,
 "remember:"
 ],
 [
 "the",
-59.76,
+52.58,
 "the"
 ],
 [
 "most",
-60.05,
+52.84,
 "most"
 ],
 [
 "dangerous",
-60.39,
+53.13,
 "dangerous"
 ],
 [
 "thing",
-60.96,
+53.75,
 "thing"
 ],
 [
 "isnt",
-61.34,
+54.04,
 "isn't"
 ],
 [
 "the",
-61.68,
+54.4,
 "the"
 ],
 [
 "cold",
-61.98,
+54.58,
 "cold."
 ]
 ],
-"end": 62.7
+"end": 55.13
 },
 {
 "p": 12,
 "text": "It's panic.",
-"start": 62.7,
+"start": 55.13,
 "words": [
 [
 "its",
-62.7,
+55.13,
 "It's"
 ],
 [
 "panic",
-62.99,
+55.53,
 "panic."
 ]
 ],
-"end": 64.16
+"end": 56.21
 }
 ]
 };
