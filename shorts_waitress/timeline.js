@@ -1,0 +1,1100 @@
+const TL = {
+"total": 73.00500000000017,
+"units": [
+{
+"p": 0,
+"text": "A boy wasn't allowed to eat at a restaurant \u2014 and that's the only reason he's still alive.",
+"start": 0.0,
+"words": [
+[
+"a",
+0.0,
+"A"
+],
+[
+"boy",
+0.22,
+"boy"
+],
+[
+"wasnt",
+0.52,
+"wasn't"
+],
+[
+"allowed",
+0.9,
+"allowed"
+],
+[
+"to",
+1.38,
+"to"
+],
+[
+"eat",
+1.62,
+"eat"
+],
+[
+"at",
+1.92,
+"at"
+],
+[
+"a",
+2.17,
+"a"
+],
+[
+"restaurant",
+2.39,
+"restaurant"
+],
+[
+"and",
+3.0,
+"and"
+],
+[
+"thats",
+3.29,
+"that's"
+],
+[
+"the",
+3.68,
+"the"
+],
+[
+"only",
+3.97,
+"only"
+],
+[
+"reason",
+4.31,
+"reason"
+],
+[
+"hes",
+4.74,
+"he's"
+],
+[
+"still",
+5.04,
+"still"
+],
+[
+"alive",
+5.42,
+"alive."
+]
+],
+"end": 6.19
+},
+{
+"p": 1,
+"text": "Florida, New Year's Day.",
+"start": 6.19,
+"words": [
+[
+"florida",
+6.19,
+"Florida,"
+],
+[
+"new",
+6.86,
+"New"
+],
+[
+"years",
+7.16,
+"Year's"
+],
+[
+"day",
+7.54,
+"Day."
+]
+],
+"end": 8.22
+},
+{
+"p": 1,
+"text": "A family sits down at a table.",
+"start": 8.22,
+"words": [
+[
+"a",
+8.22,
+"A"
+],
+[
+"family",
+8.44,
+"family"
+],
+[
+"sits",
+8.87,
+"sits"
+],
+[
+"down",
+9.21,
+"down"
+],
+[
+"at",
+9.55,
+"at"
+],
+[
+"a",
+9.8,
+"a"
+],
+[
+"table",
+10.02,
+"table."
+]
+],
+"end": 10.79
+},
+{
+"p": 1,
+"text": "The adults get their food.",
+"start": 10.79,
+"words": [
+[
+"the",
+10.79,
+"The"
+],
+[
+"adults",
+11.08,
+"adults"
+],
+[
+"get",
+11.51,
+"get"
+],
+[
+"their",
+11.8,
+"their"
+],
+[
+"food",
+12.19,
+"food."
+]
+],
+"end": 12.91
+},
+{
+"p": 1,
+"text": "The eleven-year-old boy gets nothing.",
+"start": 12.91,
+"words": [
+[
+"the",
+12.91,
+"The"
+],
+[
+"elevenyearold",
+13.21,
+"eleven-year-old"
+],
+[
+"boy",
+13.82,
+"boy"
+],
+[
+"gets",
+14.12,
+"gets"
+],
+[
+"nothing",
+14.46,
+"nothing."
+]
+],
+"end": 15.31
+},
+{
+"p": 2,
+"text": "The waitress asks:",
+"start": 15.31,
+"words": [
+[
+"the",
+15.31,
+"The"
+],
+[
+"waitress",
+15.61,
+"waitress"
+],
+[
+"asks",
+16.13,
+"asks:"
+]
+],
+"end": 16.47
+},
+{
+"p": 2,
+"text": "\"What about him?\" \"He'll eat at home.\"",
+"start": 16.47,
+"words": [
+[
+"what",
+16.47,
+"\"What"
+],
+[
+"about",
+16.81,
+"about"
+],
+[
+"him",
+17.2,
+"him?\""
+],
+[
+"hell",
+17.49,
+"\"He'll"
+],
+[
+"eat",
+17.83,
+"eat"
+],
+[
+"at",
+18.13,
+"at"
+],
+[
+"home",
+18.38,
+"home.\""
+]
+],
+"end": 18.72
+},
+{
+"p": 3,
+"text": "Then she notices the bruises.",
+"start": 18.72,
+"words": [
+[
+"then",
+18.72,
+"Then"
+],
+[
+"she",
+19.06,
+"she"
+],
+[
+"notices",
+19.35,
+"notices"
+],
+[
+"the",
+19.83,
+"the"
+],
+[
+"bruises",
+20.12,
+"bruises."
+]
+],
+"end": 20.98
+},
+{
+"p": 3,
+"text": "On his arms.",
+"start": 20.98,
+"words": [
+[
+"on",
+20.98,
+"On"
+],
+[
+"his",
+21.23,
+"his"
+],
+[
+"arms",
+21.52,
+"arms."
+]
+],
+"end": 22.24
+},
+{
+"p": 3,
+"text": "On his face.",
+"start": 22.24,
+"words": [
+[
+"on",
+22.24,
+"On"
+],
+[
+"his",
+22.49,
+"his"
+],
+[
+"face",
+22.79,
+"face."
+]
+],
+"end": 23.51
+},
+{
+"p": 4,
+"text": "She can't just ask \u2014 his parents are right there.",
+"start": 23.51,
+"words": [
+[
+"she",
+23.51,
+"She"
+],
+[
+"cant",
+23.8,
+"can't"
+],
+[
+"just",
+24.14,
+"just"
+],
+[
+"ask",
+24.48,
+"ask"
+],
+[
+"his",
+24.78,
+"his"
+],
+[
+"parents",
+25.07,
+"parents"
+],
+[
+"are",
+25.55,
+"are"
+],
+[
+"right",
+25.84,
+"right"
+],
+[
+"there",
+26.23,
+"there."
+]
+],
+"end": 26.99
+},
+{
+"p": 4,
+"text": "So she does something most people would never think of.",
+"start": 26.99,
+"words": [
+[
+"so",
+26.99,
+"So"
+],
+[
+"she",
+27.24,
+"she"
+],
+[
+"does",
+27.54,
+"does"
+],
+[
+"something",
+27.88,
+"something"
+],
+[
+"most",
+28.44,
+"most"
+],
+[
+"people",
+28.78,
+"people"
+],
+[
+"would",
+29.21,
+"would"
+],
+[
+"never",
+29.6,
+"never"
+],
+[
+"think",
+29.98,
+"think"
+],
+[
+"of",
+30.37,
+"of."
+]
+],
+"end": 31.0
+},
+{
+"p": 5,
+"text": "She writes on a notepad:",
+"start": 31.0,
+"words": [
+[
+"she",
+31.0,
+"She"
+],
+[
+"writes",
+31.29,
+"writes"
+],
+[
+"on",
+31.72,
+"on"
+],
+[
+"a",
+31.97,
+"a"
+],
+[
+"notepad",
+32.19,
+"notepad:"
+]
+],
+"end": 32.67
+},
+{
+"p": 5,
+"text": "\"Do you need help?\" \u2014 and stands behind his parents, where only he can see it.",
+"start": 32.67,
+"words": [
+[
+"do",
+32.67,
+"\"Do"
+],
+[
+"you",
+32.92,
+"you"
+],
+[
+"need",
+33.21,
+"need"
+],
+[
+"help",
+33.55,
+"help?\""
+],
+[
+"and",
+33.89,
+"and"
+],
+[
+"stands",
+34.19,
+"stands"
+],
+[
+"behind",
+34.62,
+"behind"
+],
+[
+"his",
+35.05,
+"his"
+],
+[
+"parents",
+35.34,
+"parents,"
+],
+[
+"where",
+36.02,
+"where"
+],
+[
+"only",
+36.4,
+"only"
+],
+[
+"he",
+36.74,
+"he"
+],
+[
+"can",
+36.99,
+"can"
+],
+[
+"see",
+37.29,
+"see"
+],
+[
+"it",
+37.58,
+"it."
+]
+],
+"end": 38.21
+},
+{
+"p": 6,
+"text": "The boy reads the note.",
+"start": 38.21,
+"words": [
+[
+"the",
+38.21,
+"The"
+],
+[
+"boy",
+38.51,
+"boy"
+],
+[
+"reads",
+38.8,
+"reads"
+],
+[
+"the",
+39.19,
+"the"
+],
+[
+"note",
+39.48,
+"note."
+]
+],
+"end": 40.2
+},
+{
+"p": 6,
+"text": "And gives the smallest nod.",
+"start": 40.2,
+"words": [
+[
+"and",
+40.2,
+"And"
+],
+[
+"gives",
+40.5,
+"gives"
+],
+[
+"the",
+40.88,
+"the"
+],
+[
+"smallest",
+41.18,
+"smallest"
+],
+[
+"nod",
+41.7,
+"nod."
+]
+],
+"end": 42.37
+},
+{
+"p": 7,
+"text": "She calls 911.",
+"start": 42.37,
+"words": [
+[
+"she",
+42.37,
+"She"
+],
+[
+"calls",
+42.67,
+"calls"
+],
+[
+"911",
+43.05,
+"911."
+]
+],
+"end": 43.98
+},
+{
+"p": 8,
+"text": "It turned out his stepfather had been beating him \u2014 and starving him as punishment.",
+"start": 43.98,
+"words": [
+[
+"it",
+43.98,
+"It"
+],
+[
+"turned",
+44.23,
+"turned"
+],
+[
+"out",
+44.66,
+"out"
+],
+[
+"his",
+44.95,
+"his"
+],
+[
+"stepfather",
+45.25,
+"stepfather"
+],
+[
+"had",
+45.86,
+"had"
+],
+[
+"been",
+46.15,
+"been"
+],
+[
+"beating",
+46.49,
+"beating"
+],
+[
+"him",
+46.97,
+"him"
+],
+[
+"and",
+47.26,
+"and"
+],
+[
+"starving",
+47.56,
+"starving"
+],
+[
+"him",
+48.08,
+"him"
+],
+[
+"as",
+48.37,
+"as"
+],
+[
+"punishment",
+48.62,
+"punishment."
+]
+],
+"end": 49.61
+},
+{
+"p": 9,
+"text": "The stepfather was arrested, and later found guilty in court.",
+"start": 49.61,
+"words": [
+[
+"the",
+49.61,
+"The"
+],
+[
+"stepfather",
+49.91,
+"stepfather"
+],
+[
+"was",
+50.52,
+"was"
+],
+[
+"arrested",
+50.81,
+"arrested,"
+],
+[
+"and",
+51.53,
+"and"
+],
+[
+"later",
+51.83,
+"later"
+],
+[
+"found",
+52.21,
+"found"
+],
+[
+"guilty",
+52.6,
+"guilty"
+],
+[
+"in",
+53.03,
+"in"
+],
+[
+"court",
+53.28,
+"court."
+]
+],
+"end": 54.04
+},
+{
+"p": 10,
+"text": "The police chief said: without her, they'd probably be investigating a homicide.",
+"start": 54.04,
+"words": [
+[
+"the",
+54.04,
+"The"
+],
+[
+"police",
+54.34,
+"police"
+],
+[
+"chief",
+54.77,
+"chief"
+],
+[
+"said",
+55.15,
+"said:"
+],
+[
+"without",
+55.49,
+"without"
+],
+[
+"her",
+55.97,
+"her,"
+],
+[
+"theyd",
+56.46,
+"they'd"
+],
+[
+"probably",
+56.85,
+"probably"
+],
+[
+"be",
+57.37,
+"be"
+],
+[
+"investigating",
+57.62,
+"investigating"
+],
+[
+"a",
+58.24,
+"a"
+],
+[
+"homicide",
+58.46,
+"homicide."
+]
+],
+"end": 59.36
+},
+{
+"p": 11,
+"text": "Her name is Flaviane Carvalho.",
+"start": 59.36,
+"words": [
+[
+"her",
+59.36,
+"Her"
+],
+[
+"name",
+59.65,
+"name"
+],
+[
+"is",
+59.99,
+"is"
+],
+[
+"flaviane",
+60.24,
+"Flaviane"
+],
+[
+"carvalho",
+60.76,
+"Carvalho."
+]
+],
+"end": 61.66
+},
+{
+"p": 11,
+"text": "Florida named a day in her honor.",
+"start": 61.66,
+"words": [
+[
+"florida",
+61.66,
+"Florida"
+],
+[
+"named",
+62.14,
+"named"
+],
+[
+"a",
+62.52,
+"a"
+],
+[
+"day",
+62.74,
+"day"
+],
+[
+"in",
+63.04,
+"in"
+],
+[
+"her",
+63.29,
+"her"
+],
+[
+"honor",
+63.58,
+"honor."
+]
+],
+"end": 64.35
+},
+{
+"p": 12,
+"text": "One note.",
+"start": 64.35,
+"words": [
+[
+"one",
+64.35,
+"One"
+],
+[
+"note",
+64.64,
+"note."
+]
+],
+"end": 65.36
+},
+{
+"p": 12,
+"text": "One nod.",
+"start": 65.36,
+"words": [
+[
+"one",
+65.36,
+"One"
+],
+[
+"nod",
+65.66,
+"nod."
+]
+],
+"end": 66.33
+},
+{
+"p": 13,
+"text": "Sometimes, saving a life takes nothing more than asking in a way only they can answer.",
+"start": 66.33,
+"words": [
+[
+"sometimes",
+66.33,
+"Sometimes,"
+],
+[
+"saving",
+67.1,
+"saving"
+],
+[
+"a",
+67.53,
+"a"
+],
+[
+"life",
+67.75,
+"life"
+],
+[
+"takes",
+68.09,
+"takes"
+],
+[
+"nothing",
+68.47,
+"nothing"
+],
+[
+"more",
+68.95,
+"more"
+],
+[
+"than",
+69.29,
+"than"
+],
+[
+"asking",
+69.63,
+"asking"
+],
+[
+"in",
+70.06,
+"in"
+],
+[
+"a",
+70.31,
+"a"
+],
+[
+"way",
+70.53,
+"way"
+],
+[
+"only",
+70.82,
+"only"
+],
+[
+"they",
+71.16,
+"they"
+],
+[
+"can",
+71.5,
+"can"
+],
+[
+"answer",
+71.8,
+"answer."
+]
+],
+"end": 73.01
+}
+]
+};
