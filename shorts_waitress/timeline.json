@@ -1,5 +1,5 @@
 {
-"total": 73.00500000000017,
+"total": 64.150952,
 "units": [
 {
 "p": 0,
@@ -13,1088 +13,1088 @@
 ],
 [
 "boy",
-0.22,
+0.14,
 "boy"
 ],
 [
 "wasnt",
-0.52,
+0.42,
 "wasn't"
 ],
 [
 "allowed",
-0.9,
+0.78,
 "allowed"
 ],
 [
 "to",
-1.38,
+1.13,
 "to"
 ],
 [
 "eat",
-1.62,
+1.27,
 "eat"
 ],
 [
 "at",
-1.92,
+1.45,
 "at"
 ],
 [
 "a",
-2.17,
+1.56,
 "a"
 ],
 [
 "restaurant",
-2.39,
+1.7,
 "restaurant"
 ],
 [
 "and",
-3.0,
+2.34,
 "and"
 ],
 [
 "thats",
-3.29,
+2.58,
 "that's"
 ],
 [
 "the",
-3.68,
+2.94,
 "the"
 ],
 [
 "only",
-3.97,
+3.12,
 "only"
 ],
 [
 "reason",
-4.31,
+3.4,
 "reason"
 ],
 [
 "hes",
-4.74,
+3.86,
 "he's"
 ],
 [
 "still",
-5.04,
+4.21,
 "still"
 ],
 [
 "alive",
-5.42,
+4.42,
 "alive."
 ]
 ],
-"end": 6.19
+"end": 5.27
 },
 {
 "p": 1,
 "text": "Florida, New Year's Day.",
-"start": 6.19,
+"start": 5.27,
 "words": [
 [
 "florida",
-6.19,
+5.27,
 "Florida,"
 ],
 [
 "new",
-6.86,
+6.02,
 "New"
 ],
 [
 "years",
-7.16,
+6.3,
 "Year's"
 ],
 [
 "day",
-7.54,
+6.69,
 "Day."
 ]
 ],
-"end": 8.22
+"end": 7.12
 },
 {
 "p": 1,
 "text": "A family sits down at a table.",
-"start": 8.22,
+"start": 7.12,
 "words": [
 [
 "a",
-8.22,
+7.12,
 "A"
 ],
 [
 "family",
-8.44,
+7.36,
 "family"
 ],
 [
 "sits",
-8.87,
+7.79,
 "sits"
 ],
 [
 "down",
-9.21,
+8.18,
 "down"
 ],
 [
 "at",
-9.55,
+8.39,
 "at"
 ],
 [
 "a",
-9.8,
+8.53,
 "a"
 ],
 [
 "table",
-10.02,
+8.64,
 "table."
 ]
 ],
-"end": 10.79
+"end": 9.17
 },
 {
 "p": 1,
 "text": "The adults get their food.",
-"start": 10.79,
+"start": 9.17,
 "words": [
 [
 "the",
-10.79,
+9.17,
 "The"
 ],
 [
 "adults",
-11.08,
+9.42,
 "adults"
 ],
 [
 "get",
-11.51,
+9.98,
 "get"
 ],
 [
 "their",
-11.8,
+10.16,
 "their"
 ],
 [
 "food",
-12.19,
+10.34,
 "food."
 ]
 ],
-"end": 12.91
+"end": 10.8
 },
 {
 "p": 1,
 "text": "The eleven-year-old boy gets nothing.",
-"start": 12.91,
+"start": 10.8,
 "words": [
 [
 "the",
-12.91,
+10.8,
 "The"
 ],
 [
 "elevenyearold",
-13.21,
+11.35,
 "eleven-year-old"
 ],
 [
 "boy",
-13.82,
+11.89,
 "boy"
 ],
 [
 "gets",
-14.12,
+12.25,
 "gets"
 ],
 [
 "nothing",
-14.46,
+12.67,
 "nothing."
 ]
 ],
-"end": 15.31
+"end": 13.2
 },
 {
 "p": 2,
 "text": "The waitress asks:",
-"start": 15.31,
+"start": 13.2,
 "words": [
 [
 "the",
-15.31,
+13.2,
 "The"
 ],
 [
 "waitress",
-15.61,
+13.45,
 "waitress"
 ],
 [
 "asks",
-16.13,
+14.02,
 "asks:"
 ]
 ],
-"end": 16.47
+"end": 14.62
 },
 {
 "p": 2,
 "text": "\"What about him?\" \"He'll eat at home.\"",
-"start": 16.47,
+"start": 14.62,
 "words": [
 [
 "what",
-16.47,
+14.62,
 "\"What"
 ],
 [
 "about",
-16.81,
+14.9,
 "about"
 ],
 [
 "him",
-17.2,
+15.19,
 "him?\""
 ],
 [
 "hell",
-17.49,
+15.61,
 "\"He'll"
 ],
 [
 "eat",
-17.83,
+15.89,
 "eat"
 ],
 [
 "at",
-18.13,
+16.14,
 "at"
 ],
 [
 "home",
-18.38,
+16.32,
 "home.\""
 ]
 ],
-"end": 18.72
+"end": 16.85
 },
 {
 "p": 3,
 "text": "Then she notices the bruises.",
-"start": 18.72,
+"start": 16.85,
 "words": [
 [
 "then",
-18.72,
+16.85,
 "Then"
 ],
 [
 "she",
-19.06,
+17.24,
 "she"
 ],
 [
 "notices",
-19.35,
+17.56,
 "notices"
 ],
 [
 "the",
-19.83,
+18.09,
 "the"
 ],
 [
 "bruises",
-20.12,
+18.23,
 "bruises."
 ]
 ],
-"end": 20.98
+"end": 19.08
 },
 {
 "p": 3,
 "text": "On his arms.",
-"start": 20.98,
+"start": 19.08,
 "words": [
 [
 "on",
-20.98,
+19.08,
 "On"
 ],
 [
 "his",
-21.23,
+19.26,
 "his"
 ],
 [
 "arms",
-21.52,
+19.5,
 "arms."
 ]
 ],
-"end": 22.24
+"end": 20.14
 },
 {
 "p": 3,
 "text": "On his face.",
-"start": 22.24,
+"start": 20.14,
 "words": [
 [
 "on",
-22.24,
+20.14,
 "On"
 ],
 [
 "his",
-22.49,
+20.35,
 "his"
 ],
 [
 "face",
-22.79,
+20.57,
 "face."
 ]
 ],
-"end": 23.51
+"end": 21.2
 },
 {
 "p": 4,
 "text": "She can't just ask \u2014 his parents are right there.",
-"start": 23.51,
+"start": 21.2,
 "words": [
 [
 "she",
-23.51,
+21.2,
 "She"
 ],
 [
 "cant",
-23.8,
+21.49,
 "can't"
 ],
 [
 "just",
-24.14,
+21.77,
 "just"
 ],
 [
 "ask",
-24.48,
+22.09,
 "ask"
 ],
 [
 "his",
-24.78,
+22.58,
 "his"
 ],
 [
 "parents",
-25.07,
+22.76,
 "parents"
 ],
 [
 "are",
-25.55,
+23.19,
 "are"
 ],
 [
 "right",
-25.84,
+23.36,
 "right"
 ],
 [
 "there",
-26.23,
+23.68,
 "there."
 ]
 ],
-"end": 26.99
+"end": 24.07
 },
 {
 "p": 4,
 "text": "So she does something most people would never think of.",
-"start": 26.99,
+"start": 24.07,
 "words": [
 [
 "so",
-26.99,
+24.07,
 "So"
 ],
 [
 "she",
-27.24,
+24.46,
 "she"
 ],
 [
 "does",
-27.54,
+24.71,
 "does"
 ],
 [
 "something",
-27.88,
+25.03,
 "something"
 ],
 [
 "most",
-28.44,
+25.35,
 "most"
 ],
 [
 "people",
-28.78,
+25.66,
 "people"
 ],
 [
 "would",
-29.21,
+25.98,
 "would"
 ],
 [
 "never",
-29.6,
+26.23,
 "never"
 ],
 [
 "think",
-29.98,
+26.55,
 "think"
 ],
 [
 "of",
-30.37,
+26.87,
 "of."
 ]
 ],
-"end": 31.0
+"end": 27.15
 },
 {
 "p": 5,
 "text": "She writes on a notepad:",
-"start": 31.0,
+"start": 27.15,
 "words": [
 [
 "she",
-31.0,
+27.15,
 "She"
 ],
 [
 "writes",
-31.29,
+27.47,
 "writes"
 ],
 [
 "on",
-31.72,
+27.86,
 "on"
 ],
 [
 "a",
-31.97,
+28.0,
 "a"
 ],
 [
 "notepad",
-32.19,
+28.48,
 "notepad:"
 ]
 ],
-"end": 32.67
+"end": 28.96
 },
 {
 "p": 5,
 "text": "\"Do you need help?\" \u2014 and stands behind his parents, where only he can see it.",
-"start": 32.67,
+"start": 28.96,
 "words": [
 [
 "do",
-32.67,
+28.96,
 "\"Do"
 ],
 [
 "you",
-32.92,
+29.13,
 "you"
 ],
 [
 "need",
-33.21,
+29.38,
 "need"
 ],
 [
 "help",
-33.55,
+29.66,
 "help?\""
 ],
 [
 "and",
-33.89,
+30.16,
 "and"
 ],
 [
 "stands",
-34.19,
+30.37,
 "stands"
 ],
 [
 "behind",
-34.62,
+30.87,
 "behind"
 ],
 [
 "his",
-35.05,
+31.26,
 "his"
 ],
 [
 "parents",
-35.34,
+31.43,
 "parents,"
 ],
 [
 "where",
-36.02,
+32.0,
 "where"
 ],
 [
 "only",
-36.4,
+32.21,
 "only"
 ],
 [
 "he",
-36.74,
+32.5,
 "he"
 ],
 [
 "can",
-36.99,
+32.81,
 "can"
 ],
 [
 "see",
-37.29,
+33.06,
 "see"
 ],
 [
 "it",
-37.58,
+33.27,
 "it."
 ]
 ],
-"end": 38.21
+"end": 33.59
 },
 {
 "p": 6,
 "text": "The boy reads the note.",
-"start": 38.21,
+"start": 33.59,
 "words": [
 [
 "the",
-38.21,
+33.59,
 "The"
 ],
 [
 "boy",
-38.51,
+33.84,
 "boy"
 ],
 [
 "reads",
-38.8,
+34.16,
 "reads"
 ],
 [
 "the",
-39.19,
+34.58,
 "the"
 ],
 [
 "note",
-39.48,
+34.76,
 "note."
 ]
 ],
-"end": 40.2
+"end": 35.15
 },
 {
 "p": 6,
 "text": "And gives the smallest nod.",
-"start": 40.2,
+"start": 35.15,
 "words": [
 [
 "and",
-40.2,
+35.15,
 "And"
 ],
 [
 "gives",
-40.5,
+35.4,
 "gives"
 ],
 [
 "the",
-40.88,
+35.72,
 "the"
 ],
 [
 "smallest",
-41.18,
+35.93,
 "smallest"
 ],
 [
 "nod",
-41.7,
+36.5,
 "nod."
 ]
 ],
-"end": 42.37
+"end": 37.39
 },
 {
 "p": 7,
 "text": "She calls 911.",
-"start": 42.37,
+"start": 37.39,
 "words": [
 [
 "she",
-42.37,
+37.39,
 "She"
 ],
 [
 "calls",
-42.67,
+37.71,
 "calls"
 ],
 [
 "911",
-43.05,
+38.45,
 "911."
 ]
 ],
-"end": 43.98
+"end": 39.18
 },
 {
 "p": 8,
 "text": "It turned out his stepfather had been beating him \u2014 and starving him as punishment.",
-"start": 43.98,
+"start": 39.18,
 "words": [
 [
 "it",
-43.98,
+39.18,
 "It"
 ],
 [
 "turned",
-44.23,
+39.39,
 "turned"
 ],
 [
 "out",
-44.66,
+39.71,
 "out"
 ],
 [
 "his",
-44.95,
+39.92,
 "his"
 ],
 [
 "stepfather",
-45.25,
+40.13,
 "stepfather"
 ],
 [
 "had",
-45.86,
+40.74,
 "had"
 ],
 [
 "been",
-46.15,
+40.88,
 "been"
 ],
 [
 "beating",
-46.49,
+41.09,
 "beating"
 ],
 [
 "him",
-46.97,
+41.52,
 "him"
 ],
 [
 "and",
-47.26,
+41.8,
 "and"
 ],
 [
 "starving",
-47.56,
+42.05,
 "starving"
 ],
 [
 "him",
-48.08,
+42.61,
 "him"
 ],
 [
 "as",
-48.37,
+42.86,
 "as"
 ],
 [
 "punishment",
-48.62,
+43.04,
 "punishment."
 ]
 ],
-"end": 49.61
+"end": 43.78
 },
 {
 "p": 9,
 "text": "The stepfather was arrested, and later found guilty in court.",
-"start": 49.61,
+"start": 43.78,
 "words": [
 [
 "the",
-49.61,
+43.78,
 "The"
 ],
 [
 "stepfather",
-49.91,
+43.99,
 "stepfather"
 ],
 [
 "was",
-50.52,
+44.59,
 "was"
 ],
 [
 "arrested",
-50.81,
+44.77,
 "arrested,"
 ],
 [
 "and",
-51.53,
+45.34,
 "and"
 ],
 [
 "later",
-51.83,
+45.55,
 "later"
 ],
 [
 "found",
-52.21,
+45.94,
 "found"
 ],
 [
 "guilty",
-52.6,
+46.19,
 "guilty"
 ],
 [
 "in",
-53.03,
+46.61,
 "in"
 ],
 [
 "court",
-53.28,
+46.82,
 "court."
 ]
 ],
-"end": 54.04
+"end": 47.25
 },
 {
 "p": 10,
 "text": "The police chief said: without her, they'd probably be investigating a homicide.",
-"start": 54.04,
+"start": 47.25,
 "words": [
 [
 "the",
-54.04,
+47.25,
 "The"
 ],
 [
 "police",
-54.34,
+47.5,
 "police"
 ],
 [
 "chief",
-54.77,
+47.89,
 "chief"
 ],
 [
 "said",
-55.15,
+48.24,
 "said:"
 ],
 [
 "without",
-55.49,
+48.74,
 "without"
 ],
 [
 "her",
-55.97,
+49.09,
 "her,"
 ],
 [
 "theyd",
-56.46,
+49.44,
 "they'd"
 ],
 [
 "probably",
-56.85,
+49.8,
 "probably"
 ],
 [
 "be",
-57.37,
+50.22,
 "be"
 ],
 [
 "investigating",
-57.62,
+50.36,
 "investigating"
 ],
 [
 "a",
-58.24,
+51.04,
 "a"
 ],
 [
 "homicide",
-58.46,
+51.18,
 "homicide."
 ]
 ],
-"end": 59.36
+"end": 51.99
 },
 {
 "p": 11,
 "text": "Her name is Flaviane Carvalho.",
-"start": 59.36,
+"start": 51.99,
 "words": [
 [
 "her",
-59.36,
+51.99,
 "Her"
 ],
 [
 "name",
-59.65,
+52.31,
 "name"
 ],
 [
 "is",
-59.99,
+52.63,
 "is"
 ],
 [
 "flaviane",
-60.24,
+52.84,
 "Flaviane"
 ],
 [
 "carvalho",
-60.76,
+53.65,
 "Carvalho."
 ]
 ],
-"end": 61.66
+"end": 54.45
 },
 {
 "p": 11,
 "text": "Florida named a day in her honor.",
-"start": 61.66,
+"start": 54.45,
 "words": [
 [
 "florida",
-61.66,
+54.45,
 "Florida"
 ],
 [
 "named",
-62.14,
+55.05,
 "named"
 ],
 [
 "a",
-62.52,
+55.34,
 "a"
 ],
 [
 "day",
-62.74,
+55.44,
 "day"
 ],
 [
 "in",
-63.04,
+55.73,
 "in"
 ],
 [
 "her",
-63.29,
+55.87,
 "her"
 ],
 [
 "honor",
-63.58,
+56.05,
 "honor."
 ]
 ],
-"end": 64.35
+"end": 56.72
 },
 {
 "p": 12,
 "text": "One note.",
-"start": 64.35,
+"start": 56.72,
 "words": [
 [
 "one",
-64.35,
+56.72,
 "One"
 ],
 [
 "note",
-64.64,
+57.07,
 "note."
 ]
 ],
-"end": 65.36
+"end": 57.75
 },
 {
 "p": 12,
 "text": "One nod.",
-"start": 65.36,
+"start": 57.75,
 "words": [
 [
 "one",
-65.36,
+57.75,
 "One"
 ],
 [
 "nod",
-65.66,
+58.17,
 "nod."
 ]
 ],
-"end": 66.33
+"end": 58.7
 },
 {
 "p": 13,
 "text": "Sometimes, saving a life takes nothing more than asking in a way only they can answer.",
-"start": 66.33,
+"start": 58.7,
 "words": [
 [
 "sometimes",
-66.33,
+58.7,
 "Sometimes,"
 ],
 [
 "saving",
-67.1,
+59.66,
 "saving"
 ],
 [
 "a",
-67.53,
+60.05,
 "a"
 ],
 [
 "life",
-67.75,
+60.22,
 "life"
 ],
 [
 "takes",
-68.09,
+60.47,
 "takes"
 ],
 [
 "nothing",
-68.47,
+60.82,
 "nothing"
 ],
 [
 "more",
-68.95,
+61.14,
 "more"
 ],
 [
 "than",
-69.29,
+61.39,
 "than"
 ],
 [
 "asking",
-69.63,
+61.64,
 "asking"
 ],
 [
 "in",
-70.06,
+62.13,
 "in"
 ],
 [
 "a",
-70.31,
+62.28,
 "a"
 ],
 [
 "way",
-70.53,
+62.42,
 "way"
 ],
 [
 "only",
-70.82,
+62.74,
 "only"
 ],
 [
 "they",
-71.16,
+63.09,
 "they"
 ],
 [
 "can",
-71.5,
+63.37,
 "can"
 ],
 [
 "answer",
-71.8,
+63.66,
 "answer."
 ]
 ],
-"end": 73.01
+"end": 64.15
 }
 ]
 }

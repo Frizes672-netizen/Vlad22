@@ -128,3 +128,5 @@ SC.final = { // "Иногда, чтобы спасти жизнь, достат�
   sfx(d) { return [[0, 'pad_swell', .25, { dur: d }], [d * .45, 'chime', .3]]; }
 };
 window.render = function (t) { _baseRenderAng(t); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; if (t < TL.total - .3) drawSubs(t); };
+// big titles shrink to fit the frame width (English lines run longer)
+const _bigTitle0 = bigTitle; bigTitle = function (s, y, p, o = {}) { const size = o.size || 120; ctx.save(); ctx.font = `900 ${size}px ${F_HEAD}`; const w = ctx.measureText(s).width + size * .32; ctx.restore(); return _bigTitle0(s, y, p, Object.assign({}, o, { size: w > 1000 ? Math.floor(size * 1000 / w) : size })); };
