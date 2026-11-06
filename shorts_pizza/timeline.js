@@ -1,5 +1,5 @@
 const TL = {
-"total": 50.50000000000011,
+"total": 49.930612,
 "units": [
 {
 "p": 0,
@@ -13,164 +13,164 @@ const TL = {
 ],
 [
 "called",
-0.3,
+0.15,
 "called"
 ],
 [
 "911",
-0.73,
+0.7,
 "911"
 ],
 [
 "to",
-1.27,
+1.24,
 "to"
 ],
 [
 "order",
-1.52,
+1.38,
 "order"
 ],
 [
 "a",
-1.91,
+1.67,
 "a"
 ],
 [
 "pizza",
-2.12,
+1.78,
 "pizza"
 ],
 [
 "and",
-2.51,
+2.47,
 "and"
 ],
 [
 "that",
-2.8,
+2.76,
 "that"
 ],
 [
 "pizza",
-3.14,
+3.23,
 "pizza"
 ],
 [
 "saved",
-3.53,
+3.71,
 "saved"
 ],
 [
 "her",
-3.91,
+4.22,
 "her"
 ],
 [
 "mother",
-4.21,
+4.4,
 "mother."
 ]
 ],
-"end": 5.02
+"end": 5.05
 },
 {
 "p": 1,
 "text": "Ohio, November.",
-"start": 5.02,
+"start": 5.05,
 "words": [
 [
 "ohio",
-5.02,
+5.05,
 "Ohio,"
 ],
 [
 "november",
-5.56,
+5.89,
 "November."
 ]
 ],
-"end": 6.46
+"end": 6.73
 },
 {
 "p": 1,
 "text": "A 911 dispatcher picks up.",
-"start": 6.46,
+"start": 6.73,
 "words": [
 [
 "a",
-6.46,
+6.73,
 "A"
 ],
 [
 "911",
-6.68,
+7.22,
 "911"
 ],
 [
 "dispatcher",
-7.22,
+7.71,
 "dispatcher"
 ],
 [
 "picks",
-7.83,
+8.33,
 "picks"
 ],
 [
 "up",
-8.22,
+8.69,
 "up."
 ]
 ],
-"end": 8.85
+"end": 9.02
 },
 {
 "p": 1,
 "text": "A woman says:",
-"start": 8.85,
+"start": 9.02,
 "words": [
 [
 "a",
-8.85,
+9.02,
 "A"
 ],
 [
 "woman",
-9.07,
+9.31,
 "woman"
 ],
 [
 "says",
-9.46,
+9.67,
 "says:"
 ]
 ],
-"end": 9.79
+"end": 10.11
 },
 {
 "p": 1,
 "text": "\"I'd like to order a pizza.\"",
-"start": 9.79,
+"start": 10.11,
 "words": [
 [
 "id",
-9.79,
+10.11,
 "\"I'd"
 ],
 [
 "like",
-10.04,
+10.47,
 "like"
 ],
 [
 "to",
-10.38,
+10.62,
 "to"
 ],
 [
 "order",
-10.63,
+10.76,
 "order"
 ],
 [
@@ -180,588 +180,588 @@ const TL = {
 ],
 [
 "pizza",
-11.24,
+11.13,
 "pizza.\""
 ]
 ],
-"end": 11.62
+"end": 11.89
 },
 {
 "p": 2,
 "text": "Most dispatchers would hang up.",
-"start": 11.62,
+"start": 11.89,
 "words": [
 [
 "most",
-11.62,
+11.89,
 "Most"
 ],
 [
 "dispatchers",
-11.96,
+12.46,
 "dispatchers"
 ],
 [
 "would",
-12.58,
+13.02,
 "would"
 ],
 [
 "hang",
-12.97,
+13.2,
 "hang"
 ],
 [
 "up",
-13.31,
+13.49,
 "up."
 ]
 ],
-"end": 13.94
+"end": 13.89
 },
 {
 "p": 3,
 "text": "Tim Teneyck didn't.",
-"start": 13.94,
+"start": 13.89,
 "words": [
 [
 "tim",
-13.94,
+13.89,
 "Tim"
 ],
 [
 "teneyck",
-14.23,
+14.4,
 "Teneyck"
 ],
 [
 "didnt",
-14.71,
+14.91,
 "didn't."
 ]
 ],
-"end": 15.47
+"end": 15.64
 },
 {
 "p": 3,
 "text": "\"Ma'am, you know you've called 911?\" \"Yes.\"",
-"start": 15.47,
+"start": 15.64,
 "words": [
 [
 "maam",
-15.47,
+15.64,
 "\"Ma'am,"
 ],
 [
 "you",
-16.02,
+16.07,
 "you"
 ],
 [
 "know",
-16.31,
+16.36,
 "know"
 ],
 [
 "youve",
-16.65,
+16.55,
 "you've"
 ],
 [
 "called",
-17.04,
+16.8,
 "called"
 ],
 [
 "911",
-17.47,
+17.42,
 "911?\""
 ],
 [
 "yes",
-18.01,
+18.04,
 "\"Yes.\""
 ]
 ],
-"end": 18.31
+"end": 18.76
 },
 {
 "p": 4,
 "text": "And then he understood.",
-"start": 18.31,
+"start": 18.76,
 "words": [
 [
 "and",
-18.31,
+18.76,
 "And"
 ],
 [
 "then",
-18.6,
+19.13,
 "then"
 ],
 [
 "he",
-18.94,
+19.49,
 "he"
 ],
 [
 "understood",
-19.19,
+19.78,
 "understood."
 ]
 ],
-"end": 20.18
+"end": 21.04
 },
 {
 "p": 4,
 "text": "She couldn't talk.",
-"start": 20.18,
+"start": 21.04,
 "words": [
 [
 "she",
-20.18,
+21.04,
 "She"
 ],
 [
 "couldnt",
-20.48,
+21.37,
 "couldn't"
 ],
 [
 "talk",
-20.95,
+21.88,
 "talk."
 ]
 ],
-"end": 21.67
+"end": 22.46
 },
 {
 "p": 4,
 "text": "Someone was right there with her.",
-"start": 21.67,
+"start": 22.46,
 "words": [
 [
 "someone",
-21.67,
+22.46,
 "Someone"
 ],
 [
 "was",
-22.15,
+23.04,
 "was"
 ],
 [
 "right",
-22.44,
+23.33,
 "right"
 ],
 [
 "there",
-22.83,
+23.7,
 "there"
 ],
 [
 "with",
-23.21,
+23.99,
 "with"
 ],
 [
 "her",
-23.55,
+24.24,
 "her."
 ]
 ],
-"end": 24.23
+"end": 24.64
 },
 {
 "p": 5,
 "text": "So he asked only yes-or-no questions.",
-"start": 24.23,
+"start": 24.64,
 "words": [
 [
 "so",
-24.23,
+24.64,
 "So"
 ],
 [
 "he",
-24.48,
+25.04,
 "he"
 ],
 [
 "asked",
-24.73,
+25.37,
 "asked"
 ],
 [
 "only",
-25.11,
+25.7,
 "only"
 ],
 [
 "yesorno",
-25.45,
+26.23,
 "yes-or-no"
 ],
 [
 "questions",
-25.93,
+26.75,
 "questions."
 ]
 ],
-"end": 26.87
+"end": 27.59
 },
 {
 "p": 5,
 "text": "\"Are you in danger?\" \"Yes.\"",
-"start": 26.87,
+"start": 27.59,
 "words": [
 [
 "are",
-26.87,
+27.59,
 "\"Are"
 ],
 [
 "you",
-27.17,
+27.77,
 "you"
 ],
 [
 "in",
-27.46,
+27.99,
 "in"
 ],
 [
 "danger",
-27.71,
+28.17,
 "danger?\""
 ],
 [
 "yes",
-28.14,
+28.79,
 "\"Yes.\""
 ]
 ],
-"end": 28.44
+"end": 29.51
 },
 {
 "p": 6,
 "text": "He sent police \u2014 and told them to turn off their sirens before they got there.",
-"start": 28.44,
+"start": 29.51,
 "words": [
 [
 "he",
-28.44,
+29.51,
 "He"
 ],
 [
 "sent",
-28.69,
+29.84,
 "sent"
 ],
 [
 "police",
-29.03,
+30.17,
 "police"
 ],
 [
 "and",
-29.46,
+30.75,
 "and"
 ],
 [
 "told",
-29.75,
+30.97,
 "told"
 ],
 [
 "them",
-30.09,
+31.22,
 "them"
 ],
 [
 "to",
-30.43,
+31.4,
 "to"
 ],
 [
 "turn",
-30.68,
+31.59,
 "turn"
 ],
 [
 "off",
-31.02,
+31.8,
 "off"
 ],
 [
 "their",
-31.32,
+31.99,
 "their"
 ],
 [
 "sirens",
-31.7,
+32.2,
 "sirens"
 ],
 [
 "before",
-32.13,
+32.71,
 "before"
 ],
 [
 "they",
-32.56,
+32.97,
 "they"
 ],
 [
 "got",
-32.9,
+33.15,
 "got"
 ],
 [
 "there",
-33.2,
+33.44,
 "there."
 ]
 ],
-"end": 33.96
+"end": 33.84
 },
 {
 "p": 7,
 "text": "Officers arrested a man for domestic violence.",
-"start": 33.96,
+"start": 33.84,
 "words": [
 [
 "officers",
-33.96,
+33.84,
 "Officers"
 ],
 [
 "arrested",
-34.48,
+34.5,
 "arrested"
 ],
 [
 "a",
-35.0,
+34.97,
 "a"
 ],
 [
 "man",
-35.22,
+35.08,
 "man"
 ],
 [
 "for",
-35.52,
+35.26,
 "for"
 ],
 [
 "domestic",
-35.81,
+35.44,
 "domestic"
 ],
 [
 "violence",
-36.33,
+35.99,
 "violence."
 ]
 ],
-"end": 37.23
+"end": 36.82
 },
 {
 "p": 8,
 "text": "\"Pizza\" isn't an official 911 code.",
-"start": 37.23,
+"start": 36.82,
 "words": [
 [
 "pizza",
-37.23,
+36.82,
 "\"Pizza\""
 ],
 [
 "isnt",
-37.62,
+37.4,
 "isn't"
 ],
 [
 "an",
-37.96,
+37.8,
 "an"
 ],
 [
 "official",
-38.21,
+37.99,
 "official"
 ],
 [
 "911",
-38.73,
+38.59,
 "911"
 ],
 [
 "code",
-39.27,
+39.19,
 "code."
 ]
 ],
-"end": 39.99
+"end": 39.82
 },
 {
 "p": 8,
 "text": "He just listened.",
-"start": 39.99,
+"start": 39.82,
 "words": [
 [
 "he",
-39.99,
+39.82,
 "He"
 ],
 [
 "just",
-40.24,
+40.08,
 "just"
 ],
 [
 "listened",
-40.58,
+40.4,
 "listened."
 ]
 ],
-"end": 41.48
+"end": 41.06
 },
 {
 "p": 9,
 "text": "And if you ever can't talk, in many places you can text 911 instead.",
-"start": 41.48,
+"start": 41.06,
 "words": [
 [
 "and",
-41.48,
+41.06,
 "And"
 ],
 [
 "if",
-41.78,
+41.35,
 "if"
 ],
 [
 "you",
-42.03,
+41.53,
 "you"
 ],
 [
 "ever",
-42.32,
+41.79,
 "ever"
 ],
 [
 "cant",
-42.66,
+42.08,
 "can't"
 ],
 [
 "talk",
-43.0,
+42.48,
 "talk,"
 ],
 [
 "in",
-43.54,
+42.84,
 "in"
 ],
 [
 "many",
-43.79,
+43.1,
 "many"
 ],
 [
 "places",
-44.13,
+43.46,
 "places"
 ],
 [
 "you",
-44.56,
+43.93,
 "you"
 ],
 [
 "can",
-44.86,
+44.08,
 "can"
 ],
 [
 "text",
-45.15,
+44.26,
 "text"
 ],
 [
 "911",
-45.49,
+44.8,
 "911"
 ],
 [
 "instead",
-46.04,
+45.35,
 "instead."
 ]
 ],
-"end": 46.89
+"end": 46.08
 },
 {
 "p": 10,
 "text": "Because sometimes \"I'd like a pizza\" means \"Help me.\"",
-"start": 46.89,
+"start": 46.08,
 "words": [
 [
 "because",
-46.89,
+46.08,
 "Because"
 ],
 [
 "sometimes",
-47.37,
+46.44,
 "sometimes"
 ],
 [
 "id",
-47.93,
+47.13,
 "\"I'd"
 ],
 [
 "like",
-48.18,
+47.5,
 "like"
 ],
 [
 "a",
-48.52,
+47.68,
 "a"
 ],
 [
 "pizza",
-48.74,
+47.79,
 "pizza\""
 ],
 [
 "means",
-49.13,
+48.48,
 "means"
 ],
 [
 "help",
-49.51,
+49.06,
 "\"Help"
 ],
 [
 "me",
-49.85,
+49.57,
 "me.\""
 ]
 ],
-"end": 50.5
+"end": 49.93
 }
 ]
 };
