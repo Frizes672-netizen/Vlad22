@@ -49,6 +49,7 @@ function heroCU(t, o = {}) { person(HCU[0], HCU[1], HCU[2], HERO2(Object.assign(
 const HEAD_H = [HCU[0], HCU[1] - 93.2 * HCU[2] / 100];
 const NOISE = ['Опять кредит…', 'Ненавижу понедельники', 'Она мне врёт', 'Где взять денег?', 'Скорее бы домой', 'Только бы не уволили', 'Зачем я это сказал', 'Он на меня смотрит?', 'Опоздаю…', 'Всё бесит', 'Я ей не нужен', 'Долг 300 тысяч'];
 
+function reactionCU(t, bgKey, bgFn, txt, o = {}) { ctx.drawImage(layer(bgKey, bgFn, 7), 0, 0); grade('rgba(20,20,40,1)', .25); ctx.save(); cam(HEAD_H[0] + (o.dx || 0), HEAD_H[1] + 80, 2.1 + .1 * Math.sin(t)); heroCU(t, { fear: o.fear ?? .35, tilt: .04 }); ctx.restore(); if (txt) thoughtBubble(540, 430, txt, 1, { size: 54, w: 640, toX: 60, toY: 240 }); vign(.4); }
 // ================== SCENES ==================
 SC.hook = { // FRAME 0: eyes snap open — dozens of purple thought clouds burst around his head
   draw(t, d, P, E, s) { const t2 = s.U(s.a + 1); ctx.drawImage(layer('bed', bedroomMorningDraw, 4), 0, 0); ctx.save(); cam(540, 900, lerp(1.2, 1.05, eout(prog(t, 0, .6)))); shake(t, t < .4 ? 8 : 0); heroCU(t, { fear: lerp(.2, .9, prog(t, 0, .4)) }); ctx.restore();
@@ -57,23 +58,23 @@ SC.hook = { // FRAME 0: eyes snap open — dozens of purple thought clouds burst
   sfx(d) { return [[0, 'boom', .4], [.05, 'popseq', .3, { n: 8, step: .06 }], [0, 'whisper', .3], [.6, 'crowd', .2, { dur: d - .6 }]]; }
 };
 SC.cat = { // "Семь утра. Кот смотрит на тебя и думает: «Наконец-то. Корми»."
-  draw(t, d, P, E, s) { const t1 = s.U(s.a + 1), tq = s.U(s.a + 2); ctx.drawImage(layer('bed', bedroomMorningDraw, 3), 0, 0); ctx.save(); cam(540, 1100, lerp(1.0, 1.08, prog(t, 0, d))); catSit(560, 1500, 1.4, t); ctx.restore();
+  draw(t, d, P, E, s) { const t1 = s.U(s.a + 1), tq = s.U(s.a + 2); ctx.drawImage(layer('bed', bedroomMorningDraw, 3), 0, 0); ctx.save(); const cz = eio(prog(t, tq - .3, tq + .5)); cam(lerp(540, 560, cz), lerp(1100, 1050, cz), lerp(1.0, 1.6, cz)); catSit(560, 1500, 1.4, t); ctx.restore();
     if (t < t1 - .05) { wallClockBig(820, 380, 150, 0); bigTitle('7:00', 300, prog(t, 0, .2), { size: 130, col: '#fff' }); return; } thoughtBubble(540, 480, 'Наконец-то. Корми.', prog(t, tq - .1, tq + .2), { size: 64, w: 640, toX: 0, toY: 260 }); },
   sfx(d, P, E, s) { return [[0, 'clock', .4, { dur: s.U(s.a + 1) }], [s.U(s.a + 2) - .1, 'pop', .4], [s.U(s.a + 2) + .3, 'boing_soft', .3]]; }
 };
 SC.lift = { // neighbour in the lift: "Доброе утро!" — thinks: "Опять он. Хоть бы по лестнице ходил."
   draw(t, d, P, E, s) { const ts = E('доброе', 1, 1.6), tt = s.U(s.a + 2); ctx.drawImage(layer('lift', elevatorDraw, 2), 0, 0); ctx.save(); cam(540, 900, 1.0); person(340, 2250, 1600, NEIGHB({ smile: .7, mouth: talking(t, s, ts - .1, ts + .8) })); person(820, 2450, 1700, HERO2({ shadow: false })); ctx.restore();
-    speechBubble(380, 520, 'Доброе утро!', prog(t, ts - .1, ts + .15), { tail: -.4, size: 60 }); thoughtBubble(560, 1080, 'Опять он. Хоть бы по лестнице ходил.', prog(t, tt - .1, tt + .2), { size: 50, w: 600, toX: -180, toY: 260 }); },
+    speechBubble(380, 520, 'Доброе утро!', prog(t, ts - .1, ts + .15), { tail: -.4, size: 60 }); thoughtBubble(560, 1080, 'Опять он. Хоть бы по лестнице ходил.', prog(t, tt - .1, tt + .2), { size: 50, w: 600, toX: -180, toY: 260 }); if (t > tt + 1.6) reactionCU(t, 'lift', elevatorDraw, 'Ну спасибо…', { fear: .4 }); },
   sfx(d, P, E, s) { return [[0, 'door_chime', .3], [0, 'hum', .2, { dur: d }], [E('доброе', 1, 1.6) - .1, 'pop', .35], [s.U(s.a + 2) - .1, 'pop', .35]]; }
 };
 SC.barista = { // "Хорошего дня!" — "Только не он. Он вечно меняет заказ."
   draw(t, d, P, E, s) { const ts = E('хорошего', 1, .6), tt = s.U(s.a + 2); ctx.drawImage(layer('cafe', cafeDraw, 3), 0, 0); ctx.save(); cam(540, 950, 1.05); person(420, 2300, 1600, BARISTA({ smile: .8, mouth: talking(t, s, ts - .1, ts + .8) })); ctx.restore(); ctx.fillStyle = '#5a3a20'; ctx.fillRect(0, 1350, W, 600); ctx.fillStyle = '#f2efe6'; rr(700, 1220, 120, 150, 14); ctx.fill(); // counter + cup
-    speechBubble(420, 520, 'Хорошего дня!', prog(t, ts - .1, ts + .15), { tail: 0, size: 60 }); thoughtBubble(600, 1080, 'Только не он. Он вечно меняет заказ.', prog(t, tt - .1, tt + .2), { size: 50, w: 600, toX: -160, toY: 240 }); },
+    speechBubble(420, 520, 'Хорошего дня!', prog(t, ts - .1, ts + .15), { tail: 0, size: 60 }); thoughtBubble(600, 1080, 'Только не он. Он вечно меняет заказ.', prog(t, tt - .1, tt + .2), { size: 50, w: 600, toX: -160, toY: 240 }); if (t > tt + 1.6) reactionCU(t, 'cafe', cafeDraw, 'Я же всегда беру латте…', { fear: .3 }); },
   sfx(d, P, E, s) { return [[0, 'crowd', .2, { dur: d }], [.2, 'pour', .25], [E('хорошего', 1, .6) - .1, 'pop', .35], [s.U(s.a + 2) - .1, 'pop', .35]]; }
 };
 SC.boss = { // "Отличный отчёт!" — "В пятницу сокращу."
   draw(t, d, P, E, s) { const ts = E('отличный', 1, 2), tt = s.U(s.a + 2); ctx.drawImage(layer('office2', officeDraw, 3), 0, 0); ctx.save(); cam(540, 900, 1.0); person(320, 2280, 1700, BOSS2({ smile: .8, mouth: talking(t, s, ts - .1, ts + .8) })); ctx.restore(); handshake(560, 1280, .9);
-    speechBubble(360, 480, 'Отличный отчёт!', prog(t, ts - .1, ts + .15), { tail: -.2, size: 60 }); thoughtBubble(640, 1080, 'В пятницу сокращу.', prog(t, tt - .1, tt + .2), { size: 64, w: 520, toX: -220, toY: 200 }); if (t > tt + .3) grade('rgba(120,20,30,1)', .2 * prog(t, tt + .3, tt + .8)); },
+    speechBubble(360, 480, 'Отличный отчёт!', prog(t, ts - .1, ts + .15), { tail: -.2, size: 60 }); thoughtBubble(640, 1080, 'В пятницу сокращу.', prog(t, tt - .1, tt + .2), { size: 64, w: 520, toX: -220, toY: 200 }); if (t > tt + .3) grade('rgba(120,20,30,1)', .2 * prog(t, tt + .3, tt + .8)); if (t > tt + 1.4) { reactionCU(t, 'office2', officeDraw, null, { fear: .8 }); grade('rgba(120,20,30,1)', .25); bigTitle('СОКРАЩУ?!', 300, prog(t, tt + 1.4, tt + 1.6), { size: 120, col: '#ff6b74' }); } },
   sfx(d, P, E, s) { return [[0, 'office', .2, { dur: d }], [E('отличный', 1, 2) - .1, 'pop', .35], [s.U(s.a + 2) - .1, 'dundun', .4]]; }
 };
 SC.worse = { // "Но самое страшное было не это."
@@ -127,7 +128,7 @@ function pregTest(x, y, s, p) { if (p <= 0) return; const k = eback(clamp(p)); c
 SC.anya = { // "В обед прибегает Аня. Целует: «Скучаю!» А в мыслях: «Надо сказать ему правду. Сегодня. Он не готов»."
   draw(t, d, P, E, s) { const tk = E('скучаю', 1, 2.2), tt = s.U(s.a + 3); ctx.drawImage(layer('cafe', cafeDraw, 5), 0, 0); ctx.save(); cam(540, 900, 1.0); person(380, 2250, 1550, ANYA2({ smile: .7, mouth: talking(t, s, tk - .1, tk + .6) })); person(760, 2350, 1700, HERO2({ smile: .5, shadow: false })); ctx.restore();
     if (t < s.U(s.a + 1) - .05) bigTitle('ОБЕД. АНЯ', 300, prog(t, 0, .2), { size: 110, col: '#fff' }); speechBubble(360, 480, 'Скучаю!', prog(t, tk - .1, tk + .15), { tail: -.2, size: 64 });
-    thoughtBubble(560, 1080, 'Надо сказать ему правду. Сегодня. Он не готов.', prog(t, tt - .1, tt + .2), { size: 46, w: 640, toX: -180, toY: 240 }); if (t > tt + .4) grade('rgba(40,30,90,1)', .25 * prog(t, tt + .4, tt + 1)); },
+    thoughtBubble(560, 1080, 'Надо сказать ему правду. Сегодня. Он не готов.', prog(t, tt - .1, tt + .2), { size: 46, w: 640, toX: -180, toY: 240 }); if (t > tt + .4) grade('rgba(40,30,90,1)', .25 * prog(t, tt + .4, tt + 1)); if (t > tt + 1.8) { reactionCU(t, 'cafe', cafeDraw, null, { fear: .9 }); bigTitle('КАКУЮ ПРАВДУ?', 300, prog(t, tt + 1.8, tt + 2), { size: 100, col: '#ff6b74' }); } },
   sfx(d, P, E, s) { return [[0, 'crowd', .2, { dur: d }], [E('скучаю', 1, 2.2) - .1, 'pop', .35], [s.U(s.a + 3) - .1, 'dundun', .4]]; }
 };
 SC.worry = { // "Весь день ты не находишь себе места. Какую правду? Кто-то другой?"
