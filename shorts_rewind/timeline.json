@@ -1,5 +1,5 @@
 {
-"total": 63.68000000000013,
+"total": 50.433129,
 "units": [
 {
 "p": 0,
@@ -13,1010 +13,1010 @@
 ],
 [
 "can",
-0.3,
+0.11,
 "can"
 ],
 [
 "rewind",
-0.59,
+0.41,
 "rewind"
 ],
 [
 "time",
-1.02,
+0.71,
 "time"
 ],
 [
 "ten",
-1.36,
+1.0,
 "ten"
 ],
 [
 "seconds",
-1.65,
+1.29,
 "seconds."
 ]
 ],
-"end": 2.51
+"end": 1.97
 },
 {
 "p": 0,
 "text": "But only ten times.",
-"start": 2.51,
+"start": 1.97,
 "words": [
 [
 "but",
-2.51,
+1.97,
 "But"
 ],
 [
 "only",
-2.8,
+2.22,
 "only"
 ],
 [
 "ten",
-3.14,
+2.58,
 "ten"
 ],
 [
 "times",
-3.44,
+2.97,
 "times."
 ]
 ],
-"end": 4.2
+"end": 3.62
 },
 {
 "p": 0,
 "text": "Ever.",
-"start": 4.2,
+"start": 3.62,
 "words": [
 [
 "ever",
-4.2,
+3.62,
 "Ever."
 ]
 ],
-"end": 4.92
+"end": 4.26
 },
 {
 "p": 1,
 "text": "Morning.",
-"start": 4.92,
+"start": 4.26,
 "words": [
 [
 "morning",
-4.92,
+4.26,
 "Morning."
 ]
 ],
-"end": 5.78
+"end": 4.94
 },
 {
 "p": 1,
 "text": "Coffee on your white shirt.",
-"start": 5.78,
+"start": 4.94,
 "words": [
 [
 "coffee",
-5.78,
+4.94,
 "Coffee"
 ],
 [
 "on",
-6.21,
+5.37,
 "on"
 ],
 [
 "your",
-6.46,
+5.51,
 "your"
 ],
 [
 "white",
-6.8,
+5.69,
 "white"
 ],
 [
 "shirt",
-7.18,
+5.94,
 "shirt."
 ]
 ],
-"end": 7.95
+"end": 6.6
 },
 {
 "p": 1,
 "text": "Rewind.",
-"start": 7.95,
+"start": 6.6,
 "words": [
 [
 "rewind",
-7.95,
+6.6,
 "Rewind."
 ]
 ],
-"end": 8.76
+"end": 7.26
 },
 {
 "p": 1,
 "text": "Nine left.",
-"start": 8.76,
+"start": 7.26,
 "words": [
 [
 "nine",
-8.76,
+7.26,
 "Nine"
 ],
 [
 "left",
-9.1,
+7.72,
 "left."
 ]
 ],
-"end": 9.82
+"end": 8.15
 },
 {
 "p": 2,
 "text": "Elevator doors shut in your face.",
-"start": 9.82,
+"start": 8.15,
 "words": [
 [
 "elevator",
-9.82,
+8.15,
 "Elevator"
 ],
 [
 "doors",
-10.34,
+8.72,
 "doors"
 ],
 [
 "shut",
-10.72,
+9.08,
 "shut"
 ],
 [
 "in",
-11.06,
+9.33,
 "in"
 ],
 [
 "your",
-11.31,
+9.44,
 "your"
 ],
 [
 "face",
-11.65,
+9.69,
 "face."
 ]
 ],
-"end": 12.37
+"end": 10.33
 },
 {
 "p": 2,
 "text": "Rewind.",
-"start": 12.37,
+"start": 10.33,
 "words": [
 [
 "rewind",
-12.37,
+10.33,
 "Rewind."
 ]
 ],
-"end": 13.18
+"end": 10.97
 },
 {
 "p": 2,
 "text": "Eight.",
-"start": 13.18,
+"start": 10.97,
 "words": [
 [
 "eight",
-13.18,
+10.97,
 "Eight."
 ]
 ],
-"end": 13.95
+"end": 11.51
 },
 {
 "p": 3,
 "text": "A dumb joke in front of your boss.",
-"start": 13.95,
+"start": 11.51,
 "words": [
 [
 "a",
-13.95,
+11.51,
 "A"
 ],
 [
 "dumb",
-14.17,
+11.72,
 "dumb"
 ],
 [
 "joke",
-14.51,
+12.08,
 "joke"
 ],
 [
 "in",
-14.85,
+12.37,
 "in"
 ],
 [
 "front",
-15.1,
+12.51,
 "front"
 ],
 [
 "of",
-15.48,
+12.76,
 "of"
 ],
 [
 "your",
-15.73,
+12.87,
 "your"
 ],
 [
 "boss",
-16.07,
+13.01,
 "boss."
 ]
 ],
-"end": 16.79
+"end": 13.71
 },
 {
 "p": 3,
 "text": "Rewind.",
-"start": 16.79,
+"start": 13.71,
 "words": [
 [
 "rewind",
-16.79,
+13.71,
 "Rewind."
 ]
 ],
-"end": 17.6
+"end": 14.4
 },
 {
 "p": 3,
 "text": "Seven.",
-"start": 17.6,
+"start": 14.4,
 "words": [
 [
 "seven",
-17.6,
+14.4,
 "Seven."
 ]
 ],
-"end": 18.37
+"end": 15.01
 },
 {
 "p": 4,
 "text": "At night you text your ex:",
-"start": 18.37,
+"start": 15.01,
 "words": [
 [
 "at",
-18.37,
+15.01,
 "At"
 ],
 [
 "night",
-18.62,
+15.3,
 "night"
 ],
 [
 "you",
-19.0,
+15.55,
 "you"
 ],
 [
 "text",
-19.3,
+15.72,
 "text"
 ],
 [
 "your",
-19.64,
+16.12,
 "your"
 ],
 [
 "ex",
-19.98,
+16.48,
 "ex:"
 ]
 ],
-"end": 20.23
+"end": 16.84
 },
 {
 "p": 4,
 "text": "\"Miss you\".",
-"start": 20.23,
+"start": 16.84,
 "words": [
 [
 "miss",
-20.23,
+16.84,
 "\"Miss"
 ],
 [
 "you",
-20.57,
+17.2,
 "you\"."
 ]
 ],
-"end": 21.25
+"end": 17.56
 },
 {
 "p": 4,
 "text": "Rewind.",
-"start": 21.25,
+"start": 17.56,
 "words": [
 [
 "rewind",
-21.25,
+17.56,
 "Rewind."
 ]
 ],
-"end": 22.05
+"end": 18.31
 },
 {
 "p": 4,
 "text": "Six.",
-"start": 22.05,
+"start": 18.31,
 "words": [
 [
 "six",
-22.05,
+18.31,
 "Six."
 ]
 ],
-"end": 22.73
+"end": 18.92
 },
 {
 "p": 5,
 "text": "You spend them like pocket change.",
-"start": 22.73,
+"start": 18.92,
 "words": [
 [
 "you",
-22.73,
+18.92,
 "You"
 ],
 [
 "spend",
-23.03,
+19.17,
 "spend"
 ],
 [
 "them",
-23.41,
+19.53,
 "them"
 ],
 [
 "like",
-23.75,
+19.67,
 "like"
 ],
 [
 "pocket",
-24.09,
+19.89,
 "pocket"
 ],
 [
 "change",
-24.52,
+20.31,
 "change."
 ]
 ],
-"end": 25.33
+"end": 20.92
 },
 {
 "p": 5,
 "text": "Five.",
-"start": 25.33,
+"start": 20.92,
 "words": [
 [
 "five",
-25.33,
+20.92,
 "Five."
 ]
 ],
-"end": 26.05
+"end": 21.67
 },
 {
 "p": 5,
 "text": "Four.",
-"start": 26.05,
+"start": 21.67,
 "words": [
 [
 "four",
-26.05,
+21.67,
 "Four."
 ]
 ],
-"end": 26.77
+"end": 22.42
 },
 {
 "p": 5,
 "text": "Three.",
-"start": 26.77,
+"start": 22.42,
 "words": [
 [
 "three",
-26.77,
+22.42,
 "Three."
 ]
 ],
-"end": 27.54
+"end": 23.1
 },
 {
 "p": 5,
 "text": "Two.",
-"start": 27.54,
+"start": 23.1,
 "words": [
 [
 "two",
-27.54,
+23.1,
 "Two."
 ]
 ],
-"end": 28.21
+"end": 23.53
 },
 {
 "p": 6,
 "text": "But that evening, it mattered.",
-"start": 28.21,
+"start": 23.53,
 "words": [
 [
 "but",
-28.21,
+23.53,
 "But"
 ],
 [
 "that",
-28.51,
+23.81,
 "that"
 ],
 [
 "evening",
-28.85,
+24.1,
 "evening,"
 ],
 [
 "it",
-29.52,
+24.6,
 "it"
 ],
 [
 "mattered",
-29.77,
+24.81,
 "mattered."
 ]
 ],
-"end": 30.67
+"end": 25.35
 },
 {
 "p": 7,
 "text": "A crosswalk.",
-"start": 30.67,
+"start": 25.35,
 "words": [
 [
 "a",
-30.67,
+25.35,
 "A"
 ],
 [
 "crosswalk",
-30.89,
+25.8,
 "crosswalk."
 ]
 ],
-"end": 31.84
+"end": 26.24
 },
 {
 "p": 7,
 "text": "A boy chases his ball \u2014 straight into a truck's path.",
-"start": 31.84,
+"start": 26.24,
 "words": [
 [
 "a",
-31.84,
+26.24,
 "A"
 ],
 [
 "boy",
-32.05,
+26.46,
 "boy"
 ],
 [
 "chases",
-32.35,
+26.78,
 "chases"
 ],
 [
 "his",
-32.78,
+27.21,
 "his"
 ],
 [
 "ball",
-33.08,
+27.38,
 "ball"
 ],
 [
 "straight",
-33.42,
+27.81,
 "straight"
 ],
 [
 "into",
-33.94,
+28.24,
 "into"
 ],
 [
 "a",
-34.28,
+28.46,
 "a"
 ],
 [
 "trucks",
-34.5,
+28.6,
 "truck's"
 ],
 [
 "path",
-34.93,
+29.03,
 "path."
 ]
 ],
-"end": 35.65
+"end": 29.42
 },
 {
 "p": 8,
 "text": "You're too late.",
-"start": 35.65,
+"start": 29.42,
 "words": [
 [
 "youre",
-35.65,
+29.42,
 "You're"
 ],
 [
 "too",
-36.03,
+29.71,
 "too"
 ],
 [
 "late",
-36.33,
+30.03,
 "late."
 ]
 ],
-"end": 37.05
+"end": 30.45
 },
 {
 "p": 8,
 "text": "Brakes scream.",
-"start": 37.05,
+"start": 30.45,
 "words": [
 [
 "brakes",
-37.05,
+30.45,
 "Brakes"
 ],
 [
 "scream",
-37.48,
+30.88,
 "scream."
 ]
 ],
-"end": 38.29
+"end": 31.53
 },
 {
 "p": 9,
 "text": "You have one rewind left.",
-"start": 38.29,
+"start": 31.53,
 "words": [
 [
 "you",
-38.29,
+31.53,
 "You"
 ],
 [
 "have",
-38.58,
+31.74,
 "have"
 ],
 [
 "one",
-38.92,
+32.03,
 "one"
 ],
 [
 "rewind",
-39.22,
+32.28,
 "rewind"
 ],
 [
 "left",
-39.65,
+32.88,
 "left."
 ]
 ],
-"end": 40.37
+"end": 33.31
 },
 {
 "p": 10,
 "text": "You rewind.",
-"start": 40.37,
+"start": 33.31,
 "words": [
 [
 "you",
-40.37,
+33.31,
 "You"
 ],
 [
 "rewind",
-40.66,
+33.56,
 "rewind."
 ]
 ],
-"end": 41.47
+"end": 34.21
 },
 {
 "p": 10,
 "text": "Ten seconds.",
-"start": 41.47,
+"start": 34.21,
 "words": [
 [
 "ten",
-41.47,
+34.21,
 "Ten"
 ],
 [
 "seconds",
-41.77,
+34.6,
 "seconds."
 ]
 ],
-"end": 42.62
+"end": 35.21
 },
 {
 "p": 10,
 "text": "The ball rolls out again.",
-"start": 42.62,
+"start": 35.21,
 "words": [
 [
 "the",
-42.62,
+35.21,
 "The"
 ],
 [
 "ball",
-42.92,
+35.42,
 "ball"
 ],
 [
 "rolls",
-43.26,
+35.74,
 "rolls"
 ],
 [
 "out",
-43.64,
+36.1,
 "out"
 ],
 [
 "again",
-43.94,
+36.31,
 "again."
 ]
 ],
-"end": 44.7
+"end": 36.67
 },
 {
 "p": 11,
 "text": "You run.",
-"start": 44.7,
+"start": 36.67,
 "words": [
 [
 "you",
-44.7,
+36.67,
 "You"
 ],
 [
 "run",
-45.0,
+36.92,
 "run."
 ]
 ],
-"end": 45.67
+"end": 37.31
 },
 {
 "p": 11,
 "text": "You grab him by the hood.",
-"start": 45.67,
+"start": 37.31,
 "words": [
 [
 "you",
-45.67,
+37.31,
 "You"
 ],
 [
 "grab",
-45.97,
+37.53,
 "grab"
 ],
 [
 "him",
-46.31,
+37.88,
 "him"
 ],
 [
 "by",
-46.6,
+38.03,
 "by"
 ],
 [
 "the",
-46.85,
+38.13,
 "the"
 ],
 [
 "hood",
-47.15,
+38.24,
 "hood."
 ]
 ],
-"end": 47.87
+"end": 38.56
 },
 {
 "p": 11,
 "text": "The truck misses by a foot.",
-"start": 47.87,
+"start": 38.56,
 "words": [
 [
 "the",
-47.87,
+38.56,
 "The"
 ],
 [
 "truck",
-48.16,
+38.78,
 "truck"
 ],
 [
 "misses",
-48.55,
+39.1,
 "misses"
 ],
 [
 "by",
-48.98,
+39.49,
 "by"
 ],
 [
 "a",
-49.23,
+39.63,
 "a"
 ],
 [
 "foot",
-49.45,
+39.81,
 "foot."
 ]
 ],
-"end": 50.17
+"end": 40.17
 },
 {
 "p": 12,
 "text": "His mom can't say a word.",
-"start": 50.17,
+"start": 40.17,
 "words": [
 [
 "his",
-50.17,
+40.17,
 "His"
 ],
 [
 "mom",
-50.46,
+40.45,
 "mom"
 ],
 [
 "cant",
-50.76,
+40.74,
 "can't"
 ],
 [
 "say",
-51.1,
+41.03,
 "say"
 ],
 [
 "a",
-51.39,
+41.21,
 "a"
 ],
 [
 "word",
-51.61,
+41.38,
 "word."
 ]
 ],
-"end": 52.33
+"end": 41.74
 },
 {
 "p": 13,
 "text": "And your wrist turns to zero.",
-"start": 52.33,
+"start": 41.74,
 "words": [
 [
 "and",
-52.33,
+41.74,
 "And"
 ],
 [
 "your",
-52.63,
+41.88,
 "your"
 ],
 [
 "wrist",
-52.97,
+42.13,
 "wrist"
 ],
 [
 "turns",
-53.35,
+42.6,
 "turns"
 ],
 [
 "to",
-53.74,
+42.92,
 "to"
 ],
 [
 "zero",
-53.99,
+43.1,
 "zero."
 ]
 ],
-"end": 54.71
+"end": 43.63
 },
 {
 "p": 14,
 "text": "Nine times you saved a shirt, an elevator, your pride.",
-"start": 54.71,
+"start": 43.63,
 "words": [
 [
 "nine",
-54.71,
+43.63,
 "Nine"
 ],
 [
 "times",
-55.05,
+44.1,
 "times"
 ],
 [
 "you",
-55.43,
+44.42,
 "you"
 ],
 [
 "saved",
-55.73,
+44.6,
 "saved"
 ],
 [
 "a",
-56.11,
+44.88,
 "a"
 ],
 [
 "shirt",
-56.33,
+45.03,
 "shirt,"
 ],
 [
 "an",
-56.92,
+45.42,
 "an"
 ],
 [
 "elevator",
-57.17,
+45.63,
 "elevator,"
 ],
 [
 "your",
-57.89,
+46.31,
 "your"
 ],
 [
 "pride",
-58.23,
+46.6,
 "pride."
 ]
 ],
-"end": 58.99
+"end": 47.21
 },
 {
 "p": 14,
 "text": "Once \u2014 a life.",
-"start": 58.99,
+"start": 47.21,
 "words": [
 [
 "once",
-58.99,
+47.21,
 "Once"
 ],
 [
 "a",
-59.33,
+47.81,
 "a"
 ],
 [
 "life",
-59.55,
+48.03,
 "life."
 ]
 ],
-"end": 60.27
+"end": 48.46
 },
 {
 "p": 15,
 "text": "What would you spend your last one on?",
-"start": 60.27,
+"start": 48.46,
 "words": [
 [
 "what",
-60.27,
+48.46,
 "What"
 ],
 [
 "would",
-60.61,
+48.71,
 "would"
 ],
 [
 "you",
-61.0,
+48.88,
 "you"
 ],
 [
 "spend",
-61.29,
+49.06,
 "spend"
 ],
 [
 "your",
-61.68,
+49.38,
 "your"
 ],
 [
 "last",
-62.02,
+49.56,
 "last"
 ],
 [
 "one",
-62.36,
+49.81,
 "one"
 ],
 [
 "on",
-62.65,
+50.06,
 "on?"
 ]
 ],
-"end": 63.68
+"end": 50.43
 }
 ]
 }
