@@ -1,0 +1,881 @@
+const TL = {
+"total": 48.41034,
+"units": [
+{
+"p": 0,
+"text": "A diver reached for a dead man's hand \u2014 and the hand grabbed back.",
+"start": 0,
+"words": [
+[
+"a",
+0,
+"A"
+],
+[
+"diver",
+0.16,
+"diver"
+],
+[
+"reached",
+0.5,
+"reached"
+],
+[
+"for",
+0.85,
+"for"
+],
+[
+"a",
+1.01,
+"a"
+],
+[
+"dead",
+1.13,
+"dead"
+],
+[
+"mans",
+1.44,
+"man's"
+],
+[
+"hand",
+1.86,
+"hand"
+],
+[
+"and",
+2.26,
+"and"
+],
+[
+"the",
+2.5,
+"the"
+],
+[
+"hand",
+2.73,
+"hand"
+],
+[
+"grabbed",
+3.12,
+"grabbed"
+],
+[
+"back",
+3.7,
+"back."
+]
+],
+"end": 4.24
+},
+{
+"p": 1,
+"text": "May 2013.",
+"start": 4.24,
+"words": [
+[
+"may",
+4.24,
+"May"
+],
+[
+"2013",
+4.96,
+"2013."
+]
+],
+"end": 5.68
+},
+{
+"p": 1,
+"text": "A tugboat flips in a storm and sinks thirty meters to the bottom of the Atlantic.",
+"start": 5.68,
+"words": [
+[
+"a",
+5.68,
+"A"
+],
+[
+"tugboat",
+6.05,
+"tugboat"
+],
+[
+"flips",
+6.42,
+"flips"
+],
+[
+"in",
+6.81,
+"in"
+],
+[
+"a",
+6.92,
+"a"
+],
+[
+"storm",
+7.08,
+"storm"
+],
+[
+"and",
+7.43,
+"and"
+],
+[
+"sinks",
+7.58,
+"sinks"
+],
+[
+"thirty",
+8.01,
+"thirty"
+],
+[
+"meters",
+8.4,
+"meters"
+],
+[
+"to",
+8.86,
+"to"
+],
+[
+"the",
+8.94,
+"the"
+],
+[
+"bottom",
+9.1,
+"bottom"
+],
+[
+"of",
+9.45,
+"of"
+],
+[
+"the",
+9.52,
+"the"
+],
+[
+"atlantic",
+9.64,
+"Atlantic."
+]
+],
+"end": 10.42
+},
+{
+"p": 2,
+"text": "Twelve men on board.",
+"start": 10.42,
+"words": [
+[
+"twelve",
+10.42,
+"Twelve"
+],
+[
+"men",
+10.92,
+"men"
+],
+[
+"on",
+11.19,
+"on"
+],
+[
+"board",
+11.43,
+"board."
+]
+],
+"end": 11.87
+},
+{
+"p": 2,
+"text": "The cook, Harrison, was in the toilet.",
+"start": 11.87,
+"words": [
+[
+"the",
+11.87,
+"The"
+],
+[
+"cook",
+12.11,
+"cook,"
+],
+[
+"harrison",
+12.5,
+"Harrison,"
+],
+[
+"was",
+13.12,
+"was"
+],
+[
+"in",
+13.35,
+"in"
+],
+[
+"the",
+13.47,
+"the"
+],
+[
+"toilet",
+13.62,
+"toilet."
+]
+],
+"end": 14.2
+},
+{
+"p": 3,
+"text": "In total darkness, he feels his way to a tiny pocket of air.",
+"start": 14.2,
+"words": [
+[
+"in",
+14.2,
+"In"
+],
+[
+"total",
+14.44,
+"total"
+],
+[
+"darkness",
+14.98,
+"darkness,"
+],
+[
+"he",
+15.49,
+"he"
+],
+[
+"feels",
+15.68,
+"feels"
+],
+[
+"his",
+16.11,
+"his"
+],
+[
+"way",
+16.3,
+"way"
+],
+[
+"to",
+16.5,
+"to"
+],
+[
+"a",
+16.65,
+"a"
+],
+[
+"tiny",
+16.81,
+"tiny"
+],
+[
+"pocket",
+17.23,
+"pocket"
+],
+[
+"of",
+17.62,
+"of"
+],
+[
+"air",
+17.74,
+"air."
+]
+],
+"end": 18.17
+},
+{
+"p": 4,
+"text": "Cold water up to his chest.",
+"start": 18.17,
+"words": [
+[
+"cold",
+18.17,
+"Cold"
+],
+[
+"water",
+18.55,
+"water"
+],
+[
+"up",
+18.98,
+"up"
+],
+[
+"to",
+19.14,
+"to"
+],
+[
+"his",
+19.29,
+"his"
+],
+[
+"chest",
+19.49,
+"chest."
+]
+],
+"end": 20.11
+},
+{
+"p": 4,
+"text": "No food.",
+"start": 20.11,
+"words": [
+[
+"no",
+20.11,
+"No"
+],
+[
+"food",
+20.42,
+"food."
+]
+],
+"end": 21.04
+},
+{
+"p": 4,
+"text": "No light.",
+"start": 21.04,
+"words": [
+[
+"no",
+21.04,
+"No"
+],
+[
+"light",
+21.43,
+"light."
+]
+],
+"end": 21.85
+},
+{
+"p": 4,
+"text": "And the air slowly turning to poison.",
+"start": 21.85,
+"words": [
+[
+"and",
+21.85,
+"And"
+],
+[
+"the",
+22.05,
+"the"
+],
+[
+"air",
+22.28,
+"air"
+],
+[
+"slowly",
+22.67,
+"slowly"
+],
+[
+"turning",
+23.29,
+"turning"
+],
+[
+"to",
+23.64,
+"to"
+],
+[
+"poison",
+23.84,
+"poison."
+]
+],
+"end": 24.53
+},
+{
+"p": 5,
+"text": "One day.",
+"start": 24.53,
+"words": [
+[
+"one",
+24.53,
+"One"
+],
+[
+"day",
+24.88,
+"day."
+]
+],
+"end": 25.31
+},
+{
+"p": 5,
+"text": "Two days.",
+"start": 25.31,
+"words": [
+[
+"two",
+25.31,
+"Two"
+],
+[
+"days",
+25.62,
+"days."
+]
+],
+"end": 26.28
+},
+{
+"p": 5,
+"text": "Almost three.",
+"start": 26.28,
+"words": [
+[
+"almost",
+26.28,
+"Almost"
+],
+[
+"three",
+26.83,
+"three."
+]
+],
+"end": 27.41
+},
+{
+"p": 6,
+"text": "Then \u2014 a light.",
+"start": 27.41,
+"words": [
+[
+"then",
+27.41,
+"Then"
+],
+[
+"a",
+27.99,
+"a"
+],
+[
+"light",
+28.26,
+"light."
+]
+],
+"end": 28.84
+},
+{
+"p": 7,
+"text": "Divers came to recover the bodies.",
+"start": 28.84,
+"words": [
+[
+"divers",
+28.84,
+"Divers"
+],
+[
+"came",
+29.35,
+"came"
+],
+[
+"to",
+29.54,
+"to"
+],
+[
+"recover",
+29.7,
+"recover"
+],
+[
+"the",
+30.09,
+"the"
+],
+[
+"bodies",
+30.24,
+"bodies."
+]
+],
+"end": 30.83
+},
+{
+"p": 7,
+"text": "One of them sees a hand and grabs it.",
+"start": 30.83,
+"words": [
+[
+"one",
+30.83,
+"One"
+],
+[
+"of",
+31.06,
+"of"
+],
+[
+"them",
+31.21,
+"them"
+],
+[
+"sees",
+31.45,
+"sees"
+],
+[
+"a",
+31.8,
+"a"
+],
+[
+"hand",
+31.99,
+"hand"
+],
+[
+"and",
+32.3,
+"and"
+],
+[
+"grabs",
+32.53,
+"grabs"
+],
+[
+"it",
+33.0,
+"it."
+]
+],
+"end": 33.31
+},
+{
+"p": 7,
+"text": "The hand squeezes back.",
+"start": 33.31,
+"words": [
+[
+"the",
+33.31,
+"The"
+],
+[
+"hand",
+33.58,
+"hand"
+],
+[
+"squeezes",
+33.93,
+"squeezes"
+],
+[
+"back",
+34.71,
+"back."
+]
+],
+"end": 35.06
+},
+{
+"p": 8,
+"text": "But the most dangerous part was still ahead.",
+"start": 35.06,
+"words": [
+[
+"but",
+35.06,
+"But"
+],
+[
+"the",
+35.25,
+"the"
+],
+[
+"most",
+35.41,
+"most"
+],
+[
+"dangerous",
+35.64,
+"dangerous"
+],
+[
+"part",
+36.26,
+"part"
+],
+[
+"was",
+36.53,
+"was"
+],
+[
+"still",
+36.77,
+"still"
+],
+[
+"ahead",
+37.04,
+"ahead."
+]
+],
+"end": 37.58
+},
+{
+"p": 8,
+"text": "After sixty hours under pressure, going up too fast would kill him.",
+"start": 37.58,
+"words": [
+[
+"after",
+37.58,
+"After"
+],
+[
+"sixty",
+38.01,
+"sixty"
+],
+[
+"hours",
+38.51,
+"hours"
+],
+[
+"under",
+38.86,
+"under"
+],
+[
+"pressure",
+39.14,
+"pressure,"
+],
+[
+"going",
+39.68,
+"going"
+],
+[
+"up",
+39.99,
+"up"
+],
+[
+"too",
+40.18,
+"too"
+],
+[
+"fast",
+40.5,
+"fast"
+],
+[
+"would",
+40.88,
+"would"
+],
+[
+"kill",
+41.12,
+"kill"
+],
+[
+"him",
+41.43,
+"him."
+]
+],
+"end": 41.7
+},
+{
+"p": 9,
+"text": "So they sealed him in a chamber for sixty more hours.",
+"start": 41.7,
+"words": [
+[
+"so",
+41.7,
+"So"
+],
+[
+"they",
+42.01,
+"they"
+],
+[
+"sealed",
+42.24,
+"sealed"
+],
+[
+"him",
+42.59,
+"him"
+],
+[
+"in",
+42.71,
+"in"
+],
+[
+"a",
+42.86,
+"a"
+],
+[
+"chamber",
+42.98,
+"chamber"
+],
+[
+"for",
+43.41,
+"for"
+],
+[
+"sixty",
+43.64,
+"sixty"
+],
+[
+"more",
+44.07,
+"more"
+],
+[
+"hours",
+44.38,
+"hours."
+]
+],
+"end": 44.88
+},
+{
+"p": 10,
+"text": "He walked out alive.",
+"start": 44.88,
+"words": [
+[
+"he",
+44.88,
+"He"
+],
+[
+"walked",
+45.12,
+"walked"
+],
+[
+"out",
+45.51,
+"out"
+],
+[
+"alive",
+45.78,
+"alive."
+]
+],
+"end": 46.48
+},
+{
+"p": 10,
+"text": "The only one of twelve.",
+"start": 46.48,
+"words": [
+[
+"the",
+46.48,
+"The"
+],
+[
+"only",
+46.75,
+"only"
+],
+[
+"one",
+47.18,
+"one"
+],
+[
+"of",
+47.49,
+"of"
+],
+[
+"twelve",
+47.72,
+"twelve."
+]
+],
+"end": 48.41
+}
+]
+};
