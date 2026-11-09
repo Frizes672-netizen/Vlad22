@@ -1,0 +1,743 @@
+{
+"total": 42.44161,
+"units": [
+{
+"p": 0,
+"text": "To survive a night in the jungle, you'll have to sleep in a tree.",
+"start": 0.0,
+"words": [
+[
+"to",
+0.0,
+"To"
+],
+[
+"survive",
+0.08,
+"survive"
+],
+[
+"a",
+0.48,
+"a"
+],
+[
+"night",
+0.64,
+"night"
+],
+[
+"in",
+0.85,
+"in"
+],
+[
+"the",
+0.97,
+"the"
+],
+[
+"jungle",
+1.13,
+"jungle,"
+],
+[
+"youll",
+1.65,
+"you'll"
+],
+[
+"have",
+1.97,
+"have"
+],
+[
+"to",
+2.13,
+"to"
+],
+[
+"sleep",
+2.25,
+"sleep"
+],
+[
+"in",
+2.61,
+"in"
+],
+[
+"a",
+2.77,
+"a"
+],
+[
+"tree",
+2.93,
+"tree."
+]
+],
+"end": 3.45
+},
+{
+"p": 1,
+"text": "You've lost your group.",
+"start": 3.45,
+"words": [
+[
+"youve",
+3.45,
+"You've"
+],
+[
+"lost",
+3.81,
+"lost"
+],
+[
+"your",
+4.17,
+"your"
+],
+[
+"group",
+4.41,
+"group."
+]
+],
+"end": 4.93
+},
+{
+"p": 1,
+"text": "Your radio is at the bottom of a river.",
+"start": 4.93,
+"words": [
+[
+"your",
+4.93,
+"Your"
+],
+[
+"radio",
+5.21,
+"radio"
+],
+[
+"is",
+5.73,
+"is"
+],
+[
+"at",
+5.89,
+"at"
+],
+[
+"the",
+6.01,
+"the"
+],
+[
+"bottom",
+6.13,
+"bottom"
+],
+[
+"of",
+6.53,
+"of"
+],
+[
+"a",
+6.65,
+"a"
+],
+[
+"river",
+6.81,
+"river."
+]
+],
+"end": 7.37
+},
+{
+"p": 1,
+"text": "Four hours until dark.",
+"start": 7.37,
+"words": [
+[
+"four",
+7.37,
+"Four"
+],
+[
+"hours",
+7.77,
+"hours"
+],
+[
+"until",
+8.29,
+"until"
+],
+[
+"dark",
+8.69,
+"dark."
+]
+],
+"end": 9.21
+},
+{
+"p": 2,
+"text": "The ground is out.",
+"start": 9.21,
+"words": [
+[
+"the",
+9.21,
+"The"
+],
+[
+"ground",
+9.45,
+"ground"
+],
+[
+"is",
+9.97,
+"is"
+],
+[
+"out",
+10.17,
+"out."
+]
+],
+"end": 10.65
+},
+{
+"p": 2,
+"text": "Snakes, ants, and a damp that brings fever by morning.",
+"start": 10.65,
+"words": [
+[
+"snakes",
+10.65,
+"Snakes,"
+],
+[
+"ants",
+11.53,
+"ants,"
+],
+[
+"and",
+12.09,
+"and"
+],
+[
+"a",
+12.29,
+"a"
+],
+[
+"damp",
+12.49,
+"damp"
+],
+[
+"that",
+12.85,
+"that"
+],
+[
+"brings",
+13.05,
+"brings"
+],
+[
+"fever",
+13.41,
+"fever"
+],
+[
+"by",
+13.89,
+"by"
+],
+[
+"morning",
+14.13,
+"morning."
+]
+],
+"end": 14.65
+},
+{
+"p": 3,
+"text": "You have a machete and a coil of rope.",
+"start": 14.65,
+"words": [
+[
+"you",
+14.65,
+"You"
+],
+[
+"have",
+14.89,
+"have"
+],
+[
+"a",
+15.09,
+"a"
+],
+[
+"machete",
+15.43,
+"machete"
+],
+[
+"and",
+15.77,
+"and"
+],
+[
+"a",
+15.93,
+"a"
+],
+[
+"coil",
+16.05,
+"coil"
+],
+[
+"of",
+16.41,
+"of"
+],
+[
+"rope",
+16.61,
+"rope."
+]
+],
+"end": 17.09
+},
+{
+"p": 4,
+"text": "Find four trunks close together.",
+"start": 17.09,
+"words": [
+[
+"find",
+17.09,
+"Find"
+],
+[
+"four",
+17.49,
+"four"
+],
+[
+"trunks",
+17.81,
+"trunks"
+],
+[
+"close",
+18.37,
+"close"
+],
+[
+"together",
+18.73,
+"together."
+]
+],
+"end": 19.29
+},
+{
+"p": 4,
+"text": "Cut poles as thick as your arm.",
+"start": 19.29,
+"words": [
+[
+"cut",
+19.29,
+"Cut"
+],
+[
+"poles",
+19.65,
+"poles"
+],
+[
+"as",
+20.09,
+"as"
+],
+[
+"thick",
+20.29,
+"thick"
+],
+[
+"as",
+20.57,
+"as"
+],
+[
+"your",
+20.69,
+"your"
+],
+[
+"arm",
+20.93,
+"arm."
+]
+],
+"end": 21.37
+},
+{
+"p": 4,
+"text": "Lash them above your head \u2014 with a knot that tightens under weight.",
+"start": 21.37,
+"words": [
+[
+"lash",
+21.37,
+"Lash"
+],
+[
+"them",
+21.73,
+"them"
+],
+[
+"above",
+21.93,
+"above"
+],
+[
+"your",
+22.29,
+"your"
+],
+[
+"head",
+22.53,
+"head"
+],
+[
+"with",
+22.89,
+"with"
+],
+[
+"a",
+23.05,
+"a"
+],
+[
+"knot",
+23.21,
+"knot"
+],
+[
+"that",
+23.53,
+"that"
+],
+[
+"tightens",
+23.73,
+"tightens"
+],
+[
+"under",
+24.29,
+"under"
+],
+[
+"weight",
+24.53,
+"weight."
+]
+],
+"end": 25.05
+},
+{
+"p": 5,
+"text": "Bamboo on top.",
+"start": 25.05,
+"words": [
+[
+"bamboo",
+25.05,
+"Bamboo"
+],
+[
+"on",
+25.73,
+"on"
+],
+[
+"top",
+25.93,
+"top."
+]
+],
+"end": 26.37
+},
+{
+"p": 5,
+"text": "A roof of palm leaves, overlapping like tiles, steep so the rain runs off.",
+"start": 26.37,
+"words": [
+[
+"a",
+26.37,
+"A"
+],
+[
+"roof",
+26.61,
+"roof"
+],
+[
+"of",
+26.93,
+"of"
+],
+[
+"palm",
+27.13,
+"palm"
+],
+[
+"leaves",
+27.49,
+"leaves,"
+],
+[
+"overlapping",
+27.97,
+"overlapping"
+],
+[
+"like",
+28.69,
+"like"
+],
+[
+"tiles",
+28.93,
+"tiles,"
+],
+[
+"steep",
+29.65,
+"steep"
+],
+[
+"so",
+30.09,
+"so"
+],
+[
+"the",
+30.29,
+"the"
+],
+[
+"rain",
+30.45,
+"rain"
+],
+[
+"runs",
+30.77,
+"runs"
+],
+[
+"off",
+31.17,
+"off."
+]
+],
+"end": 31.53
+},
+{
+"p": 6,
+"text": "A smoky fire underneath keeps the mosquitoes away.",
+"start": 31.53,
+"words": [
+[
+"a",
+31.53,
+"A"
+],
+[
+"smoky",
+31.73,
+"smoky"
+],
+[
+"fire",
+32.29,
+"fire"
+],
+[
+"underneath",
+32.69,
+"underneath"
+],
+[
+"keeps",
+33.25,
+"keeps"
+],
+[
+"the",
+33.49,
+"the"
+],
+[
+"mosquitoes",
+33.65,
+"mosquitoes"
+],
+[
+"away",
+34.41,
+"away."
+]
+],
+"end": 34.83
+},
+{
+"p": 7,
+"text": "At midnight you hear rushing water.",
+"start": 34.83,
+"words": [
+[
+"at",
+34.83,
+"At"
+],
+[
+"midnight",
+34.99,
+"midnight"
+],
+[
+"you",
+35.55,
+"you"
+],
+[
+"hear",
+35.71,
+"hear"
+],
+[
+"rushing",
+36.03,
+"rushing"
+],
+[
+"water",
+36.47,
+"water."
+]
+],
+"end": 36.99
+},
+{
+"p": 8,
+"text": "In the morning you look down.",
+"start": 36.99,
+"words": [
+[
+"in",
+36.99,
+"In"
+],
+[
+"the",
+37.19,
+"the"
+],
+[
+"morning",
+37.39,
+"morning"
+],
+[
+"you",
+37.87,
+"you"
+],
+[
+"look",
+38.15,
+"look"
+],
+[
+"down",
+38.43,
+"down."
+]
+],
+"end": 38.91
+},
+{
+"p": 8,
+"text": "Where you almost slept \u2014 a river, waist-deep.",
+"start": 38.91,
+"words": [
+[
+"where",
+38.91,
+"Where"
+],
+[
+"you",
+39.15,
+"you"
+],
+[
+"almost",
+39.43,
+"almost"
+],
+[
+"slept",
+39.83,
+"slept"
+],
+[
+"a",
+40.51,
+"a"
+],
+[
+"river",
+40.71,
+"river,"
+],
+[
+"waistdeep",
+41.01,
+"waist-deep."
+]
+],
+"end": 42.44
+}
+]
+}
