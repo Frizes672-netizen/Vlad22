@@ -438,7 +438,7 @@ def main():
     # ducking: lower effects while the narrator speaks
     vm = np.abs(voice).mean(1); win = int(.05 * SR)
     envv = np.convolve(vm, np.ones(win) / win, 'same'); envv = lp(envv, 4)
-    duck = 1 - .6 * np.clip(envv / .05, 0, 1)
+    duck = 1 - .78 * np.clip(envv / .05, 0, 1)
     duck = np.concatenate([duck, np.ones(len(bus) - N)])
     bus *= duck[:, None]; f1 *= (1 - .35 * (1 - duck))[:, None]
     # ambient pad bed: soft evolving chord, very quiet
@@ -448,9 +448,9 @@ def main():
         sel = ((tt // seg) % len(chords)) == i
         w = np.clip(1 - np.abs(((tt % seg) / seg) - .5) * 2.2 + .6, 0, 1)
         pad += sel * w * sum(np.sin(2 * np.pi * f * tt + np.sin(tt * .2 + k)) for k, f in enumerate(ch))
-    pad = lp(pad, 900) / 4 * .045
-    mix = voice[:N] * 1.0 + bus[:N] * .9 + f1[:N] * .62 + np.stack([pad[:N], pad[:N]], 1) * duck[:N, None] ** .5
-    mix = np.tanh(mix * 1.1) / 1.1
+    pad = lp(pad, 900) / 4 * .025
+    mix = voice[:N] * 1.0 + bus[:N] * .55 + f1[:N] * .5 + np.stack([pad[:N], pad[:N]], 1) * duck[:N, None] ** .5
+    mix = mix / max(1.0, np.abs(mix).max() / .95)  # clean peak normalise (no saturation)
     out = (np.clip(mix, -1, 1) * 32767).astype(np.int16)
     w = wave.open('out/mix.wav', 'wb'); w.setnchannels(2); w.setsampwidth(2); w.setframerate(SR); w.writeframes(out.tobytes()); w.close()
     print('mixed', len(cues), 'cues,', N / SR, 's')
