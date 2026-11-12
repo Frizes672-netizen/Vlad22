@@ -333,4 +333,16 @@ SC.lights = { // headlights in your eyes → doors open properly → two get out
     bigTitleFit(k === 2 ? 'ИХ ДВОЕ' : 'ЛИЦ НЕ ВИДНО', 300, prog(t, m[k - 1] - .05, m[k - 1] + .2), { size: 124, col: '#fff' }); },
   sfx(d, P, E, s) { return [[0, 'v8', .3, { dur: d }], [T0(s, s.a + 1), 'door_open', .5], [T0(s, s.a + 1) + .15, 'door_open', .4], [T0(s, s.a + 1) + .6, 'steps', .45, { dur: d - T0(s, s.a + 1) - .6 }], [T0(s, s.a + 3), 'wind', .3, { dur: d - T0(s, s.a + 3) }]]; }
 };
+
+SC.away = { // a separate shot: the SUV on an empty forest road pulls away from the camera towards the dawn
+  draw(t, d) { const q = eio(prog(t, .35, d)), z = Math.pow(q, .8); ctx.save(); camKeys(t, [[0, 540, 1150, 1.0], [d, 540, 1080, 1.12]], .3);
+    ctx.fillStyle = grad(0, 0, 0, 1200, [[0, '#04060d'], [.55, '#141c34'], [.82, '#4a3550'], [1, '#c8704a']]); ctx.fillRect(-300, -300, W + 600, 1600); glow(540, 1150, 700, 'rgba(255,150,90,.28)'); const R = rnd(4); for (let i = 0; i < 50; i++) { ctx.fillStyle = `rgba(255,255,255,${.15 + R() * .4})`; ctx.fillRect(R() * W, R() * 600, 2, 2); }
+    for (const side of [-1, 1]) { for (let i = 0; i < 12; i++) { const zz = i / 12, sc = .1 + zz * zz * 2.4, x = 540 + side * (70 + zz * zz * 880), y = 1170 + zz * zz * 820; pine(x, y, 360 * sc, `rgba(4,7,12,${.7 + zz * .3})`); } }
+    ctx.fillStyle = grad(0, 1160, 0, H + 400, [[0, '#2a2018'], [1, '#120d08']]); ctx.beginPath(); ctx.moveTo(520, 1160); ctx.lineTo(560, 1160); ctx.lineTo(1500, H + 400); ctx.lineTo(-420, H + 400); ctx.closePath(); ctx.fill(); ctx.strokeStyle = 'rgba(60,45,30,.7)'; ctx.lineWidth = 5; for (const k of [-1, 1]) { ctx.beginPath(); ctx.moveTo(540 + k * 6, 1162); ctx.lineTo(540 + k * 420, H + 400); ctx.stroke(); } // dirt road with ruts
+    ctx.fillStyle = 'rgba(255,170,110,.08)'; ctx.beginPath(); ctx.ellipse(540, 1300, 300, 30, 0, 0, 7); ctx.fill();
+    const sx = .62 * (1 - z) + .05 * z, sy = 1780 * (1 - z) + 1175 * z, bob = Math.abs(Math.sin(t * 9)) * 6 * (1 - z); if (t > .3) { ctx.save(); ctx.globalAlpha = .5 * (1 - z * .6); const Rr = rnd(Math.floor(t * 8)); for (let i = 0; i < 10; i++) { ctx.fillStyle = 'rgba(120,100,80,.25)'; ctx.beginPath(); ctx.ellipse(540 + (Rr() - .5) * 700 * sx, sy - 20 * sx + Rr() * 30, (80 + Rr() * 120) * sx * 2, (30 + Rr() * 40) * sx * 2, 0, 0, 7); ctx.fill(); } ctx.restore(); } // dust kicked up
+    suvRear(540, sy - bob, sx, {}); vapor(540 - 160 * sx, sy - 60 * sx, t, sx * 2.6, 3); ctx.save(); ctx.globalCompositeOperation = 'lighter'; for (const k of [-1, 1]) glow(540 + k * 375 * sx, sy - 300 * sx, 40 + 260 * sx, 'rgba(255,40,40,.45)'); ctx.restore();
+    ctx.restore(); vign(.45); bigTitleFit('НА ИХ МАШИНЕ', 300, prog(t, 0, .2), { size: 124, col: '#fff' }); },
+  sfx(d) { return [[0, 'rev', .6, { dur: 2 }], [.3, 'v8', .45, { dur: d - .3, rev: .6 }]]; }
+};
 window.render = function (t) { ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.fillStyle = '#050403'; ctx.fillRect(0, 0, W, H); _baseRenderAng(t); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.filter = 'none'; drawTransition(t); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; filmGrain(t); if (t < TL.units[TL.units.length - 2].start) drawSubs(t); };
