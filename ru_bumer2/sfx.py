@@ -452,6 +452,16 @@ def fx_faraway(x=None):
 AMBIENT.update({'v8'})
 FX.update({k[3:]: v for k, v in list(globals().items()) if k.startswith('fx_')})
 
+def fx_gunshot(x=None):  # close pistol shot in a forest: sharp crack, chest thump, rolling echoes off the trees
+    d = 2.6; tt = t_(d); out = np.zeros(len(tt))
+    crack = hp(noise(.06), 1800) * np.exp(-t_(.06) * 70) * 1.0; thump = np.sin(2 * np.pi * (90 * np.exp(-t_(.35) * 9) + 40) * t_(.35)) * np.exp(-t_(.35) * 11) * 1.1
+    body = lp(noise(.5), 2500) * np.exp(-t_(.5) * 14) * .7
+    out[:len(crack)] += crack; out[:len(thump)] += thump; out[:len(body)] += body
+    for dl, g, f in ((.18, .35, 2200), (.42, .22, 1500), (.75, .14, 1000), (1.15, .08, 700)):
+        p0 = int(dl * SR); e = lp(np.concatenate([crack, np.zeros(int(.3 * SR))]) + .6 * np.concatenate([body[:int(.3 * SR)], np.zeros(len(crack))]), f) * g; out[p0:p0 + len(e)] += e[:len(out) - p0]
+    return norm(out, 1.0)
+FX.update({k[3:]: v for k, v in list(globals().items()) if k.startswith('fx_')})
+
 def main():
     voice = read_wav('out/voice.wav'); N = len(voice)
     cues = json.load(open('sfx_cues.json'))
@@ -466,7 +476,7 @@ def main():
             pan = (rng.random() - .5) * .5; s = np.stack([s * np.sqrt((1 - pan) / 2), s * np.sqrt((1 + pan) / 2)], 1) * 1.41
         g = c['g'] * (0.8 if name in AMBIENT else 1.0)
         p = int(c['t'] * SR); p = max(0, p); e = min(len(bus), p + len(s))
-        (f1 if name == 'f1pass' else bus)[p:e] += s[:e - p] * g
+        (f1 if name in ('f1pass', 'gunshot') else bus)[p:e] += s[:e - p] * g * (2.0 if name == 'gunshot' else 1.0)
     # ducking: lower effects while the narrator speaks
     vm = np.abs(voice).mean(1); win = int(.05 * SR)
     envv = np.convolve(vm, np.ones(win) / win, 'same'); envv = lp(envv, 4)

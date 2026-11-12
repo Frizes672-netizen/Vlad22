@@ -1117,6 +1117,7 @@ function person(x, y, h, o = {}) {
   let [elR, hdR] = arm(shR, 1, lerp(lerp(.1 - sw, .3, shrug), .35, armUp), lerp(lerp(.05 - sw, 1.75, shrug), 2.75, armUp));
   if (o.point) [elR, hdR] = arm(shR, 1, 1.2, 1.5);
   if (o.phoneEar) { elR = [13.6 * u, -71 * u + bob]; hdR = [7.4 * u, headY + 8.6 * u]; } // forearm up, elbow forward: the phone is held to the right ear
+  if (o.handsUp) { const hb = Math.sin(walk * 2) * .8 * u; elL = [shL[0] - 7 * u, shL[1] - 13 * u + hb]; hdL = [elL[0] - 1.5 * u, elL[1] - 13.5 * u]; elR = [shR[0] + 7 * u, shR[1] - 13 * u - hb]; hdR = [elR[0] + 1.5 * u, elR[1] - 13.5 * u]; } // both hands up, palms out
   if (o.fall) { const fl = Math.sin((o.fallT || 0) * 2.3) * 1.2 * u; // free-fall pose: arms thrown up and out, wrists flicking in the wind
     elL = [shL[0] - 9.5 * u, shL[1] - 7 * u + fl]; hdL = [elL[0] - 3 * u, elL[1] - 12 * u - fl]; elR = [shR[0] + 9.5 * u, shR[1] - 6 * u - fl]; hdR = [elR[0] + 3.5 * u, elR[1] - 12 * u + fl]; }
   if (o.walk && !shrug && !armUp) { // arm swing seen from the front: the forward arm bends at the elbow and the hand rises; the back arm straightens
