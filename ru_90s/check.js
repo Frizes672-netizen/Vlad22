@@ -5,7 +5,7 @@ const { chromium } = require('playwright'); const path = require('path'); const 
   if (errs.length) { console.log('LOAD ERRORS', errs); process.exit(1); }
   const info = await p.evaluate(() => window.SHOTINFO);
   // continuity
-  let prevB = -1; info.forEach(([sc, st, d, a, bb]) => { if (a !== prevB + 1) console.log('GAP/OVERLAP at', a, sc); if (d < 1) console.log('SHORT', sc, a, d); prevB = bb; }); if (prevB !== 33) console.log('END', prevB);
+  let prevB = -1; info.forEach(([sc, st, d, a, bb]) => { if (a !== prevB + 1) console.log('GAP/OVERLAP at', a, sc); if (d < 1) console.log('SHORT', sc, a, d); prevB = bb; }); if (prevB !== 40) console.log('END', prevB);
   // draw sample frames for every shot (catches runtime errors + missing words)
   const mode = process.argv[2] || 'check'; fs.mkdirSync('out/prev', { recursive: true });
   for (let i = 0; i < info.length; i++) { const [sc, st, d] = info[i];

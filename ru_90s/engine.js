@@ -720,6 +720,7 @@ function drawEars(u, C, L, sil) {
       ctx.strokeStyle = 'rgba(110,52,36,.4)'; ctx.lineWidth = .08 * u; ctx.beginPath(); ctx.moveTo(.2 * u, .15 * u); ctx.quadraticCurveTo(.3 * u, .5 * u, .18 * u, .85 * u); ctx.stroke(); }
     ctx.restore(); }
 }
+function lampas3(pts, side, u, w = .5) { ctx.save(); ctx.strokeStyle = 'rgba(250,250,250,.92)'; ctx.lineWidth = w * u; ctx.lineJoin = 'round'; for (let k = 0; k < 3; k++) { ctx.beginPath(); pts.forEach((p, i) => { const a = pts[Math.max(0, i - 1)], b = pts[Math.min(pts.length - 1, i + 1)], dx = b[0] - a[0], dy = b[1] - a[1], L = Math.hypot(dx, dy) || 1; let nx = -dy / L, ny = dx / L; if (nx * side < 0) { nx = -nx; ny = -ny; } const off = (1.3 + k * .75) * u; const x = p[0] + nx * off, y = p[1] + ny * off; i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }); ctx.stroke(); } ctx.restore(); } // three white tracksuit stripes along a limb
 function personBody(u, P, C, sil) {
   const L = C.light; // +1 light from right, -1 from left
   const fill = (c) => sil ? sil : c;
@@ -727,6 +728,7 @@ function personBody(u, P, C, sil) {
   const { hipL, hipR, kneeL, kneeR, ankL, ankR, shL, shR, elL, elR, hdL, hdR, sy, headY } = P;
   // legs (jeans)
   { const lw = 1 + .5 * C.heavy; limb3(hipL, kneeL, ankL, 5.4 * lw * u, 4.2 * lw * u, 3.4 * (1 + .25 * C.heavy) * u, C.pants, L, sil); limb3(hipR, kneeR, ankR, 5.4 * lw * u, 4.2 * lw * u, 3.4 * (1 + .25 * C.heavy) * u, C.pants, L, sil); }
+  if (C.lampas && !sil) { lampas3([hipL, kneeL, ankL], -1, u, .6); lampas3([hipR, kneeR, ankR], 1, u, .6); }
   if (!sil) for (const [kn, an, lf] of [[kneeL, ankL, P.liftL || 0], [kneeR, ankR, P.liftR || 0]]) { if (lf < .05) continue;
     softBlob((kn[0] + an[0]) / 2, (kn[1] + an[1]) / 2 + 1 * u, 3.2 * u, 8 * u, '0,0,0', .14 * lf); // shin turns away → soft shadow
     softBlob(kn[0], kn[1], 3.4 * u, 3 * u, '255,255,255', .07 * lf); // knee comes towards the camera
@@ -859,7 +861,7 @@ function personBody(u, P, C, sil) {
   // arms (sleeves + hands)
   const armL = [[shL, elL, hdL, -1], [shR, elR, hdR, 1]];
   for (const [s, e, hd, side] of armL) {
-    limb3(s, e, hd, 3.5 * u, 3.2 * u, 2.6 * u, C.top, L, sil);
+    limb3(s, e, hd, 3.5 * u, 3.2 * u, 2.6 * u, C.top, L, sil); if (C.lampas && !sil) lampas3([s, e, [lerp(e[0], hd[0], .8), lerp(e[1], hd[1], .8)]], side, u * .9);
     if (!sil) { ctx.fillStyle = shade(C.top, .7); const dx0 = hd[0] - e[0], dy0 = hd[1] - e[1], l0 = Math.hypot(dx0, dy0) || 1; ctx.beginPath(); ctx.ellipse(hd[0] - dx0 / l0 * .6 * u, hd[1] - dy0 / l0 * .6 * u, 2.9 * u, 1.2 * u, Math.atan2(dy0, dx0) + Math.PI / 2, 0, 7); ctx.fill(); }
     if (C.phoneEar && side === 1) continue;
     (P.handEdge ? drawHandEdge : drawHand)(hd, Math.atan2(hd[1] - e[1], hd[0] - e[0]), u, C.skin, side, sil, L);
@@ -958,7 +960,7 @@ function gait(p) { // p ∈ [0,1): 0 = heel strike of this leg; returns angles i
 }
 function personSide(x, y, h, o = {}) {
   const u = h / 100, p = (((o.walk || 0) / (Math.PI * 2)) % 1 + 1) % 1, L = o.light ?? 1;
-  const C = { skin: o.skin || SKIN[o.skinIdx || 0], top: o.top || '#59606e', pants: o.pants || '#2d3f5e', shoe: o.shoe || '#262626', hair: o.hair || '#3a2618',
+  const C = { lampas: o.lampas, skin: o.skin || SKIN[o.skinIdx || 0], top: o.top || '#59606e', pants: o.pants || '#2d3f5e', shoe: o.shoe || '#262626', hair: o.hair || '#3a2618',
     cap: o.cap === true ? (o.capColor || '#1f2d55') : (o.cap || null), fem: o.fem, headphones: o.headphones, wound: o.wound, heavy: o.heavy || 0, scarf: o.scarf, uniform: o.uniform, pocketGold: o.pocketGold, keycard: o.keycard, age: o.age || 0, hairStyle: o.hairStyle, glasses: o.glasses, headset: o.headset, phoneEar: o.phoneEar, blouse: o.blouse, tie: o.tie, brow: o.brow, kid: o.kid };
   const sil = (o.silhouette || (o.color && o.color !== 'none' && !o.lit)) ? (o.color || '#0b0d12') : null;
   const TH = 24 * u, SH = 24 * u, FOOT = 8.4 * u, HEEL = 2 * u, SOLE = 3 * u;
@@ -1050,7 +1052,7 @@ function personSide(x, y, h, o = {}) {
       ctx.strokeStyle = '#1e110d'; ctx.lineWidth = .1 * u; ctx.beginPath(); for (let q = 0; q < 3; q++) { const lx = 4.25 * u + q * .18 * u, ly = -.72 * u + q * .1 * u; ctx.moveTo(lx, ly); ctx.lineTo(lx + .28 * u, ly - .22 * u); } ctx.stroke(); // lashes
       softBlob(3.3 * u, 2.1 * u, 1.3 * u, .75 * u, '225,110,110', .17); } // blush
     else { ctx.fillStyle = 'rgba(165,95,80,.7)'; ctx.beginPath(); ctx.moveTo(5.1 * u, 3.6 * u); ctx.quadraticCurveTo(5.95 * u, 3.75 * u, 5.7 * u, 4.4 * u); ctx.quadraticCurveTo(5.95 * u, 4.9 * u, 5.45 * u, 5.3 * u); ctx.quadraticCurveTo(4.9 * u, 4.5 * u, 5.1 * u, 3.6 * u); ctx.fill(); // lips
-      ctx.strokeStyle = 'rgba(90,35,28,.6)'; ctx.lineWidth = .14 * u; ctx.beginPath(); ctx.moveTo(4.9 * u, 4.4 * u); ctx.lineTo(5.72 * u, 4.4 * u); ctx.stroke(); softBlob(3.4 * u, 5.4 * u, 2.4 * u, 1.8 * u, '55,38,32', .12); } // mouth line, stubble
+      ctx.strokeStyle = 'rgba(90,35,28,.6)'; ctx.lineWidth = .14 * u; ctx.beginPath(); ctx.moveTo(4.9 * u, 4.4 * u); ctx.lineTo(5.72 * u, 4.4 * u); ctx.stroke(); if (C.mouthO) { ctx.fillStyle = '#2a0e0a'; ctx.beginPath(); ctx.ellipse(5.3 * u, 4.75 * u, .42 * u, .55 * u * C.mouthO + .1 * u, 0, 0, 7); ctx.fill(); ctx.strokeStyle = 'rgba(60,30,20,.6)'; ctx.lineWidth = .16 * u; ctx.beginPath(); ctx.moveTo(3.3 * u, -1.9 * u - .5 * u * C.mouthO); ctx.quadraticCurveTo(4.2 * u, -2.5 * u - .6 * u * C.mouthO, 5 * u, -1.9 * u - .4 * u * C.mouthO); ctx.stroke(); } softBlob(3.4 * u, 5.4 * u, 2.4 * u, 1.8 * u, '55,38,32', .12); } // mouth line, stubble
     if (C.wound) { ctx.fillStyle = C.wound === 'bandage' ? '#f4f1ea' : 'rgba(190,30,30,.75)'; ctx.beginPath(); ctx.ellipse(2.6 * u, -3 * u, 1.4 * u, 1 * u, 0, 0, 7); ctx.fill(); } }
   // hair / cap
   if (C.fem && C.hairStyle === 'short') { // short curly cut in profile: volume on the crown, nape covered, the ear half hidden
@@ -1128,7 +1130,7 @@ function person(x, y, h, o = {}) {
     const lag = .07, sw = Math.cos(Math.PI * 2 * (pL - lag)) * .85; // right arm forward when the left leg is forward
     [elL, hdL] = frontArm(shL, -1, -sw); [elR, hdR] = frontArm(shR, 1, sw); }
   const P = { hipL, hipR, kneeL, kneeR, ankL, ankR, shL, shR, elL, elR, hdL, hdR, sy, headY, tilt: o.tilt || (shrug * .06) || (o.walk ? .025 * Math.cos(Math.PI * 2 * (pL - .25)) : 0), mouth: o.mouth, shock: o.shock, fear: o.fear || 0, smile: o.smile || 0, closed: o.closed || 0, fall: !!o.fall, fallT: o.fallT || 0, liftL, liftR, depthL, depthR, handEdge: !!(o.walk && !shrug && !armUp && !o.point && !o.fall) };
-  const C = { skin: o.skin || SKIN[o.skinIdx || 0], top: o.top || '#59606e', pants: o.pants || '#2d3f5e', shoe: o.shoe || '#262626', hair: o.hair || '#3a2618',
+  const C = { lampas: o.lampas, skin: o.skin || SKIN[o.skinIdx || 0], top: o.top || '#59606e', pants: o.pants || '#2d3f5e', shoe: o.shoe || '#262626', hair: o.hair || '#3a2618',
     cap: o.cap === true ? (o.capColor || '#1f2d55') : (o.cap || null), light: o.light ?? 1, fem: o.fem, headphones: o.headphones, wound: o.wound, heavy: o.heavy || 0, scarf: o.scarf, uniform: o.uniform, pocketGold: o.pocketGold, keycard: o.keycard, age: o.age || 0, hairStyle: o.hairStyle, glasses: o.glasses, headset: o.headset, phoneEar: o.phoneEar, blouse: o.blouse, tie: o.tie, brow: o.brow, kid: o.kid };
   if (o.backWings) wings(0, sy + 10 * u, o.backWings.s, o.backWings.spread, o.backWings);
   if (o.rim) { ctx.save(); ctx.globalAlpha *= .55; ctx.translate(o.light === -1 ? -.7 * u : .7 * u, -.3 * u); personBody(u, P, C, o.rim); ctx.restore(); }
