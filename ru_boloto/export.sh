@@ -1,6 +1,6 @@
 #!/bin/bash
 # concat render segments + mix → iPhone-friendly 1080×1920 H.264 High 4.1, bt709, 2-pass (~9 Mbit/s)
-set -e; cd "$(dirname "$0")"; OUT=${1:-out/RazvodIliNet_01.mp4}
+set -e; cd "$(dirname "$0")"; OUT=${1:-out/Boloto.mp4}
 : > out/list.txt; for i in 0 1 2 3; do echo "file 'seg_$i.mp4'" >> out/list.txt; done
 ffmpeg -y -v error -f concat -safe 0 -i out/list.txt -c copy out/video.mp4
 ../tools/master_audio.sh out/mix.wav out/mix_master.wav
